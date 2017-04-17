@@ -48,10 +48,10 @@ LetsMeet is a single page web application inspired by Meetup, built using Ruby o
 ### Phase 3: Events model, API, and components (2 days)
 **Objective:** Events can be created, read, edited (by creator of event), and destroyed (by creator of event) through the API. Members of the group can RSVP to events.
 
-### Phase 4: Calendars
+### Phase 4: Calendars (1 day)
 **Objective:** Group show page has a calendar that lists all upcoming events. User can toggle between viewing both upcoming and previous events.
 
-### Phase 5: Search by location and group information (name and description)
+### Phase 5: Search by location and group information (name and description) (2 days)
 **Objective:** User can search by category, group name, group description, and location.
 
 ### Phase 6:
