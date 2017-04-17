@@ -40,24 +40,24 @@ LetsMeet is a single page web application inspired by Meetup, built using Ruby o
 ## Implementation Timeline
 
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
-**Objective:** Functioning rails project with front-end Authentication
+**Objective:** Functioning rails project with front-end Authentication. This includes a welcome page when there is no current user, sign up and sign in pages, and a homepage for signed in users.
 
-### Phase 2:
-**Objective:**
+### Phase 2: Groups model, API, and components (2 days)
+**Objective:** Groups can be created, read, edited (by creator of group), and destroyed (by creator of group) through the API. Users can also join groups. Creator of group can assign the group to one or more categories.
 
-### Phase 3:
-**Objective:**
+### Phase 3: Events model, API, and components (2 days)
+**Objective:** Events can be created, read, edited (by creator of event), and destroyed (by creator of event) through the API. Members of the group can RSVP to events.
 
-### Phase 4:
-**Objective:**
+### Phase 4: Calendars
+**Objective:** Group show page has a calendar that lists all upcoming events. User can toggle between viewing both upcoming and previous events.
 
-### Phase 5:
-**Objective:**
+### Phase 5: Search by location and group information (name and description)
+**Objective:** User can search by category, group name, group description, and location.
 
 ### Phase 6:
 **Objective:**
 
 ### Bonus features (TBD)
 
-- [ ] Bonus feature 1
-- [ ] Bonus feature 2
+- [ ] Calendar (for all groups in search results)
+- [ ] Group members can leave comments on events
