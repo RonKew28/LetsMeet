@@ -54,9 +54,6 @@ LetsMeet is a single page web application inspired by Meetup, built using Ruby o
 ### Phase 5: Search by location and group information (name and description) (2 days)
 **Objective:** User can search by category, group name, group description, and location.
 
-### Phase 6:
-**Objective:**
-
 ### Bonus features (TBD)
 
 - [ ] Calendar (for all groups in search results)
