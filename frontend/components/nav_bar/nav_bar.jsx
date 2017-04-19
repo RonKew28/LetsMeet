@@ -10,10 +10,10 @@ import { Link } from 'react-router';
     </nav>
     );
 
-  const loggedInLinks = (logout) => (
+  const loggedInLinks = (currentUser, logout) => (
     <nav>
       <button onClick={logout}>Log out</button>
-      <Link to='/'>View Profile</Link>
+      <h3><Link to='/'>View Profile</Link>{currentUser.email}</h3>
     </nav>
     );
 
@@ -23,7 +23,7 @@ import { Link } from 'react-router';
   // }
 
   const NavBar = ({ currentUser, logout }) => (
-    currentUser ? loggedInLinks(logout) : loggedOutLinks()
+    currentUser ? loggedInLinks(currentUser, logout) : loggedOutLinks()
     );
 
 export default NavBar;
