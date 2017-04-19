@@ -5,7 +5,7 @@
 .red-button {
 	background-color: $main-red;
 	color: white;
-	padding: 16px 0;
+	padding: 6px 8px;
 	border-radius: 3px;
   margin-bottom: 16px;
 	font-family: $sans-serif;
@@ -30,18 +30,35 @@
   font-weight: 500;
 }
 
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+  display: flex;
+  align-items: center;
+}
 
 .session-form {
   text-align: left;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #DDD;
+  width: 450px;
+  padding: 10px 0;
+  margin-top: 150px;
+  margin-left: 550px;
 }
 .session-form label {
   background-color: white;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 20px;
 }
 
-.session-form input[type=text]{
+.session-form input[type=text], input[type=password]{
   background-color: $off-white;
   font-size: 16px;
   font-weight: normal;
@@ -51,7 +68,7 @@
   height: 40px;
   width: 400px;
   border: 1px solid #DDD;
-  margin: 0 0 4px 0;
+  margin-bottom: 16px;
 
 }
 
@@ -65,7 +82,7 @@
 
 .intro-text h2 {
   color: $red-text;
-  font-weight: 525;
+  font-weight: 400;
   font-size: 45px;
   margin: 0 0 8px;
   text-align: left;
@@ -73,4 +90,13 @@
 
 .link {
   color: $blue;
+}
+
+input[type=text]:focus {
+  border-color: $blue;
+  background-color: white;
+}
+input[type=password]:focus {
+  border-color: $blue;
+  background-color: white;
 }

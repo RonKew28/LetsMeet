@@ -4,11 +4,15 @@ import { Link } from 'react-router';
 
 
   const loggedOutLinks = () => (
-    <nav>
-      <Link to='/login'>Log in</Link>
-      <Link to='/signup'>Sign up</Link>
-    </nav>
-    );
+    <header className="main-nav">
+      <nav className="left-nav">
+        <ul>
+          <li><Link to='/login'>Log in</Link></li>
+          <li><Link to='/signup'>Sign up</Link></li>
+        </ul>
+      </nav>
+    </header>
+  );
 
   const loggedInLinks = (currentUser, logout) => (
     <nav>

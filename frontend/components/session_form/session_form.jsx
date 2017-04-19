@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
     let navText;
     let formTitle;
     if (this.props.formType === "login") {
-      navText = <span>Not registered with us yet? <Link to="/signup">Sign up</Link></span>;
+      navText = <span>Not registered with us yet? <Link to="/signup" className="link">Sign up</Link></span>;
       formTitle = <h2>Log in</h2>;
     } else {
       navText = <span>Already a member? <Link to="/login" className="link">Log in.</Link></span>;
@@ -112,7 +112,7 @@ class SessionForm extends React.Component {
                      onChange={this.update("password")} />
             </label>
             <br/>
-            <input className="red-button" type="submit" value={this.props.formType === "signup" ? "Sign up" : "Log in"} onClick={this.props.clearErrors}/>
+            <input className="red-button" type="submit" onClick={this.props.clearErrors} value={this.props.formType === "signup" ? "Sign up" : "Log in"} />
           </div>
 
         </form>

@@ -4,9 +4,9 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 
 const App = ({ children }) => (
   <div>
-    <h1>Let meet</h1>
-    { children }
+    <h1>Let's meet</h1>
     <NavBarContainer className=".red-button" />
+    { children }
   </div>
 );
 
