@@ -41,6 +41,12 @@
   align-items: center;
 }
 
+.left-nav, .right-nav {
+  display: flex;
+  align-items: center;
+  font-family: $sans-serif;
+}
+
 .session-form {
   text-align: left;
   display: flex;
