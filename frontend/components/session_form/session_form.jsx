@@ -51,12 +51,12 @@ class SessionForm extends React.Component {
       navText = <span>Not registered with us yet? <Link to="/signup">Sign up</Link></span>;
       formTitle = <h2>Log in</h2>;
     } else {
-      navText = <span>Already a member? <Link to="/login">Log in.</Link></span>;
+      navText = <span>Already a member? <Link to="/login" className="link">Log in.</Link></span>;
       formTitle = <h2>Sign up</h2>;
     }
 
     return (
-      <div>
+      <div className="intro-text">
       {formTitle}
       {navText}
       </div>
@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
       getUsername="";
     }
     return (
-      <div>
+      <div className="session-form">
         <form onSubmit={this.handleSubmit}>
           {this.formIntro()}
           {this.renderErrors()}
@@ -112,7 +112,7 @@ class SessionForm extends React.Component {
                      onChange={this.update("password")} />
             </label>
             <br/>
-            <input type="submit" value={this.props.formType === "signup" ? "Sign up" : "Log in"} onClick={this.props.clearErrors}/>
+            <input className="red-button" type="submit" value={this.props.formType === "signup" ? "Sign up" : "Log in"} onClick={this.props.clearErrors}/>
           </div>
 
         </form>

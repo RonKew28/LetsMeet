@@ -5,7 +5,7 @@
 .red-button {
 	background-color: $main-red;
 	color: white;
-	// padding: 16px 0;
+	padding: 16px 0;
 	border-radius: 3px;
   margin-bottom: 16px;
 	font-family: $sans-serif;
@@ -19,6 +19,10 @@
 
 }
 
+.red-button:hover {
+  background-color: $main-red-hover;
+}
+
 .nav-links{
   font: 16px;
   background-color: black;
@@ -26,6 +30,47 @@
   font-weight: 500;
 }
 
-.red-button:hover {
-  background-color: $main-red-hover;
+
+.session-form {
+  text-align: left;
+}
+.session-form label {
+  background-color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.session-form input[type=text]{
+  background-color: $off-white;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 25px;
+  padding: 8px;
+  box-sizing: border-box;
+  height: 40px;
+  width: 400px;
+  border: 1px solid #DDD;
+  margin: 0 0 4px 0;
+
+}
+
+.intro-text {
+  font-size: 16px;
+  font-color: $off-grey;
+  font-weight: 400;
+  color: grey;
+  text-align: left;
+}
+
+.intro-text h2 {
+  color: $red-text;
+  font-weight: 525;
+  font-size: 45px;
+  margin: 0 0 8px;
+  text-align: left;
+}
+
+.link {
+  color: $blue;
 }
