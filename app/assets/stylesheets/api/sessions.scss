@@ -1,3 +1,31 @@
 // Place all the styles related to the api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.red-button {
+	background-color: $main-red;
+	color: white;
+	// padding: 16px 0;
+	border-radius: 3px;
+  margin-bottom: 16px;
+	font-family: $sans-serif;
+	font-size: 16px;
+	text-align: center;
+  cursor: pointer;
+  height: 36px;
+  width: 82px;
+  font-weight: 600;
+  line-height: 16px
+
+}
+
+.nav-links{
+  font: 16px;
+  background-color: black;
+  color: white;
+  font-weight: 500;
+}
+
+.red-button:hover {
+  background-color: $main-red-hover;
+}
