@@ -11,9 +11,9 @@ import { Link } from 'react-router';
     );
 
   const loggedInLinks = (currentUser, logout) => (
-    <nav>
+    <nav >
       <button onClick={logout}>Log out</button>
-      <h3><Link to='/'>View Profile</Link>{currentUser.email}</h3>
+      <h3 className=".red-button"><Link to='/'>View Profile</Link>{currentUser.email}</h3>
     </nav>
     );
 
