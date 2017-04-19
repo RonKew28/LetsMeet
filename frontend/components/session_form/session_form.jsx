@@ -12,6 +12,20 @@ class SessionForm extends React.Component {
     this.redirectIfLoggedIn();
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.formType !== newProps.formType) {
+      this.props.clearErrors();
+    }
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   redirectIfLoggedIn() {
     if(this.props.loggedIn) {
       this.props.router.push("/");
@@ -98,7 +112,7 @@ class SessionForm extends React.Component {
                      onChange={this.update("password")} />
             </label>
             <br/>
-            <input type="submit" value={this.props.formType === "signup" ? "Sign up" : "Log in"} />
+            <input type="submit" value={this.props.formType === "signup" ? "Sign up" : "Log in"} onClick={this.props.clearErrors}/>
           </div>
 
         </form>
