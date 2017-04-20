@@ -1,7 +1,6 @@
 // Place all the styles related to the api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 body {
   background-color: $off-white;
 }
@@ -15,51 +14,90 @@ body {
 	font-size: 16px;
 	text-align: center;
   cursor: pointer;
-  height: 36px;
-  width: 82px;
-  font-weight: 600;
-  line-height: 16px
-
+  font-weight: 500;
 }
 
 .red-button:hover {
   background-color: $main-red-hover;
 }
 
-
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #DDD;
-  background-color: white;
-}
-.sub-nav {
-  display: flex;
+	display:flex;
+	justify-content: space-between;
+	padding: 15px 10px;
+	border-bottom: 1px solid $off-grey;
 }
 
-
-
-.right-nav {
-  display: flex;
-  align-items: center;
-  font-family: $sans-serif;
-  margin: 20px 10px;
+.left-nav > ul,
+.right-nav > ul {
+	display: flex;
+	align-items: center;
+  cursor: pointer;
 }
 
-.left-nav {
-  display: flex;
-  align-items: center;
-  font-family: $sans-serif;
-  margin: 20px 10px;
+.left-nav > ul > li,
+.right-nav > ul > li {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 15px;
+  cursor: pointer;
+  text-align: center;
+  // margin-bottom: 16px;
+
+}
+//
+.right-nav > ul > li:last-of-type {
+  background-color: $main-red;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 3px;
+  // margin-bottom: 16px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
 }
 
-
-.nav-links {
-  font-size: 18px;
-  color: black;
-  background-color: white;
-  font-weight: 550;
+.right-nav > ul > li:last-of-type:hover {
+  background-color: $main-red-hover;
 }
+
+//
+// .main-nav {
+//   display: flex;
+//   justify-content: space-between;
+//   border-bottom: 1px solid #DDD;
+//   background-color: white;
+// }
+//
+// .sub-nav {
+//   display: block;
+//   padding: 5px;
+//   margin: 20px 10px;
+// }
+//
+//
+// //
+// .right-nav {
+//   display: flex;
+//   align-items: center;
+//   font-family: $sans-serif;
+//   margin: 20px 10px;
+// }
+//
+// // .left-nav {
+// //   display: flex;
+// //   align-items: center;
+// //   font-family: $sans-serif;
+// //   margin: 20px 10px;
+// // }
+// //
+// //
+// .nav-links {
+//   font-size: 18px;
+//   color: black;
+//   background-color: white;
+//   font-weight: 550;
+// }
 
 .session-form {
   text-align: left;
