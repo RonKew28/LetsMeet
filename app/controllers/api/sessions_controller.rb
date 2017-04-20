@@ -11,7 +11,7 @@ class Api::SessionsController < ApplicationController
     else
       render(
         json: { base: ["Invalid email or password"] },
-        status: 401
+        status: 422
       )
     end
   end
