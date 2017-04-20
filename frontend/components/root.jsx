@@ -9,6 +9,7 @@ import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Test from './test';
+import FooterContainer from './footer/footer_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
