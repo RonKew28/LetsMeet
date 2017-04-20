@@ -4,33 +4,34 @@ import { Link } from 'react-router';
 
   const loggedOutLinks = login => (
       <header className="main-nav">
-        <nav className="right-nav nav-links">
-          <Link to='/create'>Create a LetsMeet group</Link>
+        <nav className="left-nav">
+          <ul>
+            <li><Link to='/create'>Create a LetsMeet group</Link></li>
+          </ul>
         </nav>
-        <nav className="sub-nav">
-          <nav className="right-nav nav-links">
-              <Link to='/login'>Log in</Link>
-          </nav>
-          <nav className="right-nav red-button">
-              <Link to='/signup'>Sign up</Link>
-          </nav>
+        <nav className='right-nav'>
+            <ul>
+              <li ><Link to='/login'>Log in</Link></li>
+              <li><Link to='/signup'>Sign up</Link></li>
+            </ul>
         </nav>
-
       </header>
     );
 
   const loggedInLinks = (currentUser, logout) => (
-      <header className="main-nav">
-      <nav className="right-nav"></nav>
-        <nav className="right-nav nav-links">
-            <button onClick={logout}>Log out</button>
-        </nav>
-        <nav className="sub-nav">
-          <nav className="right-nav red-button">
-            <Link to='/'>View Profile</Link>
-          </nav>
-        </nav>
-      </header>
+    <header className="main-nav">
+      <nav className="left-nav">
+        <ul>
+          <li></li>
+        </ul>
+      </nav>
+      <nav className='right-nav'>
+          <ul>
+            <li ><button onClick={logout}>Log out</button></li>
+            <li><Link to='/'>View Profile</Link></li>
+          </ul>
+      </nav>
+    </header>
     );
 
 
