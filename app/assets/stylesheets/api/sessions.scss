@@ -4,6 +4,12 @@
 body {
   background-color: $off-white;
 }
+
+.errors {
+  font-size: 12px;
+  color: 'orange';
+  padding: 5px 0 3px 8px;
+}
 .red-button {
 	background-color: $main-red;
 	color: white;
