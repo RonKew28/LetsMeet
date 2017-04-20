@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = { username: "", password: "", email: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentDidUpdate() {
@@ -24,6 +25,11 @@ class SessionForm extends React.Component {
 
   componentWillUnmount() {
     this.props.clearErrors();
+  }
+
+  demoLogin() {
+    const guest = { email: "guest_user@guest.com", password: "password" };
+    this.props.processForm(guest);
   }
 
   redirectIfLoggedIn() {
@@ -77,6 +83,7 @@ class SessionForm extends React.Component {
 
   render() {
     let getUsername;
+    let activateDemoLogin;
     if (this.props.formType === "signup") {
       getUsername = <label>
                       Your name (this is public):
@@ -90,6 +97,13 @@ class SessionForm extends React.Component {
     else {
       getUsername="";
     }
+
+    if (this.props.formType === "login") {
+      activateDemoLogin = <button onClick={this.demoLogin}>Log in as Guest</button>;
+    } else {
+      activateDemoLogin = "";
+    }
+
     return (
       <div className="session-form">
         <form onSubmit={this.handleSubmit}>
@@ -114,8 +128,10 @@ class SessionForm extends React.Component {
             <br/>
             <input className="red-button" type="submit" onClick={this.props.clearErrors} value={this.props.formType === "signup" ? "Sign up" : "Log in"} />
           </div>
-
         </form>
+        <div>
+          {activateDemoLogin}
+        </div>
 
       </div>
     );
