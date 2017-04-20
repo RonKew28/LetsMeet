@@ -8,6 +8,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import Test from './test';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -22,6 +23,7 @@ const Root = ({ store }) => {
       <Route path="/" component={ App } >
         <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+        <Route path="/create" component={ Test } />
       </Route>
     </Router>
   </Provider>
