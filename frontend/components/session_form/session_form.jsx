@@ -85,54 +85,56 @@ class SessionForm extends React.Component {
     let getUsername;
     let activateDemoLogin;
     if (this.props.formType === "signup") {
-      getUsername = <label>
+      getUsername = <div><label>
                       Your name (this is public):
-                      <br/>
+                    </label>
+                    <br/>
                       <input type="text"
                       value={ this.state.username }
                       onChange={this.update("username")} />
-                      <br/>
-                  </label>;
+                    <br/>
+                    </div>
+                  ;
       }
     else {
       getUsername="";
     }
 
     if (this.props.formType === "login") {
-      activateDemoLogin = <button onClick={this.demoLogin}>Log in as Guest</button>;
+      activateDemoLogin = <div className='session-form'>
+      <button className="red-button" onClick={this.demoLogin}>Log in as Guest</button>
+      </div>;
     } else {
       activateDemoLogin = "";
     }
 
     return (
+      <div className='entire-session-form'>
+
+      <div className="session-form">
+        {this.formIntro()}
+      </div>
       <div className="session-form">
         <form onSubmit={this.handleSubmit}>
-          {this.formIntro()}
           {this.renderErrors()}
-          <div>
-            <br/>
-            {getUsername}
-            <label> Email:
-              <br/>
-              <input type="text"
-                     value={ this.state.email }
-                     onChange={this.update("email")} />
-            </label>
-              <br/>
-            <label> Password:
-              <br/>
-              <input type="password"
-                     value={ this.state.password }
-                     onChange={this.update("password")} />
-            </label>
-            <br/>
-            <input className="red-button" type="submit" onClick={this.props.clearErrors} value={this.props.formType === "signup" ? "Sign up" : "Log in"} />
-          </div>
+          {getUsername}
+          <label> Email: </label>
+          <br/>
+          <input type="text"
+                 value={ this.state.email }
+                 onChange={this.update("email")} />
+          <br/>
+          <label> Password:
+          <br/>
+          <input type="password"
+                 value={ this.state.password }
+                 onChange={this.update("password")} />
+          </label>
+          <br/>
+          <input className="red-button" type="submit" onClick={this.props.clearErrors} value={this.props.formType === "signup" ? "Sign up" : "Log in"} />
         </form>
-        <div>
-          {activateDemoLogin}
-        </div>
-
+      </div>
+        {activateDemoLogin}
       </div>
     );
   }
