@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-color: $off-white;
+}
 .red-button {
 	background-color: $main-red;
 	color: white;
@@ -28,6 +31,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #DDD;
+  background-color: white;
 }
 .sub-nav {
   display: flex;
