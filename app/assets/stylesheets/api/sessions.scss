@@ -61,79 +61,58 @@ body {
   background-color: $main-red-hover;
 }
 
-//
-// .main-nav {
-//   display: flex;
-//   justify-content: space-between;
-//   border-bottom: 1px solid #DDD;
-//   background-color: white;
-// }
-//
-// .sub-nav {
-//   display: block;
-//   padding: 5px;
-//   margin: 20px 10px;
-// }
-//
-//
-// //
-// .right-nav {
-//   display: flex;
-//   align-items: center;
-//   font-family: $sans-serif;
-//   margin: 20px 10px;
-// }
-//
-// // .left-nav {
-// //   display: flex;
-// //   align-items: center;
-// //   font-family: $sans-serif;
-// //   margin: 20px 10px;
-// // }
-// //
-// //
-// .nav-links {
-//   font-size: 18px;
-//   color: black;
-//   background-color: white;
-//   font-weight: 550;
-// }
+#logo {
+  color: $red-text;
+  font-size: 42px;
+  align-text: center;
+  font-family: cursive;
+  display: flex;
+}
+
+
+
 
 .session-form {
   text-align: left;
-  display: flex;
-  justify-content: center;
+  display: absolute;
+  background-color: 'white';
   border: 1px solid #DDD;
   width: 450px;
-  padding: 10px 0;
+  padding: 20px 20px;
+  margin: 0 auto;
+}
+.entire-session-form {
+  background-color: "white";
+  display: flex;
+  flex-direction: column;
   margin: 60px auto;
+
 }
 .session-form label {
   background-color: white;
   font-size: 13px;
   font-weight: 600;
-  line-height: 20px;
+
+  // padding: 10px 10px;
+
 }
 
 .session-form input[type=text], input[type=password]{
   background-color: $off-white;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 25px;
-  padding: 8px;
+  font-size: 26px;
   box-sizing: border-box;
-  height: 40px;
   width: 400px;
   border: 1px solid #DDD;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
+  margin-top: 5px
 
 }
 
+
 .intro-text {
   font-size: 16px;
-  font-color: $off-grey;
+  font-color: black;
   font-weight: 400;
-  color: grey;
   text-align: left;
 }
 
@@ -141,9 +120,11 @@ body {
   color: $red-text;
   font-weight: 400;
   font-size: 45px;
-  margin: 0 0 8px;
+  margin-bottom: 10px;
   text-align: left;
 }
+
+
 
 .link {
   color: $blue;
