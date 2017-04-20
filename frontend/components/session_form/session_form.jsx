@@ -27,6 +27,38 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
+  renderLoginErrors({login}) {
+    if(login) {
+      return (
+        <div className="errors">{password}</div>
+      );
+    }
+  }
+
+  renderUsernameError({username}) {
+    if(username) {
+      return (
+        <div className="errors">{username}</div>
+      );
+    }
+  }
+
+  renderPasswordError({password}) {
+    if(password) {
+      return (
+        <div className="errors">{password}</div>
+      );
+    }
+  }
+
+  renderEmailError({password}) {
+    if(password) {
+      return (
+        <div className="errors">{password}</div>
+      );
+    }
+  }
+
   demoLogin() {
     const guest = { email: "guest_user@guest.com", password: "password" };
     this.props.processForm(guest);
@@ -69,22 +101,6 @@ class SessionForm extends React.Component {
     );
   }
 
-  renderErrors() {
-    if(this.props.errors.length > 0) {
-      return(
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
-    } else {
-      return null;
-    }
-  }
-
   render() {
     let getUsername;
     let activateDemoLogin;
@@ -95,7 +111,8 @@ class SessionForm extends React.Component {
                     <br/>
                       <input type="text"
                       value={ this.state.username }
-                      onChange={this.update("username")} />
+                      onChange={this.update("username")}
+                      placeholder="Username"/>
                     <br/>
                     </div>
                   ;
@@ -114,25 +131,28 @@ class SessionForm extends React.Component {
 
     return (
       <div className='entire-session-form'>
-        {this.renderErrors()}
-      <div className="session-form">
-        {this.formIntro()}
-      </div>
-      <div className="session-form">
-        <form onSubmit={this.handleSubmit}>
-          {getUsername}
-          <label> Email: </label>
-          <br/>
-          <input type="text"
-                 value={ this.state.email }
-                 onChange={this.update("email")} />
-          <br/>
-          <label> Password:
-          <br/>
-          <input type="password"
-                 value={ this.state.password }
-                 onChange={this.update("password")} />
-          </label>
+        <div className="session-form">
+          {this.formIntro()}
+        </div>
+        <div className="session-form">
+          <form onSubmit={this.handleSubmit}>
+            {getUsername}
+            {this.renderUsernameError(this.props.errors)}
+            <label> Email: </label>
+            <br/>
+            <input type="text"
+                   value={ this.state.email }
+                   onChange={this.update("email")}
+                   placeholder="Email Address"/>
+            <br/>
+            {this.renderEmailError(this.props.errors)}
+            <label> Password: </label>
+            <br/>
+            <input type="password"
+                   value={ this.state.password }
+                   onChange={this.update("password")}
+                   placeholder="Password"/>
+                 Password {this.renderPasswordError(this.props.errors)}
           <br/>
           <input className="red-button" type="submit" onClick={this.props.clearErrors} value={this.props.formType === "signup" ? "Sign up" : "Log in"} />
         </form>
