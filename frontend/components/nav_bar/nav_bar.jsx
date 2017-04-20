@@ -8,11 +8,11 @@ import { Link } from 'react-router';
           <ul>
             <li><Link to='/create'>Create a LetsMeet group</Link></li>
           </ul>
+        </nav>
         <nav className="center-nav">
           <ul>
-            <li><h1 id='logo'>Let's Meet!</h1></li>
+            <li><Link to='/'><h1 id='logo'>Let's Meet!</h1></Link></li>
           </ul>
-        </nav>
         </nav>
         <nav className='right-nav'>
             <ul>
@@ -25,6 +25,11 @@ import { Link } from 'react-router';
 
   const loggedInLinks = (currentUser, logout) => (
     <header className="main-nav">
+      <nav className="left-nav">
+        <ul>
+          <li><Link to='/create'>Create a LetsMeet group</Link></li>
+        </ul>
+      </nav>
       <nav className="left-nav">
         <ul>
           <li></li>
