@@ -50,7 +50,7 @@ class GroupForm extends React.Component {
 
   goToStepTwo(e) {
     e.preventDefault();
-    document.getElementById('step-two').style = "display: flex";
+    document.getElementById('step-two').style = "className: animated fadeIn";
   }
 
   goToStepThree(e) {
