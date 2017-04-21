@@ -6,6 +6,7 @@ class Group < ApplicationRecord
 
   has_many :events
   has_many :memberships
+  belongs_to :category
 
   belongs_to :creator,
   class_name: :User,
