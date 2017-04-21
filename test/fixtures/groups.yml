@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  founded_date: 2017-04-21
+  category_id: 1
+  creator_id: 1
+  description: MyText
+  location: MyString
+  lat: 1.5
+  lng: 1.5
+
+two:
+  name: MyString
+  founded_date: 2017-04-21
+  category_id: 1
+  creator_id: 1
+  description: MyText
+  location: MyString
+  lat: 1.5
+  lng: 1.5
