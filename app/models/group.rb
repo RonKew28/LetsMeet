@@ -7,6 +7,10 @@ class Group < ApplicationRecord
   has_many :events
   has_many :memberships
 
-  belongs_to :creator
+  belongs_to :creator,
+  class_name: :User,
+  primary_key: :id,
+  foreign_key: :creator_id
+
 
 end
