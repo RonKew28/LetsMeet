@@ -128,7 +128,6 @@ class SessionForm extends React.Component {
     } else {
       activateDemoLogin = "";
     }
-
     return (
       <div className='entire-session-form'>
         <div className="session-form">
@@ -138,6 +137,7 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             {getUsername}
             {this.renderUsernameError(this.props.errors)}
+            {this.renderLoginErrors(this.props.errors)}
             <label> Email: </label>
             <br/>
             <input type="text"
