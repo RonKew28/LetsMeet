@@ -1,0 +1,31 @@
+.welcome-content {
+  display: flex;
+  justify-content: flex-end;
+  background: image_url("letsmeetcover.jpg");
+  background-size: cover;
+  padding: 200px 50px;
+
+}
+
+.welcome-content section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+}
+
+.welcome-content h1 {
+  font-size: 56px;
+  font-weight: bold;
+  justify-content: center;
+  align-text: center;
+  font-color: white;
+
+}
+
+.welcome-content h3 {
+  font-size: 22px;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+}

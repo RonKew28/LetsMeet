@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
   renderLoginErrors({login}) {
     if(login) {
       return (
-        <div className="errors">{password}</div>
+        <div className="errors">{login}</div>
       );
     }
   }
@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
   renderUsernameError({username}) {
     if(username) {
       return (
-        <div className="errors">{username}</div>
+        <div className="errors">Username {username}</div>
       );
     }
   }
@@ -46,15 +46,15 @@ class SessionForm extends React.Component {
   renderPasswordError({password}) {
     if(password) {
       return (
-        <div className="errors">{password}</div>
+        <div className="errors">Password {password}</div>
       );
     }
   }
 
-  renderEmailError({password}) {
-    if(password) {
+  renderEmailError({email}) {
+    if(email) {
       return (
-        <div className="errors">{password}</div>
+        <div className="errors">Email address {email}</div>
       );
     }
   }
@@ -144,7 +144,6 @@ class SessionForm extends React.Component {
                    value={ this.state.email }
                    onChange={this.update("email")}
                    placeholder="Email Address"/>
-            <br/>
             {this.renderEmailError(this.props.errors)}
             <label> Password: </label>
             <br/>
@@ -152,7 +151,7 @@ class SessionForm extends React.Component {
                    value={ this.state.password }
                    onChange={this.update("password")}
                    placeholder="Password"/>
-                 Password {this.renderPasswordError(this.props.errors)}
+                 {this.renderPasswordError(this.props.errors)}
           <br/>
           <input className="red-button" type="submit" onClick={this.props.clearErrors} value={this.props.formType === "signup" ? "Sign up" : "Log in"} />
         </form>
