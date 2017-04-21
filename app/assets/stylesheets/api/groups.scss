@@ -1,3 +1,65 @@
-// Place all the styles related to the api/Groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.new-group-container {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+}
+
+.step {
+  border-bottom: 1px solid $off-grey;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+
+.new-group-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-text: left;
+  padding: 20px 50px;
+}
+
+.new-group-form > section {
+  background-color: black;
+  display: flex-end;
+  width: 100%;
+}
+.new-group-form > section > h3 {
+display: flex;
+font-size: 52px;
+color: white;
+width: 100%
+}
+
+.new-group-form > section > h4 {
+  display: block;
+  font-size: 36px;
+  color: white;
+  width: 100%;
+}
+.group-form-question {
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  font-size: 22px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.step input {
+  display: flex;
+  background-color: $off-white;
+  font-size: 16px;
+  font-weight: 400px;
+  box-sizing: border-box;
+  border: 1px solid #DDD;
+  letter-spacing: 2px;
+  width: 80%;
+
+
+}
