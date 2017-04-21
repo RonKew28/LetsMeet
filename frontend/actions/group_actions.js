@@ -44,3 +44,18 @@ export const deleteGroup = id => dispatch => {
     err => dispatch(receiveError(err)))
   );
 };
+
+const receiveGroups = groups => ({
+  type: RECEIVE_GROUPS,
+  groups
+});
+
+const receiveGroup = group => ({
+  type: RECEIVE_GROUP,
+  group
+});
+
+const removeGroup = group => ({
+  type: REMOVE_GROUP,
+  group
+});
