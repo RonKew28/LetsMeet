@@ -11,6 +11,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import Test from './test';
 import FooterContainer from './footer/footer_container';
 import WelcomePage from './welcome_page/welcome_page';
+import GroupFormContainer from './groups/group_form_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -19,14 +20,21 @@ const Root = ({ store }) => {
       replace('/');
     }
   }
+
+  const _ensureLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+    replace('/login');
+    }
+  }
   return(
   <Provider store={ store }>
     <Router history={ hashHistory }>
-      <Route path="/" component={ App } >
+      <Route path="/" component={ App }>
         <IndexRoute component={WelcomePage} />
         <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
-        <Route path="/create" component={ Test } />
+        <Route path="/create" component={ GroupFormContainer } onEnter={_ensureLoggedIn} />
       </Route>
     </Router>
   </Provider>
