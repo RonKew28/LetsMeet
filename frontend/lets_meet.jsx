@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 //Components
 import Root from './components/root';
 import configureStore from './store/store';
-import { fetchGroups } from './util/group_api_util';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  debugger
-  window.fetchGroups = fetchGroups;
+  window.store = store;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);
 });
