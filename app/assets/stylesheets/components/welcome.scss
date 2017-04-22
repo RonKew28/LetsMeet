@@ -1,32 +1,32 @@
-.welcome-content {
-  display: flex;
-  justify-content: flex-end;
-  background: image_url("letsmeetcover.jpg");
-  background-size: cover;
-  padding: 200px 50px;
-
+.welcome-cover {
+  display: inline-block;
+  height: 300px;
+  width: 100%;
 }
 
-.welcome-content section {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
+#video {
+  z-index: -3;
+  overflow: hidden;
+  display: block;
+  height: 460px;
 }
 
-.welcome-content h1 {
-  font-size: 56px;
-  font-weight: bold;
-  justify-content: center;
-  align-text: center;
-  color: white;
-
-}
-
-.welcome-content h3 {
-  font-size: 22px;
-  font-weight: bold;
-  justify-content: center;
+.welcome-slogan {
+  padding-top: 170px;
+  width: 100%;
+  background: transparent;
+  z-index: 1;
+  position: absolute;
   text-align: center;
   color: white;
+}
+
+.welcome-slogan h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.welcome-slogan h3 {
+  font-size: 32px;
+  font-weight: 600;
 }

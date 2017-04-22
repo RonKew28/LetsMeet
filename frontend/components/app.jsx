@@ -7,9 +7,9 @@ const App = ({ children }) => (
   <div>
     <main>
     <NavBarContainer />
-    </main>
     { children }
     <FooterContainer />
+    </main>
   </div>
 );
 

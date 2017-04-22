@@ -23,10 +23,11 @@ body {
 }
 
 .main-nav {
-	display:flex;
+	display: flex;
 	justify-content: space-between;
 	padding: 15px 10px;
 	border-bottom: 1px solid $off-grey;
+  
 }
 
 .left-nav > ul,
