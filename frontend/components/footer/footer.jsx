@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-  const Footer = ({currentUser}) => (
+  const Footer = ({currentUser, login, logout}) => (
       <footer className="footer-main">
         <nav className="footer-left">
           <ul>
@@ -17,7 +17,7 @@ import { Link } from 'react-router';
         </nav>
         <nav className='footer-right'>
           <ul>
-            {currentUser ? <li><Link to='/logout'>Log out</Link></li> : <li ><Link to='/login'>Log in</Link></li> }
+            {currentUser ? <li><button onClick={logout}>Log out</button></li> : <li ><Link to='/login'>Log in</Link></li> }
           </ul>
         </nav>
 
