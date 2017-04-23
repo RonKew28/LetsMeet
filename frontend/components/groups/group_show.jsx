@@ -14,9 +14,14 @@ class GroupShow extends React.Component {
 
 
   render() {
-    return(
-    <GroupNavBar group={this.props.group} />
-  );
+    if (this.props.group.creator)
+      return(
+        <GroupNavBar group={this.props.group} />
+      );
+    else
+      return(
+      <h1>What</h1>
+    );
   }
 }
 
