@@ -14,6 +14,7 @@ class WelcomePage extends React.Component {
           <div className="welcome-slogan">
             <h1> Want to do something you are passionate about? </h1>
             <h3>Then LetsMeet!</h3>
+              <span className="video-signup"><Link to='/signup'>Sign up</Link></span>
           </div>
 
           <div id="video">
