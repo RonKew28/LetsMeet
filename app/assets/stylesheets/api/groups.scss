@@ -1,20 +1,73 @@
 
 
 .new-group-container {
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+}
 
+.step:first-of-type {
+  border: none;
 }
 
 .step {
-  border-bottom: 1px solid $off-grey;
-  margin-bottom: 10px;
+  border-top: 1px solid $off-grey;
+  margin-bottom: 20px;
   letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+
 }
 
+.step-button {
+  background-color: $main-red;
+  font-size: 16px;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 10px 0;
+  color: white;
+  font-weight: 400;
+  width: 15%;
+  text-align: center;
+}
+
+.step-button:hover {
+  background-color: $main-red-hover;
+}
+
+.cancel-button {
+  background-color: $off-grey;
+  color: white;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.cancel-button:hover {
+  background-color: grey;
+  color: white;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.group-form-header {
+  color: white;
+  background-color: $main-red;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-form-header > h3 {
+  font-size: 32px;
+}
+
+.group-form-header > h4 {
+  font-size: 22px;
+}
 
 .new-group-form {
   display: flex;
@@ -25,29 +78,11 @@
   padding: 20px 50px;
 }
 
-.new-group-form > section {
-  background-color: black;
-  display: flex-end;
-  width: 100%;
-}
-.new-group-form > section > h3 {
-display: flex;
-font-size: 52px;
-color: white;
-width: 100%
-}
-
-.new-group-form > section > h4 {
-  display: block;
-  font-size: 36px;
-  color: white;
-  width: 100%;
-}
 .group-form-question {
   align-items: center;
   display: flex;
-  font-weight: 600;
-  font-size: 22px;
+  font-weight: 300;
+  font-size: 28px;
   padding-top: 20px;
   padding-bottom: 10px;
 }
@@ -55,6 +90,8 @@ width: 100%
   display: flex;
   background-color: $off-white;
   font-size: 16px;
+  line-height: 28px;
+  padding: 5px;
   font-weight: 400px;
   box-sizing: border-box;
   border: 1px solid #DDD;

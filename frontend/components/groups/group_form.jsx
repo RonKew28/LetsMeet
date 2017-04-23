@@ -39,28 +39,34 @@ class GroupForm extends React.Component {
     });
   }
   navigateToGroupShow() {
-    this.props.router.push("/");
+    this.props.router.push(`groups/${this.state.group.id}`);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const newGroup = this.state;
-    this.props.createGroup(newGroup);
-    this.navigateToGroupShow();
+    this.props.createGroup(newGroup)
+      .then((result) => {
+        this.props.router.push(`groups/${result.group.id}`);
+      });
   }
 
   goToStepTwo(e) {
     e.preventDefault();
+    document.getElementById('button-one').style = "display: none";
     document.getElementById('step-two').style = "display: flex";
   }
 
   goToStepThree(e) {
     e.preventDefault();
+    document.getElementById('button-two').style = "display: none";
     document.getElementById('step-three').style = "display: flex";
   }
 
   goToStepFour(e) {
     e.preventDefault();
+    document.getElementById('button-three').style = "display: none";
+    document.getElementById('new-group-submit').style="display: block";
     document.getElementById('step-four').style = "display: flex";
   }
 
@@ -68,27 +74,25 @@ class GroupForm extends React.Component {
     return (
 
       <div className="new-group-container">
-        <div className="new-group-form">
-          <section className="group-headers">
+        <div className="group-form-header">
             <h3>Start a new LetsMeet group</h3>
             <h4>We'll help you find people who are interested.</h4>
-          </section>
+        </div>
+        <div className="new-group-form">
           <form onSubmit={this.handleSubmit}>
 
-            <div className="step">
+            <div className="step" id="step-one">
               <label className="group-form-question">
               What's your new LetsMeet Group's hometown?
               </label>
-
               <input type="text" placeholder="Please enter a city"
-                    value={this.state.location}
-                onChange={this.update("location")}/>
-              <br/>
-              <button className="red-button"
-                onClick={this.goToStepTwo}>Continue</button>
+                     value={this.state.location}
+                     onChange={this.update("location")}/>
+              <button id="button-one" className="step-button"
+                onClick={this.goToStepTwo}>Next</button>
             </div>
 
-            <div className="step" id="step-two"
+            <div className="step animated bounceInUp" id="step-two"
                  style={{display: 'none'}}>
               <label className="group-form-question">
                 What will your LetsMeet group be about?
@@ -97,7 +101,7 @@ class GroupForm extends React.Component {
                 value={this.state.category}
                 onChange={this.update("category")}/>
               <br/>
-              <button className="red-button"
+              <button id="button-two" className="step-button"
                 onClick={this.goToStepThree}>Continue</button>
             </div>
 
@@ -109,32 +113,34 @@ class GroupForm extends React.Component {
               <input type="text" placeholder="Please enter a name"
                 value={this.state.name} onChange={this.update("name")}/>
               <br/>
-              <button className="red-button"
+              <button className="step-button" id="button-three"
                 onClick={this.goToStepFour}>Continue</button>
             </div>
 
             <div className="step" id="step-four"
                  style={{display: 'none'}}>
               <label className="group-form-question">
-                Tell us a little about your group.
-                Who should join?
-                What will your Meetup do?
+                Describe what your LetsMeetGroup will do.
               </label >
               <input type="text" placeholder="Please enter description"
                 value={this.state.description}
                 onChange={this.update("description")}/>
             </div>
 
-              <div className="red-button">
-                <input type="submit" value="Create LetsMeet Group" />
+              <div>
+                <input className="red-button" style={{display: 'none'}}
+                       id='new-group-submit'
+                       type="submit"
+                       value="Create LetsMeet Group" />
               </div>
+              <button
+                onClick={this.navigateToSearch}
+                className='cancel-button'>
+                Cancel
+              </button>
             </form>
 
             <div>
-              <button
-                onClick={this.navigateToSearch}>
-                Cancel
-              </button>
             </div>
           </div>
         </div>
