@@ -6,10 +6,10 @@ class Api::GroupsController < ApplicationController
   end
 
   def create
-    @group = current_user.groups.new(group_params)
+    @group = Group.new(group_params)
+    @group.creator_id = current_user.id
+    @group.founded_date = Date.new()
     if @group.save
-      @group.creator_id = current_user.id
-      @group.founded_date = Date.today
       render :show
     else
       render json: @group.errors.messages, status: 422
@@ -32,8 +32,6 @@ class Api::GroupsController < ApplicationController
     else
       render json :groups.errors.messages, status: 422
     end
-  end
-
   end
 
 

@@ -30,3 +30,19 @@
   font-size: 32px;
   font-weight: 600;
 }
+
+.video-signup {
+
+  background-color: $main-red;
+  align-items: center;
+  color: white;
+  padding: 15px 100px;
+  border-radius: 8px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.video-signup:hover {
+  background-color: $main-red-hover;
+}

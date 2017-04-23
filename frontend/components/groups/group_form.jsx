@@ -6,6 +6,7 @@ class GroupForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToSearch = this.navigateToSearch.bind(this);
+    this.navigateToGroupShow = this.navigateToGroupShow.bind(this);
     this.state = {
       name: "",
       location: "",
@@ -43,14 +44,14 @@ class GroupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const bench = this.state;
-    this.props.createGroup(Group);
-    this.props.navigateToGroupShow();
+    const newGroup = this.state;
+    this.props.createGroup(newGroup);
+    this.navigateToGroupShow();
   }
 
   goToStepTwo(e) {
     e.preventDefault();
-    document.getElementById('step-two').style = "className: animated fadeIn";
+    document.getElementById('step-two').style = "display: flex";
   }
 
   goToStepThree(e) {
@@ -80,6 +81,7 @@ class GroupForm extends React.Component {
               </label>
 
               <input type="text" placeholder="Please enter a city"
+                    value={this.state.location}
                 onChange={this.update("location")}/>
               <br/>
               <button className="red-button"
@@ -92,6 +94,7 @@ class GroupForm extends React.Component {
                 What will your LetsMeet group be about?
               </label>
               <input type="text" placeholder="Please select a category"
+                value={this.state.category}
                 onChange={this.update("category")}/>
               <br/>
               <button className="red-button"
@@ -104,7 +107,7 @@ class GroupForm extends React.Component {
                 What will your LetsMeet group's name be?
               </label>
               <input type="text" placeholder="Please enter a name"
-                onChange={this.update("name")}/>
+                value={this.state.name} onChange={this.update("name")}/>
               <br/>
               <button className="red-button"
                 onClick={this.goToStepFour}>Continue</button>
@@ -117,8 +120,9 @@ class GroupForm extends React.Component {
                 Who should join?
                 What will your Meetup do?
               </label >
-              <input type="text" placeholder="Please enter a name"
-                onChange={this.update("name")}/>
+              <input type="text" placeholder="Please enter description"
+                value={this.state.description}
+                onChange={this.update("description")}/>
             </div>
 
               <div className="red-button">
