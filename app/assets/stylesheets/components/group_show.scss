@@ -5,14 +5,14 @@
 
 .group-nav-name {
   color: white;
-  background-color: $lighter-red;
+  background-color: red;
   padding: 40px 0;
   margin-top: 20px;
   box-sizing: border-box;
   font-size: 40px;
   font-weight: 500;
   text-align: center;
-  border-bottom: 10px solid $main-red-hover;
+  border-bottom: 10px solid $lighter-red;
 }
 
 .group-lower-nav {
