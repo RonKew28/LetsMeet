@@ -19,14 +19,14 @@ const Root = ({ store }) => {
     if (currentUser) {
       replace('/');
     }
-  }
+  };
 
   const _ensureLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
     replace('/login');
     }
-  }
+  };
   return(
   <Provider store={ store }>
     <Router history={ hashHistory }>
@@ -34,7 +34,7 @@ const Root = ({ store }) => {
         <IndexRoute component={WelcomePage} />
         <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
-        <Route path="/create" component={ GroupFormContainer } onEnter={_ensureLoggedIn} />
+        <Route path="/create" component={ GroupFormContainer } />
       </Route>
     </Router>
   </Provider>
