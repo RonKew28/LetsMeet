@@ -14,11 +14,10 @@ class GroupShow extends React.Component {
 
 
   render() {
-    debugger
     return(
-    <h1>{this.props.group.name}</h1>
+    <GroupNavBar group={this.props.group} />
   );
   }
 }
 
-export default GroupShow;
+export default withRouter(GroupShow);
