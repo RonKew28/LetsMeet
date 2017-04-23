@@ -9,6 +9,6 @@ class GroupsShow extends React.Component {
   }
 
   render() {
-    <GroupNavBar />;
+    <GroupNavBar {this.props} />;
   }
 }
