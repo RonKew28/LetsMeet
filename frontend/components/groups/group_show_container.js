@@ -9,7 +9,7 @@ import GroupShow from './group_show';
 
 const mapStateToProps = (state, { params }) => {
   const groupId = parseInt(params.groupId);
-  const group = selectBench(state, groupId);
+  const group = selectGroup(state, groupId);
   return {
     groupId,
     group
