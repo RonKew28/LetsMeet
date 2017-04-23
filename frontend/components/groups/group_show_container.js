@@ -10,6 +10,7 @@ import GroupShow from './group_show';
 const mapStateToProps = (state, { params }) => {
   const groupId = parseInt(params.groupId);
   const group = selectGroup(state, groupId);
+  debugger
   return {
     groupId,
     group

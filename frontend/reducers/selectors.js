@@ -5,5 +5,5 @@ export const selectGroup = ({ groups }, id) => {
 };
 
 export const groupsArray = ({ groups }) => (
-  Object.keys(groups).map(key => groups[key]);
+  Object.keys(groups).map(key => groups[key])
 );
