@@ -1,25 +1,26 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import GroupShow from './group_show';
 
 class GroupNavBar extends React.Component {
   render() {
+    return(
     <div className='group-nav-bar'>
       <div className='group-nav-name'>
         <h1>{this.props.group.name}</h1>
       </div>
       <div className='group-lower-nav'>
-        <ul className='left-group-nav'>
-          <li><Link to={`/groups/${this.props.group.id}`}>Home</Link></li>
-          <li><Link to='/'>Members</Link></li>
-          <li><Link to={`/groups/${this.props.group.id}/event/create`}>Suggest an event</Link></li>
-        </ul>
-
-        <ul className='right-group-nav'>
-          <li></li>
-        </ul>
-
+        <div className='left-group-nav'>
+          <span><Link to={`/groups/${this.props.group.id}`}>Home</Link></span>
+          <span><Link to='/'>Members</Link></span>
+          <span><Link to='/'>Members</Link></span>
+        </div>
+        <div className='right-group-nav'>
+          <span><button className="join-us-button">Join us!</button></span>
+        </div>
       </div>
-    </div>;
+    </div>
+  );
   }
 }
 
