@@ -1,5 +1,10 @@
 class Api::EventsController < ApplicationController
 
+  def index
+    @events = Event.all
+    render :index
+  end
+
   def create
     @event = Event.new(event_params)
     if @event.save
