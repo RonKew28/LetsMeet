@@ -9,21 +9,31 @@ class GroupShow extends React.Component {
     super(props);
     this.toggleEditButton = this.toggleEditButton.bind(this);
     this.navigateToEdit = this.navigateToEdit.bind(this);
+    this.toggleJoinButton = this.toggleJoinButton.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchGroup(this.props.groupId);
   }
   navigateToEdit() {
-    this.props.router.push(`/groups/${this.props.group.id}`);
+    this.props.router.push(`/groups/${this.props.group.id}/edit`);
+  }
+
+  toggleJoinButton() {
+    return(
+      <button className="join-us-button">Join us!</button>
+    );
   }
 
   toggleEditButton() {
     if (this.props.group.creator.id === currentUser.id) {
       return(
         <button onClick={this.navigateToEdit}>Edit Group</button>
-      );} else {
-        return <div></div>;
+      );
+      } else {
+        return (
+          <div>{this.toggleJoinButton()}</div>
+        );
       }
     }
 
@@ -33,7 +43,6 @@ class GroupShow extends React.Component {
       return(
         <div className="group-show-container">
           <GroupNavBar group={this.props.group} editButton={this.toggleEditButton} />
-          <h1>{this.toggleEditButton}</h1>
           <div className='group-show-content'>
             <GroupSideBar group={this.props.group} date={this.props.group.formatted_date} />
             <p>{this.props.group.description}</p>

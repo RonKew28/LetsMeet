@@ -38,7 +38,9 @@ class EditGroupForm extends React.Component {
     }
   }
 
-  handleDelete() {
+  handleDelete(e) {
+    debugger
+    e.preventDefault();
     this.props.deleteGroup(this.state.id);
   }
 

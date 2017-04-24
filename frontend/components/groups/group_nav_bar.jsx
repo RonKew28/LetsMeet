@@ -15,10 +15,9 @@ class GroupNavBar extends React.Component {
         <div className='left-group-nav'>
           <span><Link to={`/groups/${this.props.group.id}`}>Home</Link></span>
           <span><Link to='/'>Members</Link></span>
-          <span>{this.props.editButton}</span>
         </div>
         <div className='right-group-nav'>
-          <span><button className="join-us-button">Join us!</button></span>
+          <span>{this.props.editButton()}</span>
         </div>
       </div>
     </div>
