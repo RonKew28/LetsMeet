@@ -13,6 +13,7 @@ import FooterContainer from './footer/footer_container';
 import WelcomePage from './welcome_page/welcome_page';
 import GroupFormContainer from './groups/group_form_container';
 import GroupShowContainer from './groups/group_show_container';
+import EditGroupContainer from './groups/edit_group_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -37,6 +38,7 @@ const Root = ({ store }) => {
         <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/create" component={ GroupFormContainer } />
         <Route path='groups/:groupId' component={GroupShowContainer} />
+        <Route path='groups/:groupId/edit' component={EditGroupContainer} />
       </Route>
     </Router>
   </Provider>
