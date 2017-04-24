@@ -1,6 +1,7 @@
 .group-nav-bar {
   width: 960px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .group-nav-name {
@@ -62,4 +63,60 @@
 
 .right-group-nav > span:hover {
   background-color: $main-red-hover;
+}
+
+.group-sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  font-size: 13px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid $off-grey;
+}
+
+.group-sidebar-container > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.group-sidebar-container > ul > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+
+
+.group-sidebar-container > ul > li > span:last-of-type {
+  text-align: right;
+}
+.group-sidebar-container > ul > li:last-of-type {
+  margin-bottom: 0;
+}
+.group-show-container {
+  display: flex;
+  flex-direction: column;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.group-show-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.group-show-content > p {
+  text-align: justify;
+  font-size: 16px;
+  margin-left: 10px;
+  width: 740px;
+  border: 1px solid $off-grey;
+  padding: 10px;
+  margin-bottom: 20px;
+
 }
