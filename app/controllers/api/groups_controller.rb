@@ -24,9 +24,9 @@ class Api::GroupsController < ApplicationController
   end
 
   def destroy
-    @group = current_user.groups.find(params[:id])
+    @group = current_user.created_groups.find(params[:id])
     if @group.destroy
-      render :index
+      redirect_to root
     else
       render json :groups.errors.messages, status: 422
     end
