@@ -11,7 +11,7 @@ const GroupsReducer = (state = _nullGroup, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_GROUPS:
-      return action.benches;
+      return action.groups;
     case RECEIVE_GROUP:
       return merge({}, state, { [action.group.id]: action.group });
     case REMOVE_GROUP:
