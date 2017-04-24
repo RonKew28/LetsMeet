@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-  validates :name, :description, :group, :location, :date, :organizer presence: true
+  validates :name, :description, :group, :location, :date, :organizer, presence: true
 
   belongs_to :group
 

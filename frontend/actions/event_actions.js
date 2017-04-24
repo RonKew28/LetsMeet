@@ -1,4 +1,4 @@
-import * as EventApiUtil from "..util/events_api_util";
+import * as EventAPIUtil from "../util/event_api_util";
 import { receiveErrors, clearErrors} from './error_actions';
 
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';

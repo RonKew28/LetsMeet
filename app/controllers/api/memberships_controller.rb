@@ -2,6 +2,7 @@ class Api::MembershipsController < ApplicationController
 
   def create
     @membership = Membership.new(membership_params)
+    @group = @membership.group
     if @membership.save
       render 'api/groups/show'
     else
