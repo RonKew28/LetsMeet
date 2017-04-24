@@ -24,6 +24,7 @@ export const updateGroup = (group) => {
   return $.ajax({
     method: 'PATCH',
     url: `/api/groups/${group.id}`,
+    data: { group }
   });
 };
 

@@ -11,6 +11,5 @@ Group.destroy_all
 Category.destroy_all
 
 User.create!(email: "guest_user@guest.com", username: "guest", password: "password")
-Category.create!(title: "Sports")
-#
-Group.create!(name: "Tennis", description: "Tennis", creator_id: User.first.id, location: "New York", founded_date: Date.today, category_id: Category.first.id)
+
+Group.create!(name: "test", category: "test", creator_id: User.first.id, description: "tesltkjeagkjlf", location: "New York", founded_date: Date.new() )
