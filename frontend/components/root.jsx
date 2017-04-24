@@ -38,7 +38,7 @@ const Root = ({ store }) => {
         <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/create" component={ GroupFormContainer } />
         <Route path='groups/:groupId' component={GroupShowContainer} />
-        <Route path='groups/:groupId/edit' component={EditGroupContainer} />
+        <Route path='groups/:groupId/edit' component={EditGroupContainer} onEnter={_ensureLoggedIn} />
       </Route>
     </Router>
   </Provider>

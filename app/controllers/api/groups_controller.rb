@@ -17,8 +17,8 @@ class Api::GroupsController < ApplicationController
   end
 
   def update
-    @group = current_user.groups.find(params[:id])
-    if @group.update_attributes(group_params)
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
       render :show
     else
       render json :groups.errors.messages, status: 422
@@ -42,6 +42,7 @@ class Api::GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(
+      :id,
       :name,
       :creator_id,
       :description,
