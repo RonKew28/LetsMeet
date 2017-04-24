@@ -7,3 +7,12 @@ export const selectGroup = ({ groups }, id) => {
 export const groupsArray = ({ groups }) => (
   Object.keys(groups).map(key => groups[key])
 );
+
+export const selectEvent = ({ events }, id) => {
+   const event = events[id] || {};
+   return event;
+};
+
+export const eventsArray = ({ events }) => (
+  Object.keys(events).map(key => events[key])
+);
