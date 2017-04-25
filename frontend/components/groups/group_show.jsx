@@ -18,7 +18,9 @@ class GroupShow extends React.Component {
     if (this.props.group.creator) {
       return(
         <div className="group-show-container">
-          <GroupNavBar group={this.props.group} currentUser={currentUser} />
+          <GroupNavBar group={this.props.group} currentUser={currentUser}
+            deleteMembership={this.props.deleteMembership}
+            createMembership={this.props.createMembership} />
           <div className='group-show-content'>
             <GroupSideBar group={this.props.group} date={this.props.group.formatted_date} />
             <p>{this.props.group.description}</p>

@@ -36,15 +36,15 @@ export const deleteGroup = (id) => {
 };
 
 export const createMembership = (membership) => {
-  $.ajax({
+  return $.ajax({
     method: 'POST',
     url: `api/memberships/`,
     data: { membership }
   });
 };
 
-export const deleteMembership = (id) => {
-  $.ajax({
+export const deleteMembership = (membership) => {
+  return $.ajax({
     method: 'DELETE',
     url: `api/memberships/${id}`,
   });

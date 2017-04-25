@@ -4,6 +4,8 @@ import { receiveErrors, clearErrors} from './error_actions';
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
 export const REMOVE_GROUP = "REMOVE_GROUP";
+// export const RECEIVE_MEMBERSHIP = "RECEIVE_MEMBERSHIP";
+// export const REMOVE_MEMBERSHIP = "REMOVE_MEMBERSHIP";
 
 export const fetchGroups = () => dispatch => {
   return(
@@ -46,9 +48,10 @@ export const deleteGroup = id => dispatch => {
 };
 
 export const createMembership = membership => dispatch => {
+  debugger
   return(
-    GroupsAPIUtil.createMembership(membership).
-    then(membership => dispatch(receiveMembership(membership)),
+    GroupAPIUtil.createMembership(membership)
+    .then(membership => dispatch(receiveGroup(membership)),
     err => dispatch(receiveErrors(err)))
   );
 };
@@ -56,7 +59,7 @@ export const createMembership = membership => dispatch => {
 export const deleteMembership = id => dispatch => {
   return(
     GroupAPIUtil.deleteMembership(id)
-    .then(group => dispatch(removeMembership(membership)),
+    .then(membership => dispatch(receiveGroup(membership)),
     err => dispatch(receiveErrors(err)))
   );
 };
@@ -75,3 +78,13 @@ const removeGroup = group => ({
   type: REMOVE_GROUP,
   group
 });
+
+// const removeMembership = membership => ({
+//   type: REMOVE_MEMBERSHIP,
+//   membership
+// });
+//
+// const receiveMembership = membership => ({
+//   type: RECEIVE_MEMBERSHIP,
+//   membership
+// });
