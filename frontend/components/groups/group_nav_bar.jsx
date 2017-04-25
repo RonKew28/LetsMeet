@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import GroupShow from './group_show';
 import EventShow from '../events/event_show';
+import { createMembership, deleteMembership } from '../../actions/group_actions';
 
 class GroupNavBar extends React.Component {
   constructor(props) {
@@ -10,16 +11,24 @@ class GroupNavBar extends React.Component {
     this.navigateToEdit = this.navigateToEdit.bind(this);
     this.toggleJoinButton = this.toggleJoinButton.bind(this);
     this.toggleEditButton = this.toggleEditButton.bind(this);
+    this.addMember = this.addMember.bind(this);
+    this.removeMember = this.removeMember.bind(this);
   }
+
 
   navigateToEdit() {
     this.props.router.push(`/groups/${this.props.group.id}/edit`);
   }
 
   toggleJoinButton() {
+    if(Object.keys(this.props.group.members).includes(`${this.props.currentUser.id}`))
     return(
-      <button className="join-us-button">Join us!</button>
-    );
+      <button className="join-us-button" onClick={this.removeMember}>Leave group</button>
+    ); else {
+      return(
+        <button className="join-us-button" onClick={this.addMember}>Join us!</button>
+      );
+    }
   }
 
   toggleEditButton() {
@@ -27,12 +36,22 @@ class GroupNavBar extends React.Component {
       return(
         <button onClick={this.navigateToEdit}>Edit Group</button>
       );
-      } else {
+    } else {
         return (
-          <div>{this.toggleJoinButton}</div>
+          <div>{this.toggleJoinButton()}</div>
         );
       }
     }
+
+    addMember () {
+      this.props.createMembership({group_id: this.props.group.id, member_id: this.props.currentUser.id});
+    }
+
+
+    removeMember () {
+      this.props.deleteMembership({group_id: this.props.group.id, member_id: this.props.currentUser.id});
+    }
+
 
   render() {
     if(this.props.group) {

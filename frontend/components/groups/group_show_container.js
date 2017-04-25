@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { clearErrors } from '../../actions/error_actions';
 
-import { fetchGroup } from '../../actions/group_actions';
+import { fetchGroup, deleteMembership, createMembership } from '../../actions/group_actions';
 import { selectGroup } from '../../reducers/selectors';
 
 import GroupShow from './group_show';
@@ -19,7 +19,9 @@ const mapStateToProps = (state, { params }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchGroup: id => dispatch(fetchGroup(id))
+  fetchGroup: id => dispatch(fetchGroup(id)),
+  createMembership: membership => dispatch(createMembership(membership)),
+  deleteMembership: id => dispatch(deleteMembership(id))
 });
 
 export default connect(
