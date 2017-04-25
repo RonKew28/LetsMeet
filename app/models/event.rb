@@ -9,4 +9,17 @@ class Event < ApplicationRecord
   primary_key: :id,
   foreign_key: :organizer_id
 
+  has_many :rsvps
+
+  has_many :attendees,
+  through: :rsvps,
+  source: :attendee
+
+  def save_and_join
+    transaction do
+      self.date = Date.new()
+      save
+      Rsvp.create(event_id: self.id, attendee_id: organizer.id)
+    end
+  end
 end

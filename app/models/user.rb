@@ -17,6 +17,12 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :organizer_id
 
+  has_many :rsvps
+
+  has_many :confirmed_events,
+  through: :rsvps,
+  source: :event
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user
