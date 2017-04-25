@@ -43,6 +43,7 @@ class Api::GroupsController < ApplicationController
       :id,
       :name,
       :creator_id,
+      :creator,
       :description,
       :category,
       :location,

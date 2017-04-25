@@ -23,7 +23,7 @@ class GroupNavBar extends React.Component {
   }
 
   toggleEditButton() {
-    if (this.props.group.creator.id === this.props.currentUser.id) {
+    if (this.props.group.creator_id === this.props.currentUser.id) {
       return(
         <button onClick={this.navigateToEdit}>Edit Group</button>
       );
@@ -35,22 +35,26 @@ class GroupNavBar extends React.Component {
     }
 
   render() {
+    if(this.props.group) {
     return(
-    <div className='group-nav-bar'>
-      <div className='group-nav-name'>
-        <h1>{this.props.group.name}</h1>
-      </div>
-      <div className='group-lower-nav'>
-        <div className='left-group-nav'>
-          <span><Link to={`/groups/${this.props.group.id}`}>Home</Link></span>
-          <span><Link to='/'>Members</Link></span>
+      <div className='group-nav-bar'>
+        <div className='group-nav-name'>
+          <h1>{this.props.group.name}</h1>
         </div>
-        <div className='right-group-nav'>
-          <span>{this.toggleEditButton()}</span>
+        <div className='group-lower-nav'>
+          <div className='left-group-nav'>
+            <span><Link to={`/groups/${this.props.group.id}`}>Home</Link></span>
+            <span><Link to='/'>Members</Link></span>
+          </div>
+          <div className='right-group-nav'>
+            <span>{this.toggleEditButton()}</span>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+    } else {
+      return <h1>What</h1>;
+    }
   }
 }
 

@@ -12,7 +12,8 @@ const mapStateToProps = (state, { params }) => {
   const currentUser = state.session.currentUser;
   return {
     eventId,
-    event
+    event,
+    currentUser
   };
 };
 

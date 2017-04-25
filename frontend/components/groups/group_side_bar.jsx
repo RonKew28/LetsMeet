@@ -9,7 +9,7 @@ class GroupSideBar extends React.Component {
   }
 
   toggleEditButton() {
-    if (this.props.group.creator.id === currentUser.id) {
+    if (this.props.group.creator_id === currentUser.id) {
       return(
         <button onClick={this.navigateToEdit}>Edit Group</button>
       );
@@ -17,6 +17,7 @@ class GroupSideBar extends React.Component {
   }
 
   render() {
+    if(this.props.group) {
     return(
     <div className='group-sidebar-container'>
       <ul>
@@ -47,6 +48,9 @@ class GroupSideBar extends React.Component {
       </ul>
     </div>
   );
+  } else {
+    return <h1>What</h1>;
+  }
   }
 }
 
