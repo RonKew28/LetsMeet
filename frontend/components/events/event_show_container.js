@@ -9,6 +9,7 @@ import EventShow from './event_show';
 const mapStateToProps = (state, { params }) => {
   const eventId = parseInt(params.eventId);
   const event = selectEvent(state, eventId);
+  debugger
   return {
     eventId,
     event

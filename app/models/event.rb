@@ -15,7 +15,7 @@ class Event < ApplicationRecord
   through: :rsvps,
   source: :attendee
 
-  def save_and_join
+  def save_and_attend
     transaction do
       self.date = Date.new()
       save

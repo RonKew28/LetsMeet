@@ -6,10 +6,8 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.organizer_id = current_user.id
-    @event.date = Date.new()
-    if @event.save
+    @event = current_user.organized_events.new(event_params)
+    if @event.save_and_attend
       render :show
     else
       render json: @event.errors.messages, status: 422
@@ -18,7 +16,7 @@ class Api::EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    if @event.update
+    if @event.update(event_params)
       render :show
     else
       render json: @event.errors.messages, status: 422
@@ -26,7 +24,7 @@ class Api::EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    @event = current_user.organized_events.find(params[:id])
     @group = Group.find(@event.group.id)
     if @event.destroy
       render 'api/groups/show'
@@ -42,6 +40,6 @@ class Api::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:id, :name, :description, :date, :group_id, :organizer_id, :location)
+    params.require(:event).permit(:id, :name, :description, :date, :group_id, :organizer_id, :location, :rsvps, :attendees)
   end
 end
