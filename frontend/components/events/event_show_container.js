@@ -7,7 +7,6 @@ import { selectEvent } from '../../reducers/selectors';
 import EventShow from './event_show';
 
 const mapStateToProps = (state, { params }) => {
-  debugger
   const eventId = parseInt(params.eventId);
   const event = selectEvent(state, eventId);
   const currentUser = state.session.currentUser;
