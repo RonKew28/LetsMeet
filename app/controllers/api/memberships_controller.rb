@@ -1,7 +1,6 @@
 class Api::MembershipsController < ApplicationController
 
   def create
-    debugger
     @membership = Membership.new(membership_params)
     @group = @membership.group
     if @membership.save
@@ -12,7 +11,7 @@ class Api::MembershipsController < ApplicationController
   end
 
   def destroy
-    @membership = Membership.find_by(params[:id])
+    @membership = Membership.find_by(member_id: current_user.id, group_id: params[:id])
     if @membership.destroy
       render 'api/groups/show'
     else

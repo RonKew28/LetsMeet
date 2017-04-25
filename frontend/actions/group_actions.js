@@ -48,7 +48,6 @@ export const deleteGroup = id => dispatch => {
 };
 
 export const createMembership = membership => dispatch => {
-  debugger
   return(
     GroupAPIUtil.createMembership(membership)
     .then(membership => dispatch(receiveGroup(membership)),

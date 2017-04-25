@@ -46,6 +46,6 @@ export const createMembership = (membership) => {
 export const deleteMembership = (membership) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/memberships/${id}`,
+    url: `api/memberships/${membership.id}`,
   });
 };
