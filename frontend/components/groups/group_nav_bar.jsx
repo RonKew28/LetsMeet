@@ -4,6 +4,35 @@ import GroupShow from './group_show';
 import EventShow from '../events/event_show';
 
 class GroupNavBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.navigateToEdit = this.navigateToEdit.bind(this);
+    this.toggleJoinButton = this.toggleJoinButton.bind(this);
+    this.toggleEditButton = this.toggleEditButton.bind(this);
+  }
+
+  navigateToEdit() {
+    this.props.router.push(`/groups/${this.props.group.id}/edit`);
+  }
+
+  toggleJoinButton() {
+    return(
+      <button className="join-us-button">Join us!</button>
+    );
+  }
+
+  toggleEditButton() {
+    if (this.props.group.creator.id === this.props.currentUser.id) {
+      return(
+        <button onClick={this.navigateToEdit}>Edit Group</button>
+      );
+      } else {
+        return (
+          <div>{this.toggleJoinButton}</div>
+        );
+      }
+    }
 
   render() {
     return(
@@ -17,7 +46,7 @@ class GroupNavBar extends React.Component {
           <span><Link to='/'>Members</Link></span>
         </div>
         <div className='right-group-nav'>
-          <span>{this.props.editButton()}</span>
+          <span>{this.toggleEditButton()}</span>
         </div>
       </div>
     </div>
