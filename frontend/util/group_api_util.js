@@ -34,3 +34,18 @@ export const deleteGroup = (id) => {
     url: `/api/groups/${id}`,
   });
 };
+
+export const createMembership = (membership) => {
+  $.ajax({
+    method: 'POST',
+    url: `api/memberships/`,
+    data: { membership }
+  });
+};
+
+export const deleteMembership = (id) => {
+  $.ajax({
+    method: 'DELETE',
+    url: `api/memberships/${id}`,
+  });
+};

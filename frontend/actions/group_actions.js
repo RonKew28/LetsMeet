@@ -45,6 +45,22 @@ export const deleteGroup = id => dispatch => {
   );
 };
 
+export const createMembership = membership => dispatch => {
+  return(
+    GroupsAPIUtil.createMembership(membership).
+    then(membership => dispatch(receiveMembership(membership)),
+    err => dispatch(receiveErrors(err)))
+  );
+};
+
+export const deleteMembership = id => dispatch => {
+  return(
+    GroupAPIUtil.deleteMembership(id)
+    .then(group => dispatch(removeMembership(membership)),
+    err => dispatch(receiveErrors(err)))
+  );
+};
+
 const receiveGroups = groups => ({
   type: RECEIVE_GROUPS,
   groups
