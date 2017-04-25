@@ -15,6 +15,7 @@ import GroupShowContainer from './groups/group_show_container';
 import EditGroupContainer from './groups/edit_group_container';
 import EventShowContainer from './events/event_show_container';
 import EventFormContainer from './events/event_form_container';
+import EditEventContainer from './events/edit_event_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -42,6 +43,7 @@ const Root = ({ store }) => {
                onEnter={_ensureLoggedIn}/>
         <Route path='groups/:groupId/edit' component={EditGroupContainer}       onEnter={_ensureLoggedIn} />
         <Route path='events/:eventId' component={EventShowContainer} />
+        <Route path='events/:eventId/edit' component={EditEventContainer} onEnter={_ensureLoggedIn} />
         <Route path='groups/:groupId/events/create' component={EventFormContainer} />
       </Route>
     </Router>

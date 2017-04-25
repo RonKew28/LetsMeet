@@ -1,76 +1,61 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import { hashHistory } from 'react-router';
 
-class EventForm extends React.Component {
+class EditEventForm extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.navigateToSearch = this.navigateToSearch.bind(this);
-    this.navigateToEventShow = this.navigateToEventShow.bind(this);
+
     this.state = {
-      group_id: this.props.params.groupId,
-      name: "",
-      location_name: "",
-      location_address: "",
-      date: "",
-      time: "",
-      description: ""
+      id: this.props.event.id,
+      name: this.props.event.name,
+      location_name: this.props.event.location_name,
+      location_address: this.props.event.location_address,
+      date: this.props.event.date,
+      time: this.props.event.time,
+      description: this.props.event.description
     };
-
-  }
-
-  navigateToSearch() {
-    this.props.router.push("/");
-  }
-  componentDidMount() {
-    this.props.clearErrors();
-  }
-
-  componentWillUnmount() {
-    this.props.clearErrors();
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (this.props.formType !== newProps.formType) {
-      this.props.clearErrors();
-    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEventDelete = this.handleEventDelete.bind(this);
   }
 
   update(field) {
     return e => this.setState({
-      [field]: e.currentTarget.value
+      [field]: e.target.value
     });
   }
-  navigateToEventShow() {
-    this.props.router.push(`events/${this.state.event.id}`);
+
+  componentDidMount() {
+    this.props.fetchEvent(this.props.eventId);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.event !== newProps) {
+      this.setState({
+        id: newProps.event.id,
+        name: newProps.event.name,
+        location_name: newProps.event.location_name,
+        location_address: newProps.event.location_address,
+        date: newProps.event.date,
+        time: newProps.event.time,
+        description: newProps.event.description
+      });
+    }
+  }
+
+  handleEventDelete(e) {
+    e.preventDefault();
+    this.props.deleteEvent(this.state.id);
+    hashHistory.push('/');
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const newEvent = this.state;
-    this.props.createEvent(newEvent)
+    this.props.updateEvent(newEvent)
       .then((result) => {
         this.props.router.push(`events/${result.event.id}`);
       });
-  }
-
-  goToStepTwo(e) {
-    e.preventDefault();
-    document.getElementById('button-one').style = "display: none";
-    document.getElementById('step-two').style = "display: flex";
-  }
-
-  goToStepThree(e) {
-    e.preventDefault();
-    document.getElementById('button-two').style = "display: none";
-    document.getElementById('step-three').style = "display: flex";
-  }
-
-  goToStepFour(e) {
-    e.preventDefault();
-    document.getElementById('button-three').style = "display: none";
-    document.getElementById('new-group-submit').style="display: block";
-    document.getElementById('step-four').style = "display: flex";
   }
 
   render() {
@@ -78,13 +63,13 @@ class EventForm extends React.Component {
 
       <div className="new-group-container">
         <div className="group-form-header">
-            <h3>Create an event!</h3>
-            <h4>Just give us a few details below.</h4>
+            <h3>Want to edit your event?!</h3>
+            <h4>No problem. Edit your details below.</h4>
         </div>
         <div className="new-group-form">
           <form onSubmit={this.handleSubmit}>
 
-            <div className="step" id="step-one">
+            <div className="step">
               <label className="group-form-question">
               What's the address of your event?
               </label>
@@ -94,12 +79,9 @@ class EventForm extends React.Component {
               <input type="text" placeholder="Please enter a location address"
                      value={this.state.location_address}
                      onChange={this.update("location_address")}/>
-              <button id="button-one" className="step-button"
-                onClick={this.goToStepTwo}>Next</button>
             </div>
 
-            <div className="step animated bounceInUp" id="step-two"
-                 style={{display: 'none'}}>
+            <div className="step">
               <label className="group-form-question">
                 What date will the event be held?
               </label>
@@ -110,24 +92,18 @@ class EventForm extends React.Component {
                 value={this.state.time}
                 onChange={this.update("time")}/>
               <br/>
-              <button id="button-two" className="step-button"
-                onClick={this.goToStepThree}>Continue</button>
             </div>
 
-            <div className="step" id="step-three"
-                 style={{display: 'none'}}>
+            <div className="step">
               <label className="group-form-question">
                 Give a name for your event!
               </label>
               <input type="text" placeholder="Please enter a name"
                 value={this.state.name} onChange={this.update("name")}/>
               <br/>
-              <button className="step-button" id="button-three"
-                onClick={this.goToStepFour}>Continue</button>
             </div>
 
-            <div className="step" id="step-four"
-                 style={{display: 'none'}}>
+            <div className="step" id="step-four">
               <label className="group-form-question">
                 Please give some details about your event.
               </label >
@@ -137,11 +113,17 @@ class EventForm extends React.Component {
             </div>
 
               <div>
-                <input className="red-button" style={{display: 'none'}}
+                <input className="red-button"
                        id='new-group-submit'
                        type="submit"
-                       value="Create Event" />
+                       value="Update Event" />
               </div>
+              <button
+                onClick={this.handleEventDelete}
+                className='red-button'>
+                DELETE EVENT
+              </button>
+              <br />
               <button
                 onClick={this.navigateToSearch}
                 className='cancel-button'>
@@ -157,4 +139,4 @@ class EventForm extends React.Component {
     }
   }
 
-export default withRouter(EventForm);
+  export default withRouter(EditEventForm);

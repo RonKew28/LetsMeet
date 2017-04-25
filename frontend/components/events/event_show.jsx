@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import GroupNavBar from '../groups/group_nav_bar';
 import GroupSideBar from '../groups/group_side_bar';
+import EventSideBar from './event_sidebar';
 
 
 class EventShow extends React.Component {
@@ -24,9 +25,12 @@ class EventShow extends React.Component {
               <div className='event-show-content-main'>
                 <h1>{this.props.event.name}</h1>
                 <h2>{this.props.event.date}</h2>
-                <h3>{this.props.event.location}</h3>
+                <h2>{this.props.event.time}</h2>
+                <h3>{this.props.event.location_name}</h3>
+                <h3>{this.props.event.location_address}</h3>
                 <p>{this.props.event.description}</p>
               </div>
+              <EventSideBar event={this.props.event} currentUser={currentUser} />
             </div>
         </div>
       );

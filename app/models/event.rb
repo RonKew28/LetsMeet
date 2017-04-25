@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-  validates :name, :description, :group, :location, :date, :organizer, presence: true
+  validates :name, :description, :group, :location_name, :location_address, :time, :date, :organizer, presence: true
 
   belongs_to :group
 
@@ -17,7 +17,6 @@ class Event < ApplicationRecord
 
   def save_and_attend
     transaction do
-      self.date = Date.new()
       save
       Rsvp.create(event_id: self.id, attendee_id: organizer.id)
     end
