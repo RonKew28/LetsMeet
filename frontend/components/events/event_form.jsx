@@ -8,6 +8,7 @@ class EventForm extends React.Component {
     this.navigateToSearch = this.navigateToSearch.bind(this);
     this.navigateToEventShow = this.navigateToEventShow.bind(this);
     this.state = {
+      group_id: this.props.params.groupId,
       name: "",
       location: "",
       description: "",
