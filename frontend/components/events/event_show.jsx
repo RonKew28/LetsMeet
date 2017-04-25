@@ -17,12 +17,16 @@ class EventShow extends React.Component {
   render() {
     if (this.props.event) {
       return(
-        <div>
+        <div className='group-show-container'>
           <GroupNavBar group={this.props.event.group} currentUser={currentUser} />
             <div className='group-show-content'>
-              <GroupSideBar group={this.props.event.group} date={this.props.event.group.formatted_date} />
-              <h1>{this.props.event.name}</h1>
-              <p>{this.props.event.description}</p>
+              <GroupSideBar group={this.props.event.group} date={this.props.event.group_founded_date} />
+              <div className='event-show-content-main'>
+                <h1>{this.props.event.name}</h1>
+                <h2>{this.props.event.date}</h2>
+                <h3>{this.props.event.location}</h3>
+                <p>{this.props.event.description}</p>
+              </div>
             </div>
         </div>
       );
