@@ -24,6 +24,4 @@ class Api::RsvpsController < ApplicationController
 
     end
 
-  end
-
 end

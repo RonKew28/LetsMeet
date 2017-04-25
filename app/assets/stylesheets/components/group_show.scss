@@ -118,5 +118,26 @@
   border: 1px solid $off-grey;
   padding: 10px;
   margin-bottom: 20px;
+}
 
+.event-show-content-main {
+  margin-left: 10px;
+  width: 740px;
+  border: 1px solid $off-grey;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.event-show-content-main > p {
+  font-size: 16px;
+  text-align: justify;
+}
+.event-show-content-main > h1 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.event-show-content-main > h2 {
+  font-size: 20px;
 }
