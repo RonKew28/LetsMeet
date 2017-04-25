@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import { hashHistory } from 'react-router';
 
 class EditGroupForm extends React.Component {
   constructor(props) {
@@ -39,9 +40,9 @@ class EditGroupForm extends React.Component {
   }
 
   handleDelete(e) {
-    debugger
     e.preventDefault();
     this.props.deleteGroup(this.state.id);
+    hashHistory.push('/');
   }
 
   handleSubmit(e) {

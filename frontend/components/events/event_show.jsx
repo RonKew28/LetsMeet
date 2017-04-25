@@ -14,10 +14,11 @@ class EventShow extends React.Component {
 
 
   render() {
+    debugger
     if (this.props.event) {
       return(
         <div>
-          <GroupNavBar group={this.props.event.group} />
+          <GroupNavBar group={this.props.event.group} currentUser={currentUser} />
           <h1>{this.props.event.name}</h1>
         </div>
       );
