@@ -14,7 +14,6 @@ class EventShow extends React.Component {
 
 
   render() {
-    debugger
     if (this.props.event) {
       return(
         <div>
