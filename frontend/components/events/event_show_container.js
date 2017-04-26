@@ -10,7 +10,7 @@ import EventShow from './event_show';
 const mapStateToProps = (state, { params }) => {
   const eventId = parseInt(params.eventId);
   const event = selectEvent(state, eventId);
-  const group = state.groups;
+  // const group = state.groups;
   const currentUser = state.session.currentUser;
   return {
     eventId,

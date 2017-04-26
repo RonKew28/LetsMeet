@@ -73,7 +73,7 @@ class GroupForm extends React.Component {
   render() {
     return (
 
-      <div className="new-group-container">
+      <div className="new-group-container animated bounceInUp">
         <div className="group-form-header">
             <h3>Start a new LetsMeet group</h3>
             <h4>We'll help you find people who are interested.</h4>
@@ -105,7 +105,7 @@ class GroupForm extends React.Component {
                 onClick={this.goToStepThree}>Continue</button>
             </div>
 
-            <div className="step" id="step-three"
+            <div className="step animated bounceInUp" id="step-three"
                  style={{display: 'none'}}>
               <label className="group-form-question">
                 What will your LetsMeet group's name be?
@@ -117,7 +117,7 @@ class GroupForm extends React.Component {
                 onClick={this.goToStepFour}>Continue</button>
             </div>
 
-            <div className="step" id="step-four"
+            <div className="step animated bounceInUp" id="step-four"
                  style={{display: 'none'}}>
               <label className="group-form-question">
                 Describe what your LetsMeetGroup will do.
@@ -128,7 +128,8 @@ class GroupForm extends React.Component {
             </div>
 
               <div>
-                <input className="red-button" style={{display: 'none'}}
+                <input className="red-button animated bounceInUp"
+                       style={{display: 'none'}}
                        id='new-group-submit'
                        type="submit"
                        value="Create LetsMeet Group" />

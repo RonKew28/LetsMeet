@@ -15,33 +15,35 @@ class GroupSideBar extends React.Component {
 
   render() {
     if(this.props.group) {
-    return(
-    <div className='group-sidebar-container'>
-      <ul>
-        <li>
-          <span>Location</span>
-          <span>{this.state.group.location_name}</span>
-        </li>
-        <li>
-          <span>Founded</span>
-          <span>{this.props.date}</span>
-        </li>
-        <li>
-          <span># of Members</span>
-          <span>{this.state.group.member_count}</span>
-        </li>
-        <li>
-          <span>Upcoming Meetups</span>
-          <span>{this.props.eventCount}</span>
-        </li>
-        <li>
-          <span>Our calendar</span>
-          <span>icon</span>
-        </li>
-      </ul>
-    </div>
-  );
-  }
+      return(
+        <div className='group-sidebar-container'>
+          <ul>
+            <li>
+              <span>Location</span>
+              <span>{this.state.group.location_name}</span>
+            </li>
+            <li>
+              <span>Founded</span>
+              <span>{this.props.date}</span>
+            </li>
+            <li>
+              <span># of Members</span>
+              <span>{this.state.group.member_count}</span>
+            </li>
+            <li>
+              <span>Upcoming Meetups</span>
+              <span>{this.props.eventCount}</span>
+            </li>
+            <li>
+              <span>Our calendar</span>
+              <span>icon</span>
+            </li>
+          </ul>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
