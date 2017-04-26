@@ -35,17 +35,17 @@ export const deleteGroup = (id) => {
   });
 };
 
-export const createMembership = (membership) => {
+export const createMembership = (groupId, userId) => {
   return $.ajax({
     method: 'POST',
-    url: `api/memberships/`,
-    data: { membership }
+    url: `api/groups/${groupId}/memberships`,
+    data: { membership: { group_id: groupId, member_id: userId } }
   });
 };
 
-export const deleteMembership = (membership) => {
+export const deleteMembership = (groupId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/memberships/${membership.id}`,
+    url: `api/groups/${groupId}/memberships`
   });
 };
