@@ -19,16 +19,15 @@ class EventShow extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.eventId && nextProps.eventId != this.props.eventId.toString()){
-      this.props.fetchEvents(nextProps.eventId);
+      this.props.fetchEvent(nextProps.eventId);
     }
-    this.setState({ event: nextProps.event });
-    if (this.state.group && nextProps.event.group && this.state.group.id != nextProps.event.group.id) {
+    if (this.props.group && nextProps.event.group && this.props.group.id != nextProps.event.group.id) {
+      debugger
       this.props.fetchGroup(nextProps.event.group.id);
     }
-    this.setState({ group: nextProps.group, location: "home" });
   }
 
-  chnageLocation(newLoc) {
+  changeLocation(newLoc) {
     return () => this.setState({ location: newLoc });
   }
 
@@ -36,8 +35,8 @@ class EventShow extends React.Component {
   render() {
     let attendeeList = [];
     let attendeeIds=[];
-    if(this.state.event.attendees) {
-      this.state.event.attendees.forEach( attendee => {
+    if(this.props.event.attendees) {
+      this.props.event.attendees.forEach( attendee => {
         attendeeIds.push(attendee.id);
         attendeeList.push(
           <li key={attendee.id}>
@@ -48,8 +47,8 @@ class EventShow extends React.Component {
     }
 
     let memberIds = [];
-    if (this.state.group.members) {
-      this.state.group.members.forEach(member => {
+    if (this.props.group.members) {
+      this.props.group.members.forEach(member => {
         memberIds.push(member.id)
       })
     }

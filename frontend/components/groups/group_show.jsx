@@ -16,10 +16,15 @@ class GroupShow extends React.Component {
     this.handleLeave = this.handleLeave.bind(this);
     this.changeLocation = this.changeLocation.bind(this);
     this.navigateToEdit = this.navigateToEdit.bind(this);
+    this.navigateToCreateEvent = this.navigateToCreateEvent.bind(this);
   }
 
   navigateToEdit() {
     this.props.router.push(`/groups/${this.props.group.id}/edit`);
+  }
+
+  navigateToCreateEvent() {
+    this.props.router.push(`groups/${this.props.group.id}/events/create`)
   }
 
   handleJoin() {
@@ -39,6 +44,7 @@ class GroupShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger
     if (this.props.groupId && nextProps.params.groupId !== this.props.groupId.toString()) {
       this.props.fetchGroup(nextProps.params.groupId);
     }
@@ -63,8 +69,10 @@ class GroupShow extends React.Component {
     }
 
     let joinButton = (<button onClick={this.handleJoin} className="join-us-button">Join</button>);
+    let createEventButton;
     if(this.props.currentUser && memberIds.includes(this.props.currentUser.id)) {
       joinButton = (<button onClick={this.handleLeave} className="join-us-button">Leave Group</button>);
+      createEventButton = (<button onClick={this.navigateToCreateEvent} className="join-us-button">Create an Event</button>);
     }
 
     let mainContent;
@@ -109,6 +117,7 @@ class GroupShow extends React.Component {
                 </ul>
               </div>
               <div className='right-group-nav'>
+                  {createEventButton}
                   {editLink}
                   {joinButton}
               </div>

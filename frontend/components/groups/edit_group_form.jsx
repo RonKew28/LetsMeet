@@ -58,7 +58,7 @@ class EditGroupForm extends React.Component {
     if(this.props.group.name) {
       return (
 
-        <div className="new-group-container">
+        <div className="new-group-container animated bounceInUp">
           <div className="group-form-header">
             <h3>Update your LetsMeet group details</h3>
           </div>
