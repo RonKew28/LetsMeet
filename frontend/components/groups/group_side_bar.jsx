@@ -1,19 +1,16 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import GroupShow from './group_show';
+import { connect } from 'react-redux';
 
 class GroupSideBar extends React.Component {
+  constructor(props) {
+    super(props);
 
-  navigateToEdit() {
-    this.props.router.push(`/groups/${this.props.group.id}`);
+    this.state = { group: this.props.group, members: this.props.members};
   }
 
-  toggleEditButton() {
-    if (this.props.group.creator_id === currentUser.id) {
-      return(
-        <button onClick={this.navigateToEdit}>Edit Group</button>
-      );
-    }
+  componentWillReceiveProps(nextProps) {
+    this.setState({group: nextProps.group, members: nextProps.members});
   }
 
   render() {
@@ -23,7 +20,7 @@ class GroupSideBar extends React.Component {
       <ul>
         <li>
           <span>Location</span>
-          <span>{this.props.group.location}</span>
+          <span>{this.state.group.location_name}</span>
         </li>
         <li>
           <span>Founded</span>
@@ -31,15 +28,11 @@ class GroupSideBar extends React.Component {
         </li>
         <li>
           <span># of Members</span>
-          <span>{this.props.group.member_count}</span>
+          <span>{this.state.group.member_count}</span>
         </li>
         <li>
           <span>Upcoming Meetups</span>
-          <span>13</span>
-        </li>
-        <li>
-          <span>Past Meetups</span>
-          <span>10</span>
+          <span>{this.props.eventCount}</span>
         </li>
         <li>
           <span>Our calendar</span>
@@ -48,10 +41,8 @@ class GroupSideBar extends React.Component {
       </ul>
     </div>
   );
-  } else {
-    return <h1>What</h1>;
   }
   }
 }
 
-export default withRouter(GroupSideBar);
+export default GroupSideBar;

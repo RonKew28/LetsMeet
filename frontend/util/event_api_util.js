@@ -34,3 +34,17 @@ export const deleteEvent = (id) => {
     url: `/api/events/${id}`,
   });
 };
+
+export const createRsvp = (eventId, memberId) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/events/${eventId}/rsvps`
+  });
+};
+
+export const deleteRsvp = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/events/${id}/rsvps`
+  });
+};

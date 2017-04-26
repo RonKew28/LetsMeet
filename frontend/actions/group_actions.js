@@ -77,13 +77,3 @@ const removeGroup = group => ({
   type: REMOVE_GROUP,
   group
 });
-
-// const removeMembership = membership => ({
-//   type: REMOVE_MEMBERSHIP,
-//   membership
-// });
-//
-// const receiveMembership = membership => ({
-//   type: RECEIVE_MEMBERSHIP,
-//   membership
-// });

@@ -1,5 +1,6 @@
 import * as EventAPIUtil from "../util/event_api_util";
 import { receiveErrors, clearErrors} from './error_actions';
+import { hashHistory } from 'react-router';
 
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
@@ -43,6 +44,22 @@ export const deleteEvent = id => dispatch => {
     .then(event => dispatch(removeEvent(event)),
     err => dispatch(receiveErrors(err)))
   );
+};
+
+export const createRsvp = (id) => {
+  return (dispatch) => {
+    return EventAPIUtil.createRsvp(eventId, userId)
+    .then(event => dispatch(receiveEvent(event)),
+    err => dispatch(receiveErrors(err)));
+  };
+};
+
+export const deleteRsvp = (id) => {
+  return (dispatch) => {
+    return EventAPIUtil.deleteRsvp(id)
+    .then(event => dispatch(receiveEvent(event)),
+    err => dispatch(receiveErrors(err)))
+  };
 };
 
 const receiveEvents = events => ({
