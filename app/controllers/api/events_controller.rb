@@ -15,7 +15,7 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = Event.includes(:group, :orgnaizer, :attendees).find(params[:id])
     if @event.update(event_params)
       render :show
     else
@@ -35,7 +35,7 @@ class Api::EventsController < ApplicationController
 
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.includes(:group, :attendees, :organizer).find(params[:id])
   end
 
   private
