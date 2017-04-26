@@ -49,7 +49,6 @@ class GroupNavBar extends React.Component {
     }
 
     addMember () {
-      debugger
       this.props.createMembership({group_id: this.props.group.id, member_id: this.props.currentUser.id});
     }
 

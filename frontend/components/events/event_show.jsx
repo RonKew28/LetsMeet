@@ -8,14 +8,57 @@ import EventSideBar from './event_sidebar';
 class EventShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { location: "home", event: this.props.event, user: this.props.currentUser, group: this.props.group };
+    this.changeLocation = this.changeLocation.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchEvent(this.props.eventId);
+    this.setState({ event: this.props.event });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.eventId && nextProps.eventId != this.props.eventId.toString()){
+      this.props.fetchEvents(nextProps.eventId);
+    }
+    this.setState({ event: nextProps.event });
+    if (this.state.group && nextProps.event.group && this.state.group.id != nextProps.event.group.id) {
+      this.props.fetchGroup(nextProps.event.group.id);
+    }
+    this.setState({ group: nextProps.group, location: "home" });
+  }
+
+  chnageLocation(newLoc) {
+    return () => this.setState({ location: newLoc });
   }
 
 
   render() {
+    let attendeeList = [];
+    let attendeeIds=[];
+    if(this.state.event.attendees) {
+      this.state.event.attendees.forEach( attendee => {
+        attendeeIds.push(attendee.id);
+        attendeeList.push(
+          <li key={attendee.id}>
+            {attendee.username}
+          </li>
+        );
+      });
+    }
+
+    let memberIds = [];
+    if (this.state.group.members) {
+      this.state.group.members.forEach(member => {
+        memberIds.push(member.id)
+      })
+    }
+
+    let body;
+    switch(this.state.location) {
+      case "home":
+
+    }
     if (this.props.event) {
       return(
         <div className='group-show-container'>
