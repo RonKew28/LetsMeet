@@ -12,6 +12,7 @@ class Api::MembershipsController < ApplicationController
 
   def destroy
     @membership = Membership.find_by(member_id: current_user.id, group_id: params[:id])
+    @group = @membership.group
     if @membership.destroy
       render 'api/groups/show'
     else
