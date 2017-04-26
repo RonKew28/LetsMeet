@@ -22,7 +22,6 @@ class EventShow extends React.Component {
       this.props.fetchEvent(nextProps.eventId);
     }
     if (this.props.group && nextProps.event.group && this.props.group.id != nextProps.event.group.id) {
-      debugger
       this.props.fetchGroup(nextProps.event.group.id);
     }
   }
