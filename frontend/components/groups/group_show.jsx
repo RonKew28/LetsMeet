@@ -10,33 +10,8 @@ import GroupMembers from './group_members';
 class GroupShow extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = { navigation: "home", group: this.props.group };
-    this.handleJoin = this.handleJoin.bind(this);
     this.handleLeave = this.handleLeave.bind(this);
-    this.changeLocation = this.changeLocation.bind(this);
-    this.navigateToEdit = this.navigateToEdit.bind(this);
-    this.navigateToCreateEvent = this.navigateToCreateEvent.bind(this);
-  }
-
-  navigateToEdit() {
-    this.props.router.push(`/groups/${this.props.group.id}/edit`);
-  }
-
-  navigateToCreateEvent() {
-    this.props.router.push(`groups/${this.props.group.id}/events/create`)
-  }
-
-  handleJoin() {
-    this.props.createMembership(this.props.groupId, this.props.currentUser.id).then(() => {
-      this.setState({navigation: "home"});
-    });
-  }
-
-  handleLeave() {
-    this.props.deleteMembership(this.props.groupId).then(() => {
-      this.props.router.push('/');
-    })
+    this.handleJoin = this.handleJoin.bind(this);
   }
 
   componentDidMount() {
@@ -44,65 +19,53 @@ class GroupShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (this.props.groupId && nextProps.params.groupId !== this.props.groupId.toString()) {
       this.props.fetchGroup(nextProps.params.groupId);
     }
   }
 
-  changeLocation(newLoc) {
-    return () => this.setState({ navigation: newLoc });
+  handleLeave() {
+    this.props.deleteMembership(this.props.groupId).then(() => {
+      this.props.router.push(`groups/${this.props.groupId}`);
+    })
+  }
+  handleJoin() {
+    this.props.createMembership(this.props.groupId, this.props.currentUser.id).then(() => {
+      this.props.router.push(`groups/${this.props.groupId}`);
+    });
   }
 
-
+  groupButtons() {
+    switch(this.props.memberType) {
+      case 'owner':
+        return (
+          <ul>
+            <li><Link to={`groups/${this.props.group.id}/edit`} className="join-us-button">Edit group</Link></li>
+            <li><Link to={`groups/${this.props.group.id}/events/create`} className="join-us-button">Create Event</Link></li>
+          </ul>
+        );
+      case 'member':
+        return (
+          <ul>
+            <li><button onClick={this.handleLeave} className="join-us-button">Leave Group</button></li>
+            <li><Link to={`groups/${this.props.group.id}/events/create`} className="join-us-button">Create an Event</Link></li>
+          </ul>
+        );
+      case 'nonmember':
+        return (
+          <ul>
+            <li><button onClick={this.handleJoin} className="join-us-button">Join</button></li>
+          </ul>
+        );
+    }
+  }
 
   render() {
+    let membersLink = <Link to={`groups/${this.props.group.id}/members`}>Members</Link>;
+    let homeLink = <Link to={`groups/${this.props.group.id}`}>Home</Link>;
 
-    let members = [];
-    let memberIds = [];
-
-    if (this.props.group.members) {
-      members = this.props.group.members;
-      members.forEach((member) => {
-        memberIds.push(member.id);
-      });
-    }
-
-    let joinButton = (<button onClick={this.handleJoin} className="join-us-button">Join</button>);
-    let createEventButton;
-    if(this.props.currentUser && memberIds.includes(this.props.currentUser.id)) {
-      joinButton = (<button onClick={this.handleLeave} className="join-us-button">Leave Group</button>);
-      createEventButton = (<button onClick={this.navigateToCreateEvent} className="join-us-button">Create an Event</button>);
-    }
-
-    let mainContent;
-    if(this.state.navigation === "home" ) {
-      mainContent = (<GroupBody events={this.props.group.events} members={members} group={this.props.group} />);
-    } else if(this.state.navigation === "members") {
-      mainContent = (<GroupMembers members={this.props.group.members} />);
-    } else if(this.state.navigation === "events") {
-      mainContent = (<EventListGroup changeLocation = {this.changeLocation} events={this.props.group.events} />);
-    }
-
-    let editLink = (<div />);
-    if(this.props.group.creator && this.props.group.creator.id === this.props.currentUser.id) {
-      let editClass = this.state.navigation === "edit" ? "red-button" : "";
-      editLink = <li className={editClass} onClick={this.navigateToEdit}>Edit</li>;
-    }
-    let homeClass = this.state.navigation === "home" ? "red-button" : "unclicked button";
-    let memberClass = this.state.navigation === "members" ? "red-button" : "unclicked button";
-    let eventClass = this.state.navigation === "events" ? "red-button" : "";
-
-    let eventCount = 0;
-    if (this.props.group.events) {
-      eventCount = this.props.group.events.length;
-    }
-
-
-
-
-        if(this.props.group) {
-          return(
+    if(this.props.group) {
+      return(
         <div className="group-show-container">
           <div className='group-nav-bar'>
             <div className='group-nav-name'>
@@ -111,32 +74,26 @@ class GroupShow extends React.Component {
             <div className='group-lower-nav'>
               <div className='left-group-nav'>
                 <ul>
-                  <li className={homeClass} onClick={this.changeLocation("home")}>Home</li>
-                  <li className={memberClass} onClick={this.changeLocation("members")}>Members</li>
-                  <li className={eventClass} onClick={this.changeLocation("events")}>Events</li>
+                  <li>{this.props.homeLink}</li>
+                  <li>{this.props.membersLink}</li>
                 </ul>
               </div>
               <div className='right-group-nav'>
-                  {createEventButton}
-                  {editLink}
-                  {joinButton}
+                { this.groupButtons() }
               </div>
             </div>
           </div>
 
           <div className='group-show-content'>
-            <GroupSideBar group={this.props.group} members={members} eventCount={eventCount}/>
             <p>{this.props.group.description}</p>
-            {mainContent}
+            {this.props.children}
           </div>
         </div>
       );
     } else {
-      return <h1>What</h1>
+      return <h1> Loading </h1>
     }
   }
-
-
 }
 
 

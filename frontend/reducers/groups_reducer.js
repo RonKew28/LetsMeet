@@ -13,8 +13,7 @@ const GroupsReducer = (state = _nullGroup, action) => {
     case RECEIVE_GROUPS:
       return action.groups;
     case RECEIVE_GROUP:
-    debugger
-      return merge({}, state, { [action.group.id]: action.group });
+      return Object.assign({}, state, { [action.group.id]: action.group });
     case REMOVE_GROUP:
       let newState = merge({}, state);
       delete newState[action.group.id];
