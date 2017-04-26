@@ -1,5 +1,6 @@
 import * as GroupAPIUtil from '../util/group_api_util';
 import { receiveErrors, clearErrors} from './error_actions';
+import { hashHistory } from 'react-router';
 
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
@@ -47,21 +48,20 @@ export const deleteGroup = id => dispatch => {
   );
 };
 
-export const createMembership = membership => dispatch => {
+export const createMembership = (groupId, userId) => dispatch => {
   return(
-    GroupAPIUtil.createMembership(membership)
-    .then(membership => dispatch(receiveGroup(membership)),
-    err => dispatch(receiveErrors(err)))
+    GroupAPIUtil.createMembership(groupId, userId)
+    .then(group => dispatch(receiveGroup(group)))
   );
 };
 
 export const deleteMembership = id => dispatch => {
   return(
     GroupAPIUtil.deleteMembership(id)
-    .then(membership => dispatch(receiveGroup(membership)),
-    err => dispatch(receiveErrors(err)))
+    .then(group => dispatch(receiveGroup(group)))
   );
 };
+
 
 const receiveGroups = groups => ({
   type: RECEIVE_GROUPS,
