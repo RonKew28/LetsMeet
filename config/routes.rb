@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     end
     delete 'groups/:id/memberships', to: 'memberships#destroy', as: 'group_membership'
     resources :events, only: [:create, :update, :destroy, :index, :show] do
-      resources :rsvps, only: [:create, :destroy]
-
+      resources :rsvps, only: [:create]
     end
+    delete 'events/:event_id/rsvps', to: 'rsvps#destroy', as: 'event_membership'
   end
   # root "static_pages#root"
   root to: "static_pages#root"

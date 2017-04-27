@@ -21,7 +21,10 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :organizer_id
 
-  has_many :rsvps
+  has_many :rsvps,
+  class_name: :Rsvp,
+  primary_key: :id,
+  foreign_key: :attendee_id
 
   has_many :confirmed_events,
   through: :rsvps,
