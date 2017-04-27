@@ -24,17 +24,22 @@ class GroupBody extends React.Component {
 
           eventList.push(
             <li key={event.id}>
-              <ul>
-                <Link to={`groups/${this.props.groupId}/events/${event.id}`} ><li><h2>{event.name}</h2></li></Link>
-                <li><h2>Location:</h2>{event.location_name}</li><li>{event.location_address}</li></ul></li>);
+              <ul className="group-event-item">
+                <li id="hello"><Link to={`groups/${this.props.groupId}/events/${event.id}`}>
+                  <span id="this">{event.name}</span></Link></li>
+
+                <li><span>{event.location_name}</span></li>
+                <li><span id="event-loc-address">{event.location_address}</span></li>
+              </ul>
+            </li>);
         });
     }
 
     return (
       <div className="group-show-content">
         <div className="group-show-content-right">
-          <p>{this.props.group.description}</p>
-          <ul>
+          <p id="event-description">{this.props.group.description}</p>
+          <ul className="event-list-container">
             {eventList}
           </ul>
         </div>

@@ -5,7 +5,7 @@
 }
 
 .group-nav-name {
-  color: black;
+  color: white;
   padding: 40px 0;
   margin-top: 20px;
   box-sizing: border-box;
@@ -15,7 +15,7 @@
   position: relative;
   border: 1px solid $off-grey;
   border-bottom: none;
-  background-color: red;
+  background-color: $main-red;
 
 
 }
@@ -33,11 +33,6 @@
   font-size: 20px;
   padding: 5px;
   background-color: white;
-}
-
-.right-group-nav {
-  display: flex;
-  justify-content: center;
 }
 
 .left-group-nav {
@@ -85,7 +80,7 @@
   justify-content: space-between;
 }
 
-.right-group-nav > span {
+.right-group-nav > ul > li {
   background-color: $main-red;
   color: white;
   border-radius: 3px;
