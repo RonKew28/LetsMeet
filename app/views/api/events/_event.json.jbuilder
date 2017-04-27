@@ -14,4 +14,6 @@ json.attendees do
   end
 end
 
+json.attendee_count event.attendees.length
+
 json.group_founded_date event.group.founded_date.to_formatted_s(:long_ordinal)

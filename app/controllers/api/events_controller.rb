@@ -35,7 +35,7 @@ class Api::EventsController < ApplicationController
 
 
   def show
-    @event = Event.includes(:group, :attendees, :organizer).find(params[:id])
+    @event = Event.find(params[:id])
   end
 
   private
