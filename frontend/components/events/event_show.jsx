@@ -61,7 +61,7 @@ class EventShow extends React.Component {
   }
 
   render() {
-    debugger
+
     if (!this.props.event.id) {
       return <h1>Loading</h1>;
       }
@@ -83,6 +83,7 @@ class EventShow extends React.Component {
             <div className='event-show-content-main'>
               { this.eventButtons() }
               <p>{this.props.event.description}</p>
+              {this.props.event.attendees.length}
             </div>
           </div>
       </div>

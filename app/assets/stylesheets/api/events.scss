@@ -1,3 +1,44 @@
 // Place all the styles related to the api/Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.group-event-item {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.group-event-item > li {
+  font-size: 20px;
+  font-weight: 400;
+
+}
+
+.group-event-item > li > span {
+  font-size: 16px;
+  color: black;
+  text-shadow: none;
+}
+
+.group-event-item > li {
+}
+
+.event-list-container {
+  background-color: $main-red;
+  border-radius: 4px
+}
+
+#hello {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+#hello:hover {
+  color: blue;
+}
+
+#event-description {
+  border-radius: 4px;
+}
