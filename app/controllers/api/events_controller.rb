@@ -7,7 +7,8 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = current_user.organized_events.new(event_params)
-    if @event.save_and_attend
+    if @event.save
+      @event.attend
       render :show
     else
       render json: @event.errors.messages, status: 422
@@ -15,7 +16,7 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    @event = Event.includes(:group, :orgnaizer, :attendees).find(params[:id])
+    @event = Event.includes(:group, :organizer, :attendees).find(params[:id])
     if @event.update(event_params)
       render :show
     else

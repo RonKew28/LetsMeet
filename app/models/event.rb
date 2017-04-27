@@ -15,10 +15,7 @@ class Event < ApplicationRecord
   through: :rsvps,
   source: :attendee
 
-  def save_and_attend
-    transaction do
-      save
-      Rsvp.create(event_id: self.id, attendee_id: organizer.id)
-    end
+  def attend
+    Rsvp.create(event_id: self.id, attendee_id: organizer.id)
   end
 end

@@ -8,13 +8,12 @@ import { selectEvent } from '../../reducers/selectors';
 import EventShow from './event_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
-  const event = state.events[ownProps.params.eventId];
+  const eventId = parseInt(ownProps.params.eventId);
+  const event = selectEvent(state, eventId);
   const currentUser = state.session.currentUser;
 
   let attendees = [];
   let attendeeIds = [];
-
   if (event.attendees) {
     attendees = event.attendees;
     attendees.forEach((attendee) => {

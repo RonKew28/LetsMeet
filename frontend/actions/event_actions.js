@@ -25,7 +25,9 @@ export const fetchEvent = id => dispatch => {
 export const createEvent = event => dispatch => {
   return(
     EventAPIUtil.createEvent(event)
-    .then(event => dispatch(receiveEvent(event)),
+    .then(event => {
+      return dispatch(receiveEvent(event));
+    },
     err => dispatch(receiveErrors(err)))
   );
 };
@@ -58,7 +60,7 @@ export const deleteRsvp = (id) => {
   return (dispatch) => {
     return EventAPIUtil.deleteRsvp(id)
     .then(event => dispatch(receiveEvent(event)),
-    err => dispatch(receiveErrors(err)))
+    err => dispatch(receiveErrors(err)));
   };
 };
 

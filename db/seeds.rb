@@ -20,7 +20,7 @@ Category.destroy_all
 #   "Music",
 #   "Book Clubs"]
 
-
+# u.image = File.open('app/assets/images/letsmeetcover.jpg')
 # Group.create!(name: "test", category: "test", creator_id: User.first.id, description: "tesltkjeagkjlf", location: "New York", founded_date: Date.new() )
 
 # Users
