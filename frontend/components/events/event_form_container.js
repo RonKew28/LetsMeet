@@ -4,8 +4,8 @@ import { clearErrors } from '../../actions/error_actions';
 import EventForm from './event_form';
 
 
-const mapStateToProps = (state) => ({
-
+const mapStateToProps = (state, ownProps) => ({
+  group_id: ownProps.params.groupId
 });
 
 const mapDispatchToProps = (dispatch) => ({

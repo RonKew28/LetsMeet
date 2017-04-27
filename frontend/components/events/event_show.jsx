@@ -7,7 +7,6 @@ import EventSideBar from './event_sidebar';
 
 class EventShow extends React.Component {
   constructor(props) {
-    debugger
     super(props);
     this.handleCreateRsvp = this.handleCreateRsvp.bind(this);
     this.handleDeleteRsvp = this.handleDeleteRsvp.bind(this);

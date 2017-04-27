@@ -8,7 +8,6 @@ class EventForm extends React.Component {
     this.navigateToSearch = this.navigateToSearch.bind(this);
     this.navigateToEventShow = this.navigateToEventShow.bind(this);
     this.state = {
-      group_id: this.props.params.groupId,
       name: "",
       location_name: "",
       location_address: "",
@@ -48,6 +47,7 @@ class EventForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const newEvent = this.state;
+    newEvent.group_id = this.props.group_id;
     this.props.createEvent(newEvent)
       .then((result) => {
         this.props.router.push(`events/${result.event.id}`);

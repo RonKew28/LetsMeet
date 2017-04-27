@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_attached_file :image
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  # default_url:
+
   has_many :created_groups,
   class_name: :Group,
   primary_key: :id,

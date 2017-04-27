@@ -41,14 +41,14 @@ class GroupShow extends React.Component {
         return (
           <ul>
             <li><Link to={`groups/${this.props.group.id}/edit`} className="join-us-button">Edit group</Link></li>
-            <li><Link to={`groups/${this.props.group.id}/events/create`} className="join-us-button">Create Event</Link></li>
+            <li><Link to={`groups/${this.props.group.id}/events/new`} className="join-us-button">Create Event</Link></li>
           </ul>
         );
       case 'member':
         return (
           <ul>
             <li><button onClick={this.handleLeave} className="join-us-button">Leave Group</button></li>
-            <li><Link to={`groups/${this.props.group.id}/events/create`} className="join-us-button">Create an Event</Link></li>
+            <li><Link to={`groups/${this.props.group.id}/events/new`} className="join-us-button">Create an Event</Link></li>
           </ul>
         );
       case 'nonmember':

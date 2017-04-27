@@ -41,12 +41,11 @@ const Root = ({ store }) => {
         <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/create" component={ GroupFormContainer } />
+        <Route path='groups/:groupId/events/new' component={EventFormContainer} />
         <Route path='groups/:groupId' component={GroupShowContainer} onEnter={_ensureLoggedIn}>
           <IndexRoute component={GroupBody} />
-          <Route path='groups/:groupId/events/create' component={EventFormContainer} />
-          <Route path='events/:eventId' component={EventShowContainer} />
+          <Route path='/events/:eventId' component={EventShowContainer} />
           <Route path='groups/:groupId/members' component={GroupMembers} />
-
         </Route>
         <Route path='groups/:groupId/edit' component={EditGroupContainer} onEnter={_ensureLoggedIn} />
         <Route path='events/:eventId/edit' component={EditEventContainer} onEnter={_ensureLoggedIn} />
