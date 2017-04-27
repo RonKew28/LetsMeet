@@ -13,11 +13,13 @@ class EventShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchEvent(this.props.event.id);
+    this.props.fetchEvent(this.props.params.eventId);
   }
 
-  componentWillMount() {
-    this.props.fetchEvent(this.props.event.id);
+  componentWillReceiveProps(nextProps) {
+    if (this.props.event && nextProps.params.eventId !== this.props.params.eventId) {
+      this.props.fetchEvent(nextProps.params.eventId);
+    }
   }
 
 

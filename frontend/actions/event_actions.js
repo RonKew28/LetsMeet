@@ -48,9 +48,9 @@ export const deleteEvent = id => dispatch => {
   );
 };
 
-export const createRsvp = (id) => {
+export const createRsvp = (eventId) => {
   return (dispatch) => {
-    return EventAPIUtil.createRsvp(eventId, userId)
+    return EventAPIUtil.createRsvp(eventId)
     .then(event => dispatch(receiveEvent(event)),
     err => dispatch(receiveErrors(err)));
   };
