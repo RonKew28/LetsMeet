@@ -7,77 +7,72 @@ import EventSideBar from './event_sidebar';
 
 class EventShow extends React.Component {
   constructor(props) {
+    debugger
     super(props);
-    this.state = { location: "home", event: this.props.event, user: this.props.currentUser, group: this.props.group };
-    this.changeLocation = this.changeLocation.bind(this);
+    this.handleCreateRsvp = this.handleCreateRsvp.bind(this);
+    this.handleDeleteRsvp = this.handleDeleteRsvp.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchEvent(this.props.eventId);
-    this.setState({ event: this.props.event });
+    this.props.fetchEvent(this.props.event.id);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.eventId && nextProps.eventId != this.props.eventId.toString()){
-      this.props.fetchEvent(nextProps.eventId);
+  componentWillMount() {
+    this.props.fetchEvent(this.props.event.id);
+  }
+
+
+  handleCreateRsvp() {
+    this.props.createRsvp(this.props.event.id);
+  }
+
+  handleDeleteRsvp() {
+    this.props.deleteRsvp(this.props.event.id);
+  }
+
+  eventButtons() {
+    switch(this.props.attendeeType) {
+      case 'organizer':
+        return (
+          <ul>
+            <li><Link to={`events/${this.props.event.id}/edit`} className="join-us-button">Edit event</Link></li>
+          </ul>
+        );
+      case 'attendee':
+        return (
+          <ul>
+            <li>
+              <span>Your RSVP:</span>
+              <span><button onClick={this.handleDeleteRsvp} className="join-us-button">YES</button></span>
+            </li>
+          </ul>
+        );
+      case "nonattendee":
+        return (
+          <ul>
+            <li>
+              <span>Your RSVP:</span>
+              <span><button onClick={this.handleCreateRsvp} className="join-us-button">NO</button></span>
+            </li>
+          </ul>
+        );
     }
-    if (this.props.group && nextProps.event.group && this.props.group.id != nextProps.event.group.id) {
-      this.props.fetchGroup(nextProps.event.group.id);
-    }
   }
-
-  changeLocation(newLoc) {
-    return () => this.setState({ location: newLoc });
-  }
-
 
   render() {
-    let attendeeList = [];
-    let attendeeIds=[];
-    if(this.props.event.attendees) {
-      this.props.event.attendees.forEach( attendee => {
-        attendeeIds.push(attendee.id);
-        attendeeList.push(
-          <li key={attendee.id}>
-            {attendee.username}
-          </li>
-        );
-      });
-    }
-
-    let memberIds = [];
-    if (this.props.group.members) {
-      this.props.group.members.forEach(member => {
-        memberIds.push(member.id)
-      })
-    }
-
-    let body;
-    switch(this.state.location) {
-      case "home":
-
-    }
     if (this.props.event) {
       return(
         <div className='group-show-container'>
-          <GroupNavBar group={this.props.event.group} currentUser={currentUser} />
             <div className='group-show-content'>
-              <GroupSideBar group={this.props.event.group} date={this.props.event.group_founded_date} />
               <div className='event-show-content-main'>
-                <h1>{this.props.event.name}</h1>
-                <h2>{this.props.event.date}</h2>
-                <h2>{this.props.event.time}</h2>
-                <h3>{this.props.event.location_name}</h3>
-                <h3>{this.props.event.location_address}</h3>
-                <p>{this.props.event.description}</p>
+                { this.eventButtons() }
               </div>
-              <EventSideBar event={this.props.event} currentUser={currentUser} />
             </div>
         </div>
       );
     } else {
         return(
-        <h1>What</h1>
+        <h1> Loading </h1>
       );
     }
   }

@@ -13,7 +13,7 @@ const EventsReducer = (state = _nullEvent, action) => {
     case RECEIVE_EVENTS:
       return action.events;
     case RECEIVE_EVENT:
-      return merge({}, state, { [action.event.id]: action.event });
+      return Object.assign({}, state, { [action.event.id]: action.event });
     case REMOVE_EVENT:
       let newState = merge({}, state);
       delete newState[action.event.id];
