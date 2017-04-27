@@ -17,11 +17,7 @@
   border-bottom: none;
   background-color: red;
 
-  h1 {
-    position: absolute;
-    top: 70px;
-    left: 260px;
-  }
+
 }
 
 #group-img {
@@ -36,7 +32,7 @@
   border: 1px solid $off-grey;
   font-size: 20px;
   padding: 5px;
-  background-color: $main-red;
+  background-color: white;
 }
 
 .right-group-nav {
@@ -51,16 +47,42 @@
 
 }
 
-.left-group-nav > span {
+.left-group-nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-group-nav > ul > li {
   margin: 0 10px;
-  color: grey;
+  color: black;
   padding: 8px;
   border-radius: 3px;
 }
 
-.left-group-nav > span:hover {
+.left-group-nav > ul > li:focus {
   background-color: red;
   color: white;
+}
+
+.left-group-nav > ul > li:hover {
+  background-color: red;
+  color: white;
+}
+
+.right-group-nav {
+  background-color: $main-red;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.left-group-nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .right-group-nav > span {
@@ -74,8 +96,10 @@
 }
 
 
-.right-group-nav > span:hover {
-  background-color: $main-red-hover;
+.right-group-nav > ul > li:hover {
+  background-color: red;
+  color: white;
+
 }
 
 .group-sidebar-container {
@@ -123,11 +147,17 @@
   justify-content: space-between;
 }
 
-.group-show-content > p {
+.group-show-content-right {
+  display: flex;
+  flex-direction: column;
+  width: 760px;
+}
+
+.group-show-content-right > p,
+.group-show-content-right > ul {
   text-align: justify;
   font-size: 16px;
   margin-left: 10px;
-  width: 740px;
   border: 1px solid $off-grey;
   padding: 10px;
   margin-bottom: 20px;
@@ -135,7 +165,7 @@
 
 .event-show-content-main {
   margin-left: 10px;
-  width: 740px;
+  width: 760px;
   border: 1px solid $off-grey;
   padding: 10px;
   margin-bottom: 20px;

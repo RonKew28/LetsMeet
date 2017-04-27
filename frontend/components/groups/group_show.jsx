@@ -72,7 +72,6 @@ class GroupShow extends React.Component {
         <div className="group-show-container">
           <div className='group-nav-bar'>
             <div className='group-nav-name'>
-              <img id="group-img" src={this.props.group.image_url} />
               <h1>{this.props.group.name}</h1>
             </div>
             <div className='group-lower-nav'>
@@ -83,7 +82,9 @@ class GroupShow extends React.Component {
                 </ul>
               </div>
               <div className='right-group-nav'>
+                <ul>
                 { this.groupButtons() }
+                </ul>
               </div>
             </div>
           </div>

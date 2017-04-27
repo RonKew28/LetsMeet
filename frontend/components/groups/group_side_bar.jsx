@@ -19,12 +19,15 @@ class GroupSideBar extends React.Component {
         <div className='group-sidebar-container'>
           <ul>
             <li>
+              <img id="group-img" src={this.state.group.image_url} />
+            </li>
+            <li>
               <span>Location</span>
-              <span>{this.state.group.location_name}</span>
+              <span>{this.state.group.location}</span>
             </li>
             <li>
               <span>Founded</span>
-              <span>{this.props.date}</span>
+              <span>{this.state.group.founded_date}</span>
             </li>
             <li>
               <span># of Members</span>
