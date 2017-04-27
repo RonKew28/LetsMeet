@@ -1,6 +1,6 @@
 
 export const selectGroup = ({ groups }, id) => {
-   const group = groups[id] || {};
+   const group = groups[id];
    return group;
 };
 

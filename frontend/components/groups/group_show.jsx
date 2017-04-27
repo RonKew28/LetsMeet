@@ -61,6 +61,9 @@ class GroupShow extends React.Component {
   }
 
   render() {
+    if(!this.props.group) {
+      return <h1>Loading</h1>;
+    }
     let membersLink = <Link to={`groups/${this.props.group.id}/members`}>Members</Link>;
     let homeLink = <Link to={`groups/${this.props.group.id}`}>Home</Link>;
 
@@ -86,7 +89,7 @@ class GroupShow extends React.Component {
           </div>
 
           <div className='group-show-content'>
-            <p>{this.props.group.description}</p>
+            <GroupSideBar group={this.props.group} />
             {this.props.children}
           </div>
         </div>

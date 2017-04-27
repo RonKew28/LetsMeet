@@ -50,7 +50,7 @@ class EventForm extends React.Component {
     newEvent.group_id = this.props.group_id;
     this.props.createEvent(newEvent)
       .then((result) => {
-        this.props.router.push(`events/${result.event.id}`);
+        this.props.router.push(`groups/${this.props.params.groupId}/events/${result.event.id}`);
       });
   }
 
