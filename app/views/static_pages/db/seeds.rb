@@ -8,6 +8,7 @@
 
 User.destroy_all
 Group.destroy_all
+Category.destroy_all
 
 # Categories = [
 #   "Outdoors & Adventure",
@@ -19,7 +20,7 @@ Group.destroy_all
 #   "Music",
 #   "Book Clubs"]
 
-# u.image = File.open('app/assets/images/letsmeetcover.jpg')
+
 # Group.create!(name: "test", category: "test", creator_id: User.first.id, description: "tesltkjeagkjlf", location: "New York", founded_date: Date.new() )
 
 # Users
@@ -46,20 +47,18 @@ user19 = User.create!(email: "michele_peters@gmail.com", username: "michele_pete
 user20 = User.create!(email: "heather_dorer@aol.com", username: "heather_dorer", password: "password")
 
 # Groups
-group1 = Group.create!(
-  name: "California Women Bikers",
-  category: "Sports & Fitness",
-  location: "San Francisco, CA",
-  description:
-  "We are women who love to bike!
-  We go on weekly biking rides as well as have talks about
-  all things bicycles. Come join us if you are someone who likes
-  biking as well!",
-  creator_id: user20.id,
-  founded_date: Date.new,
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/california_women_bikers_bg.png"
-)
-
+# group1 = Group.create!(
+#   name: "California Women Bikers",
+#   category: "Sports & Fitness",
+#   location: "San Francisco, CA",
+#   description:
+#   "We are women who love to bike!
+#   We go on weekly biking rides as well as have talks about
+#   all things bicycles. Come join us if you are someone who likes
+#   biking as well!"
+#   creator_id:
+# )
+#
 # group2 = Group.create!(
 #   name: "NY City Ballerz",
 #   category: "Sports & Fitness",
@@ -110,22 +109,20 @@ group1 = Group.create!(
 #   creator_id:
 # )
 #
-group5 = Group.create!(
-  name: "Radiohead Fanatics of NYC",
-  category: "Music",
-  location: "New York, NY",
-  description:
-  "We are obsessed with Radiohead. Every week we
-  listen to one of their albums and discuss it afterward.
-  We also do other random Radiohead things, like going to their
-  concerts, learning how to play their music on various instruments...
-  it is so much fun! If you love Radiohead as much as us come join!
-  Please, NO Coldplay fans. They are Radiohead wannabees with no
-  taste in music.",
-  creator_id: user2.id,
-  founded_date: Date.new,
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/radiohead_fanatics_NYC_bg.jpeg"
-)
+# group5 = Group.create!(
+#   name: "Radiohead Fanatics of NYC",
+#   category: "Music",
+#   location: "New York, NY",
+#   description:
+#   "We are obsessed with Radiohead. Every week we
+#   listen to one of their albums and discuss it afterward.
+#   We also do other random Radiohead things, like going to their
+#   concerts, learning how to play their music on various instruments...
+#   it is so much fun! If you love Radiohead as much as us come join!
+#   Please, NO Coldplay fans. They are Radiohead wannabees with no
+#   taste in music."
+#   creator_id:
+# )
 #
 # group6 = Group.create!(
 #   name: "Desi Drinkers",

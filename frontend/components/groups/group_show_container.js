@@ -16,22 +16,23 @@ const mapStateToProps = (state, ownProps) => {
   let members = [];
   let memberIds = [];
 
-  if (group.members) {
+  let memberType;
+  if (group) {
     members = group.members;
     members.forEach((member) => {
       memberIds.push(member.id);
     });
+    if (currentUser && currentUser.id === group.creator_id) {
+      memberType = "owner";
+    } else if (currentUser && memberIds.includes(currentUser.id)) {
+      memberType = "member";
+    } else if (currentUser) {
+      memberType = "nonmember";
+    }
   }
 
-  let memberType;
 
-  if (currentUser && currentUser.id === group.creator_id) {
-    memberType = "owner";
-  } else if (currentUser && memberIds.includes(currentUser.id)) {
-    memberType = "member";
-  } else if (currentUser) {
-    memberType = "nonmember";
-  }
+
 
   return {
     memberType,
