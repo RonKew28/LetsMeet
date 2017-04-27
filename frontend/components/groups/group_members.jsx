@@ -31,7 +31,7 @@ class GroupMembers extends React.Component {
     });
 
     return(
-      <div>
+      <div className="event-show-content-main">
       <h1>Members:</h1>
       <ul>
         {memberList}

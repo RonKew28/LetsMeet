@@ -9,7 +9,8 @@ export const groupsArray = ({ groups }) => (
 );
 
 export const selectEvent = ({ events }, id) => {
-   const event = events[id] || {};
+  debugger
+   const event = events[id];
    return event;
 };
 

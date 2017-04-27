@@ -168,16 +168,17 @@ group5 = Group.create!(
 #   creator_id:
 # )
 #
-# group9 = Group.create!(
-#   name: "Denver Wake n' Bake",
-#   category: "Food and Drink",
-#   location: "Denver, CO",
-#   description: "Love to cook?
-#   Are you an early riser? Then our LetsMeet group
-#   is for you! We are a group of people who love to wake
-#   up at the crack of dawn and bake, bake, bake! We bake cookies, cakes,
-#   savory dishes - you name it, we bake it. We also hold bake sales to
-#   raise money for charity. We are always looking for new bakers, so please
-#   come join if you are interested!",
-#   creator_id:
-# )
+group9 = Group.create!(
+  name: "Denver Wake n' Bake",
+  category: "Food and Drink",
+  location: "Denver, CO",
+  description: "Love to cook?
+  Are you an early riser? Then our LetsMeet group
+  is for you! We are a group of people who love to wake
+  up at the crack of dawn and bake, bake, bake! We bake cookies, cakes,
+  savory dishes - you name it, we bake it. We also hold bake sales to
+  raise money for charity. We are always looking for new bakers, so please
+  come join if you are interested!",
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/radiohead_fanatics_NYC_bg.jpeg"
+  creator_id: user4.id
+)

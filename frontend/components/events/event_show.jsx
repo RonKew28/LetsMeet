@@ -61,21 +61,32 @@ class EventShow extends React.Component {
   }
 
   render() {
-    if (this.props.event) {
-      return(
-        <div className='group-show-container'>
-            <div className='group-show-content'>
-              <div className='event-show-content-main'>
-                { this.eventButtons() }
-              </div>
+    debugger
+    if (!this.props.event.id) {
+      return <h1>Loading</h1>;
+      }
+      let attendeeList = [];
+
+    this.props.event.attendees.forEach((attendee) => {
+      attendeeList.push(
+        <li key={attendee.id}>
+          <ul>
+            <li>{attendee.username}</li>
+          </ul>
+        </li>
+      );
+
+    });
+    return(
+      <div className='group-show-container'>
+          <div className='group-show-content'>
+            <div className='event-show-content-main'>
+              { this.eventButtons() }
+              <p>{this.props.event.description}</p>
             </div>
-        </div>
-      );
-    } else {
-        return(
-        <h1> Loading </h1>
-      );
-    }
+          </div>
+      </div>
+    );
   }
 }
 
