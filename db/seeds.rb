@@ -8,7 +8,6 @@
 
 User.destroy_all
 Group.destroy_all
-Category.destroy_all
 
 # Categories = [
 #   "Outdoors & Adventure",
@@ -47,18 +46,20 @@ user19 = User.create!(email: "michele_peters@gmail.com", username: "michele_pete
 user20 = User.create!(email: "heather_dorer@aol.com", username: "heather_dorer", password: "password")
 
 # Groups
-# group1 = Group.create!(
-#   name: "California Women Bikers",
-#   category: "Sports & Fitness",
-#   location: "San Francisco, CA",
-#   description:
-#   "We are women who love to bike!
-#   We go on weekly biking rides as well as have talks about
-#   all things bicycles. Come join us if you are someone who likes
-#   biking as well!"
-#   creator_id:
-# )
-#
+group1 = Group.create!(
+  name: "California Women Bikers",
+  category: "Sports & Fitness",
+  location: "San Francisco, CA",
+  description:
+  "We are women who love to bike!
+  We go on weekly biking rides as well as have talks about
+  all things bicycles. Come join us if you are someone who likes
+  biking as well!",
+  creator_id: user20.id,
+  founded_date: Date.new,
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/california_women_bikers_background.jpg"
+)
+
 # group2 = Group.create!(
 #   name: "NY City Ballerz",
 #   category: "Sports & Fitness",
