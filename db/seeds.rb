@@ -57,7 +57,7 @@ group1 = Group.create!(
   all things bicycles. Come join us if you are someone who likes
   biking as well!",
   creator_id: user20.id,
-  founded_date: Date.new,
+  founded_date: "2014-10-10",
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/california_women_bikers_bg.png"
 )
 
@@ -72,7 +72,7 @@ group2 = Group.create!(
   we also have random BBQs. Come and check us out if you
   are into any of the above.",
   creator_id: user3.id,
-  founded_date: Date.new,
+  founded_date: "2010-07-01",
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/ny_city_ballerz_bg.png"
 )
 
@@ -86,7 +86,7 @@ group3 = Group.create!(
   who love to play and talk all things football. Not only do we play
   pickup football regularly, but we also meet at members' houses to watch
   NFL games. Both men and women are welcome!",
-  founded_date: Date.new,
+  founded_date: "2016-08-23",
   creator_id: user11.id,
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/pickup_football_nyc_bg.jpeg"
 )
@@ -99,7 +99,7 @@ group4 = Group.create!(
   "We hike. We drink beer. We hike while
   drinking beer. It's really that simple.
   Come join us if you like beer and/or hiking.",
-  founded_date: Date.new,
+  founded_date: "2015-02-03",
   creator_id: user4.id,
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/beer_hikes_bg.JPG"
 )
@@ -115,7 +115,7 @@ group5 = Group.create!(
   AND blogging very seriously. Please do not attend our LetsMeet groups
   if you are not interested in both of these. But if you are, feel free to
   come check us out!",
-  founded_date: Date.new,
+  founded_date: "2013-04-18",
   creator_id: user13.id,
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/san_fran_book_club_bg.jpeg"
 )
@@ -133,7 +133,7 @@ group6 = Group.create!(
   Please, NO Coldplay fans. They are Radiohead wannabees with no
   taste in music.",
   creator_id: user2.id,
-  founded_date: Date.new,
+  founded_date: "2012-10-02",
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/radiohead_fanatics_NYC_bg.jpeg"
 )
 
@@ -146,7 +146,7 @@ group7 = Group.create!(
   30s who love to go out and drink. We
   try to go to new bars throughout the city
   and always have a good time. Come join us!",
-  founded_date: Date.new,
+  founded_date: "2010-08-08",
   creator_id: user15.id,
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/desi_drinkers_bg.jpg"
 )
@@ -163,7 +163,7 @@ group8 = Group.create!(
   There is no point in joining if you are not going to read.
   We only want people who will take the book club seriously.
   Thanks! Come join us!",
-  founded_date: Date.new,
+  founded_date: "2013-01-15",
   creator_id: user20.id,
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/san_fran_book_club_bg.jpeg"
 )
@@ -179,7 +179,7 @@ group9 = Group.create!(
   a variety of genres, including both fiction and nonfiction
   books. We are always looking for more avid readers like ourselves,
   so please join if you are love to read!",
-  founded_date: Date.new,
+  founded_date: "2017-04-01",
   creator_id: user19.id,
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/young_readers_nyc_bg.jpg"
 )
@@ -195,7 +195,7 @@ group10 = Group.create!(
   savory dishes - you name it, we bake it. We also hold bake sales to
   raise money for charity. We are always looking for new bakers, so please
   come join if you are interested!",
-  founded_date: Date.new,
+  founded_date: "2014-06-01",
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/denver_wake_n_bake_bg.jpg",
   creator_id: user4.id
 )
