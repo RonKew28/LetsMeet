@@ -54,3 +54,39 @@
 .video-signup:hover {
   background-color: $main-red-hover;
 }
+
+#welcome-group-img {
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+#welcome-img-txt{
+  position: absolute;
+  width: 231px;
+  left: 21px;
+  padding: 5px 10px;
+  bottom: 0px;
+  right: 0px;
+  font-size: 18px;
+  background: $main-red;
+  color: white;
+  text-overflow: ellipsis;
+  font-weight: normal;
+  text-align: center;
+}
+
+.welcome-group-container ul {
+  position: relative;
+}
+
+
+.flexthis {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}

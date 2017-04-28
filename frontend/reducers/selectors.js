@@ -4,9 +4,15 @@ export const selectGroup = ({ groups }, id) => {
    return group;
 };
 
-export const groupsArray = ({ groups }) => (
-  Object.keys(groups).map(key => groups[key])
-);
+export const groupsArray = (groups) => {
+  let arr = [];
+  if (groups) {
+    let keys = Object.keys(groups);
+    keys.forEach( (key) => arr.push(groups[key]))
+  }
+  return arr;
+};
+
 
 export const selectEvent = ({ events }, id) => {
    const event = events[id];

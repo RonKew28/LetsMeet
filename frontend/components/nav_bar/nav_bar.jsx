@@ -38,10 +38,10 @@ import Modal from 'react-modal';
       </nav>
       <nav className='right-nav'>
           <ul>
-            <li ><button onClick={logout}>Log out</button></li>
+            <li><button onClick={logout}>Log out</button></li>
             <li>Hello, {currentUser.username}</li>
-            <img id="profile-pic" src={currentUser.profile_pic_url} />
-            <li><Link to='/'>View Profile</Link></li>
+            <li><Link to='/home'><img id="profile-pic" src={currentUser.profile_pic_url}/></Link></li>
+            <li><Link to='/home'>View Profile</Link></li>
           </ul>
       </nav>
     </header>
