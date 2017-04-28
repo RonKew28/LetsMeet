@@ -30,6 +30,8 @@ class GroupBody extends React.Component {
 
                 <li><span>{event.location_name}</span></li>
                 <li><span id="event-loc-address">{event.location_address}</span></li>
+                  <span>{event.date}</span>
+                  <li>{event.time}</li>
               </ul>
             </li>);
         });
