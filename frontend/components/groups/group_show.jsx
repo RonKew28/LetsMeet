@@ -39,22 +39,22 @@ class GroupShow extends React.Component {
     switch(this.props.memberType) {
       case 'owner':
         return (
-          <ul>
-            <li><Link to={`groups/${this.props.group.id}/edit`} className="join-us-button">Edit group</Link></li>
-            <li><Link to={`groups/${this.props.group.id}/events/new`} className="join-us-button">Create Event</Link></li>
+          <ul className="right-group-nav">
+            <li className="join-us-button"><Link to={`groups/${this.props.group.id}/edit`}>Edit group</Link></li>
+            <li className="join-us-button"><Link to={`groups/${this.props.group.id}/events/new`}>Create Event</Link></li>
           </ul>
         );
       case 'member':
         return (
-          <ul>
-            <li><button onClick={this.handleLeave} className="join-us-button">Leave Group</button></li>
-            <li><Link to={`groups/${this.props.group.id}/events/new`} className="join-us-button">Create an Event</Link></li>
+          <ul className="right-group-nav">
+            <li className="join-us-button"><button onClick={this.handleLeave}>Leave Group</button></li>
+            <li className="join-us-button"><Link to={`groups/${this.props.group.id}/events/new`}>Create an Event</Link></li>
           </ul>
         );
       case 'nonmember':
         return (
-          <ul>
-            <li><button onClick={this.handleJoin} className="join-us-button">Join</button></li>
+          <ul className="right-group-nav">
+            <li className="join-us-button"><button onClick={this.handleJoin}>Join</button></li>
           </ul>
         );
     }
@@ -82,7 +82,7 @@ class GroupShow extends React.Component {
                 </ul>
               </div>
               <div className='right-group-nav'>
-                <ul>
+                <ul className='right-group-nav'>
                 { this.groupButtons() }
                 </ul>
               </div>

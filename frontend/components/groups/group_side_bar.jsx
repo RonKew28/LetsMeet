@@ -27,7 +27,7 @@ class GroupSideBar extends React.Component {
             </li>
             <li>
               <span>Founded</span>
-              <span>{this.state.group.founded_date}</span>
+              <span>{this.state.group.formatted_date}</span>
             </li>
             <li id='member-count-sidebar'>
               <Link to={`groups/${this.props.group.id}/members`}>
@@ -35,12 +35,12 @@ class GroupSideBar extends React.Component {
               <span><Link to={`groups/${this.props.group.id}/members`}>{this.state.group.member_count}</Link></span>
             </li>
             <li>
-              <span>Upcoming Meetups</span>
+              <span>Upcoming meetings</span>
               <span>{this.props.eventCount}</span>
             </li>
             <li>
               <span>Our calendar</span>
-              <span>icon</span>
+              <span><i className="fa fa-calendar" aria-hidden="true"></i></span>
             </li>
           </ul>
         </div>
