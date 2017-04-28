@@ -43,8 +43,8 @@ class EventShow extends React.Component {
         return (
           <ul>
             <li>
-              <span>Your RSVP:</span>
-              <span><button onClick={this.handleDeleteRsvp} className="join-us-button">YES</button></span>
+              <h2>Want to go?</h2>
+              <h3>Your RSVP (click to change):</h3><button onClick={this.handleDeleteRsvp} className="rsvp-button">YES</button>
             </li>
           </ul>
         );
@@ -52,10 +52,23 @@ class EventShow extends React.Component {
         return (
           <ul>
             <li>
-              <span>Your RSVP:</span>
-              <span><button onClick={this.handleCreateRsvp} className="join-us-button">NO</button></span>
+              <h2>Want to go?</h2>
+              <h3>Your RSVP (click to change):</h3><button onClick={this.handleCreateRsvp} className="rsvp-button">NO</button>
             </li>
           </ul>
+        );
+      default:
+        return (
+          <div className='rsvp-container'>
+            <div>
+              <h1>Want to go?</h1>
+            </div>
+            <div>
+              <h4>Your RSVP:</h4>
+              <button id="rsvp-button" onClick={this.handleCreateRsvp} className="rsvp-button">Join us!</button>
+            </div>
+
+          </div>
         );
     }
   }
@@ -69,24 +82,28 @@ class EventShow extends React.Component {
 
     this.props.event.attendees.forEach((attendee) => {
       attendeeList.push(
-        <li key={attendee.id}>
-          <ul>
+          <ul key={attendee.id} className='event-member-list'>
+            <li><img src={attendee.profile_pic_url} /></li>
             <li>{attendee.username}</li>
           </ul>
-        </li>
       );
 
     });
     return(
-      <div className='group-show-container'>
-          <div className='group-show-content'>
+          <div className='event-show-content-container'>
             <div className='event-show-content-main'>
-              { this.eventButtons() }
               <p>{this.props.event.description}</p>
-              {this.props.event.attendees.length}
+            </div>
+            <div className='event-show-right-bar'>
+              <div className='rsvp-container'>
+                { this.eventButtons() }
+              </div>
+              <div className='members-container'>
+                <h2>{this.props.event.attendees.length} going</h2>
+                {attendeeList}
+              </div>
             </div>
           </div>
-      </div>
     );
   }
 }

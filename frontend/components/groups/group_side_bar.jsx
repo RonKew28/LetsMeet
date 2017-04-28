@@ -29,6 +29,10 @@ class GroupSideBar extends React.Component {
               <span>Founded</span>
               <span>{this.state.group.formatted_date}</span>
             </li>
+            <li>
+              <span>Founder</span>
+              <span>{this.state.group.creator.username}</span>
+            </li>
             <li id='member-count-sidebar'>
               <Link to={`groups/${this.props.group.id}/members`}>
               <span># of Members</span></Link>
