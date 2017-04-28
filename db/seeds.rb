@@ -10,6 +10,9 @@ require 'faker'
 
 User.destroy_all
 Group.destroy_all
+Membership.destroy_all
+Rsvp.destroy_all
+Event.destroy_all
 
 # Categories = [
 #   "Outdoors & Adventure",
