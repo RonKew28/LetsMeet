@@ -529,6 +529,6 @@ rsvp16= Rsvp.create!({attendee_id: user9.id, event_id: event4.id})
 
 rsvp17 = Rsvp.create!({attendee_id: user15.id, event_id: event5.id})
 rsvp18 = Rsvp.create!({attendee_id: user2.id, event_id: event5.id})
-rsvp19 = Rsvp.create!({attendee_id: user6.id, event_id: event5.id})
+rsvp19 = Rsvp.create!({attendee_id: user4.id, event_id: event5.id})
 rsvp20= Rsvp.create!({attendee_id: user8.id, event_id: event5.id})
 rsvp21= Rsvp.create!({attendee_id: user10.id, event_id: event5.id})
