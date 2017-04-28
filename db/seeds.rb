@@ -258,6 +258,61 @@ event1 = Event.create!(
   location_name: "Inwood Hill Park",
   location_address: "Dyckman St, New York, NY 10452",
   time: "03:00:00",
-  date: "2017-05-02",
+  date: "2017-05-06",
   description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
 )
+
+event2 = Event.create!(
+  name: "Weekly Hike!",
+  organizer_id: user4.id,
+  group_id: group4.id,
+  location_name: "Inwood Hill Park",
+  location_address: "Dyckman St, New York, NY 10452",
+  time: "03:00:00",
+  date: "2017-05-13",
+  description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
+)
+
+event3 = Event.create!(
+  name: "Weekly Hike!",
+  organizer_id: user4.id,
+  group_id: group4.id,
+  location_name: "Inwood Hill Park",
+  location_address: "Dyckman St, New York, NY 10452",
+  time: "03:00:00",
+  date: "2017-05-20",
+  description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
+)
+
+event4 = Event.create!(
+  name: "Weekly Hike!",
+  organizer_id: user4.id,
+  group_id: group4.id,
+  location_name: "Inwood Hill Park",
+  location_address: "Dyckman St, New York, NY 10452",
+  time: "03:00",
+  date: "2017-05-27",
+  description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
+)
+
+#RSVPs:
+
+rsvp1 = Rsvp.create!({attendee_id: user4.id, event_id: event1.id})
+rsvp2 = Rsvp.create!({attendee_id: user5.id, event_id: event1.id})
+rsvp3 = Rsvp.create!({attendee_id: user8.id, event_id: event1.id})
+rsvp4 = Rsvp.create!({attendee_id: user9.id, event_id: event1.id})
+
+rsvp1 = Rsvp.create!({attendee_id: user4.id, event_id: event2.id})
+rsvp2 = Rsvp.create!({attendee_id: user5.id, event_id: event2.id})
+rsvp3 = Rsvp.create!({attendee_id: user8.id, event_id: event2.id})
+rsvp4 = Rsvp.create!({attendee_id: user9.id, event_id: event2.id})
+
+rsvp5 = Rsvp.create!({attendee_id: user4.id, event_id: event3.id})
+rsvp6 = Rsvp.create!({attendee_id: user5.id, event_id: event3.id})
+rsvp7 = Rsvp.create!({attendee_id: user8.id, event_id: event3.id})
+rsvp8 = Rsvp.create!({attendee_id: user9.id, event_id: event3.id})
+
+rsvp9 = Rsvp.create!({attendee_id: user4.id, event_id: event4.id})
+rsvp10 = Rsvp.create!({attendee_id: user5.id, event_id: event4.id})
+rsvp11 = Rsvp.create!({attendee_id: user8.id, event_id: event4.id})
+rsvp12= Rsvp.create!({attendee_id: user9.id, event_id: event4.id})
