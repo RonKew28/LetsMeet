@@ -143,11 +143,7 @@ group7 = Group.create!(
   name: "Desi Drinkers",
   category: "Food and Drink",
   location: "New York, NY",
-  description:
-  "We are young Desis in our 20s and
-  30s who love to go out and drink. We
-  try to go to new bars throughout the city
-  and always have a good time. Come join us!",
+  description: Faker::Hipster.paragraph(60),
   founded_date: "2010-08-08",
   creator_id: user15.id,
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/desi_drinkers_bg.jpg"
@@ -410,7 +406,7 @@ event1 = Event.create!(
   location_address: "Dyckman St, New York, NY 10452",
   time: "03:00:00",
   date: "2017-05-06",
-  description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
+  description: Faker::Hipster.paragraph(60)
 )
 
 event2 = Event.create!(
@@ -421,7 +417,7 @@ event2 = Event.create!(
   location_address: "Dyckman St, New York, NY 10452",
   time: "03:00:00",
   date: "2017-05-13",
-  description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
+  description: Faker::Hipster.paragraph(60)
 )
 
 event3 = Event.create!(
@@ -432,7 +428,7 @@ event3 = Event.create!(
   location_address: "Dyckman St, New York, NY 10452",
   time: "03:00:00",
   date: "2017-05-20",
-  description: Faker::Hipster.paragraph(30)
+  description: Faker::Hipster.paragraph(60)
 )
 
 event4 = Event.create!(
@@ -443,7 +439,7 @@ event4 = Event.create!(
   location_address: "Dyckman St, New York, NY 10452",
   time: "03:00",
   date: "2017-05-27",
-  description: Faker::Hipster.paragraph(30)
+  description: Faker::Hipster.paragraph(60)
 )
 
 event5 = Event.create!(
@@ -532,3 +528,27 @@ rsvp18 = Rsvp.create!({attendee_id: user2.id, event_id: event5.id})
 rsvp19 = Rsvp.create!({attendee_id: user4.id, event_id: event5.id})
 rsvp20= Rsvp.create!({attendee_id: user8.id, event_id: event5.id})
 rsvp21= Rsvp.create!({attendee_id: user10.id, event_id: event5.id})
+
+rsvp22 = Rsvp.create!({attendee_id: user15.id, event_id: event6.id})
+rsvp23 = Rsvp.create!({attendee_id: user2.id, event_id: event6.id})
+rsvp24 = Rsvp.create!({attendee_id: user4.id, event_id: event6.id})
+rsvp25= Rsvp.create!({attendee_id: user8.id, event_id: event6.id})
+rsvp26= Rsvp.create!({attendee_id: user10.id, event_id: event6.id})
+
+rsvp27 = Rsvp.create!({attendee_id: user15.id, event_id: event7.id})
+rsvp28 = Rsvp.create!({attendee_id: user2.id, event_id: event7.id})
+rsvp29 = Rsvp.create!({attendee_id: user4.id, event_id: event7.id})
+rsvp30= Rsvp.create!({attendee_id: user8.id, event_id: event7.id})
+rsvp31= Rsvp.create!({attendee_id: user10.id, event_id: event7.id})
+
+rsvp32 = Rsvp.create!({attendee_id: user15.id, event_id: event8.id})
+rsvp33 = Rsvp.create!({attendee_id: user2.id, event_id: event8.id})
+rsvp34 = Rsvp.create!({attendee_id: user4.id, event_id: event8.id})
+rsvp35= Rsvp.create!({attendee_id: user8.id, event_id: event8.id})
+rsvp36= Rsvp.create!({attendee_id: user10.id, event_id: event8.id})
+
+rsvp37 = Rsvp.create!({attendee_id: user15.id, event_id: event9.id})
+rsvp38 = Rsvp.create!({attendee_id: user2.id, event_id: event9.id})
+rsvp39 = Rsvp.create!({attendee_id: user4.id, event_id: event9.id})
+rsvp40= Rsvp.create!({attendee_id: user8.id, event_id: event9.id})
+rsvp41= Rsvp.create!({attendee_id: user10.id, event_id: event9.id})

@@ -14,6 +14,7 @@ Events creation, editing, updating, and deleting
 Users have the ability to create events of groups that they are a part of, as well as edit/update/delete events that they have created. Users can also join and leave groups created by other users.
 
 RSVPs/Member Display
+Members of groups can RSVP to events and see a list of members who are going to each event.
 
 #Future Directions for the Project
 In addition to the features I have already implemented, there are a couple more features that I would like to add to this project in the future. The next steps are outlied below.
