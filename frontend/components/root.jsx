@@ -18,6 +18,7 @@ import EventFormContainer from './events/event_form_container';
 import EditEventContainer from './events/edit_event_container';
 import GroupBody from './groups/group_body';
 import GroupMembers from './groups/group_members';
+import HomePage from './welcome_page/home_page';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -38,6 +39,7 @@ const Root = ({ store }) => {
     <Router history={ hashHistory }>
       <Route path="/" component={ App }>
         <IndexRoute component={WelcomePage} />
+        <Route path='/home' component={HomePage} />
         <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/create" component={ GroupFormContainer } />
