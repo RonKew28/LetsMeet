@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'rubygems'
+require 'faker'
 
 User.destroy_all
 Group.destroy_all
@@ -200,6 +202,146 @@ group10 = Group.create!(
   creator_id: user4.id
 )
 
+group11 = Group.create!(
+  name: "Pokemon",
+  category: "Outdoors & Adventure",
+  location: "Denver, CO",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/pokemon_lover_bg.png",
+  creator_id: user4.id
+)
+
+group12 = Group.create!(
+  name: "Piano Players of New York",
+  category: "Music",
+  location: "New York, NY",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/piano_players_ny.png",
+  creator_id: user9.id
+)
+
+group13 = Group.create!(
+  name: "We Love Wine!",
+  category: "Food and Drink",
+  location: "San Francisco, CA",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/wine_bg.jpg",
+  creator_id: user10.id
+)
+
+group14 = Group.create!(
+  name: "Tennis Round Robin",
+  category: "Sports",
+  location: "New York, NY",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/tennis_bg.jpeg",
+  creator_id: user4.id
+)
+
+
+group15 = Group.create!(
+  name: "Super Smash Bros Fans",
+  category: "Sports",
+  location: "Denver, CO",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/super_smash_bros_bg.jpeg",
+  creator_id: user4.id
+)
+
+group16 = Group.create!(
+  name: "We Sit On Sofas And Watch TV",
+  category: "Food and Drink",
+  location: "New York, NY",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/sit_tv_bg.jpeg",
+  creator_id: user3.id
+)
+
+group17 = Group.create!(
+  name: "Settlers of Catan Fanatics",
+  category: "Games",
+  location: "Denver, CO",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/settlers_of_catan_bg.jpg",
+  creator_id: user12.id
+)
+
+group18 = Group.create!(
+  name: "Chess! Chess! Chess!",
+  category: "Games",
+  location: "New York, NY",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/chess_bg.jpeg",
+  creator_id: user12.id
+)
+
+group19 = Group.create!(
+  name: "Magic the Gathering Group",
+  category: "Games",
+  location: "Denver, CO",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/magic_gathering_bg.png",
+  creator_id: user14.id
+)
+
+group20 = Group.create!(
+  name: "We Love Teddy Bears",
+  category: "Games",
+  location: "Denver, CO",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/teddy_bears.jpg",
+  creator_id: user10.id
+)
+
+group21 = Group.create!(
+  name: "Swing Dancin' in the City",
+  category: "Games",
+  location: "New York, NYC",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/swing_dancing_bg.png",
+  creator_id: user12.id
+)
+
+group22 = Group.create!(
+  name: "Tech Talks",
+  category: "Tech",
+  location: "San Francisco, CA",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/tech_talks.png",
+  creator_id: user12.id
+)
+
+group23 = Group.create!(
+  name: "Java Junkies",
+  category: "Tech",
+  location: "Denver, CO",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/java_junkies_bg.jpg",
+  creator_id: user12.id
+)
+
+group24 = Group.create!(
+  name: "Improv Actors and Actresses of San Francisco",
+  category: "Games",
+  location: "San Francisco, CA",
+  description: Faker::Hipster.paragraph(60),
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/improv_acting_bg.jpeg",
+  creator_id: user17.id
+)
 #Memberships
 
 #Group creators' memberships
@@ -248,6 +390,15 @@ membership36 = Membership.create!({ group_id: group5.id, member_id: user6.id})
 membership37 = Membership.create!({ group_id: group5.id, member_id: user7.id})
 membership38 = Membership.create!({ group_id: group5.id, member_id: user8.id})
 
+membership39 = Membership.create!({ group_id: group7.id, member_id: user2.id})
+membership40 = Membership.create!({ group_id: group7.id, member_id: user4.id})
+membership41 = Membership.create!({ group_id: group7.id, member_id: user6.id})
+membership42 = Membership.create!({ group_id: group7.id, member_id: user8.id})
+membership43 = Membership.create!({ group_id: group7.id, member_id: user10.id})
+membership44 = Membership.create!({ group_id: group7.id, member_id: user12.id})
+membership45 = Membership.create!({ group_id: group7.id, member_id: user14.id})
+membership46 = Membership.create!({ group_id: group7.id, member_id: user11.id})
+
 
 #Events
 
@@ -281,7 +432,7 @@ event3 = Event.create!(
   location_address: "Dyckman St, New York, NY 10452",
   time: "03:00:00",
   date: "2017-05-20",
-  description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
+  description: Faker::Hipster.paragraph(30)
 )
 
 event4 = Event.create!(
@@ -292,8 +443,67 @@ event4 = Event.create!(
   location_address: "Dyckman St, New York, NY 10452",
   time: "03:00",
   date: "2017-05-27",
-  description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
+  description: Faker::Hipster.paragraph(30)
 )
+
+event5 = Event.create!(
+  name: "Desi Drinkin'",
+  organizer_id: user15.id,
+  group_id: group7.id,
+  location_name: "Old Town Bar and Restaurant",
+  location_address: "45 E 18th St, New York, NY 10003",
+  time: "06:00",
+  date: Faker::Date.forward(60),
+  description: Faker::Hipster.paragraph(30)
+)
+
+event6 = Event.create!(
+  name: "Desi Drinkin'",
+  organizer_id: user15.id,
+  group_id: group7.id,
+  location_name: "Old Town Bar and Restaurant",
+  location_address: "45 E 18th St, New York, NY 10003",
+  time: "06:00",
+  date: Faker::Date.forward(60),
+  description: Faker::Hipster.paragraph(30)
+)
+
+event7 = Event.create!(
+  name: "Desi Drinkin'",
+  organizer_id: user15.id,
+  group_id: group7.id,
+  location_name: "Old Town Bar and Restaurant",
+  location_address: "45 E 18th St, New York, NY 10003",
+  time: "06:00",
+  date: Faker::Date.forward(60),
+  description: Faker::Hipster.paragraph(30)
+)
+
+event8 = Event.create!(
+  name: "Desi Drinkin'",
+  organizer_id: user15.id,
+  group_id: group7.id,
+  location_name: "Old Town Bar and Restaurant",
+  location_address: "45 E 18th St, New York, NY 10003",
+  time: "06:00",
+  date: Faker::Date.forward(60),
+  description: Faker::Hipster.paragraph(30)
+)
+
+event9 = Event.create!(
+  name: "Desi Drinkin'",
+  organizer_id: user15.id,
+  group_id: group7.id,
+  location_name: "Old Town Bar and Restaurant",
+  location_address: "45 E 18th St, New York, NY 10003",
+  time: "06:00",
+  date: Faker::Date.forward(60),
+  description: Faker::Hipster.paragraph(30)
+)
+
+
+
+
 
 #RSVPs:
 
@@ -302,17 +512,23 @@ rsvp2 = Rsvp.create!({attendee_id: user5.id, event_id: event1.id})
 rsvp3 = Rsvp.create!({attendee_id: user8.id, event_id: event1.id})
 rsvp4 = Rsvp.create!({attendee_id: user9.id, event_id: event1.id})
 
-rsvp1 = Rsvp.create!({attendee_id: user4.id, event_id: event2.id})
-rsvp2 = Rsvp.create!({attendee_id: user5.id, event_id: event2.id})
-rsvp3 = Rsvp.create!({attendee_id: user8.id, event_id: event2.id})
-rsvp4 = Rsvp.create!({attendee_id: user9.id, event_id: event2.id})
+rsvp5 = Rsvp.create!({attendee_id: user4.id, event_id: event2.id})
+rsvp6 = Rsvp.create!({attendee_id: user5.id, event_id: event2.id})
+rsvp7 = Rsvp.create!({attendee_id: user8.id, event_id: event2.id})
+rsvp8 = Rsvp.create!({attendee_id: user9.id, event_id: event2.id})
 
-rsvp5 = Rsvp.create!({attendee_id: user4.id, event_id: event3.id})
-rsvp6 = Rsvp.create!({attendee_id: user5.id, event_id: event3.id})
-rsvp7 = Rsvp.create!({attendee_id: user8.id, event_id: event3.id})
-rsvp8 = Rsvp.create!({attendee_id: user9.id, event_id: event3.id})
+rsvp9 = Rsvp.create!({attendee_id: user4.id, event_id: event3.id})
+rsvp10 = Rsvp.create!({attendee_id: user5.id, event_id: event3.id})
+rsvp11 = Rsvp.create!({attendee_id: user8.id, event_id: event3.id})
+rsvp12 = Rsvp.create!({attendee_id: user9.id, event_id: event3.id})
 
-rsvp9 = Rsvp.create!({attendee_id: user4.id, event_id: event4.id})
-rsvp10 = Rsvp.create!({attendee_id: user5.id, event_id: event4.id})
-rsvp11 = Rsvp.create!({attendee_id: user8.id, event_id: event4.id})
-rsvp12= Rsvp.create!({attendee_id: user9.id, event_id: event4.id})
+rsvp13 = Rsvp.create!({attendee_id: user4.id, event_id: event4.id})
+rsvp14 = Rsvp.create!({attendee_id: user5.id, event_id: event4.id})
+rsvp15 = Rsvp.create!({attendee_id: user8.id, event_id: event4.id})
+rsvp16= Rsvp.create!({attendee_id: user9.id, event_id: event4.id})
+
+rsvp17 = Rsvp.create!({attendee_id: user15.id, event_id: event5.id})
+rsvp18 = Rsvp.create!({attendee_id: user2.id, event_id: event5.id})
+rsvp19 = Rsvp.create!({attendee_id: user6.id, event_id: event5.id})
+rsvp20= Rsvp.create!({attendee_id: user8.id, event_id: event5.id})
+rsvp21= Rsvp.create!({attendee_id: user10.id, event_id: event5.id})
