@@ -34,7 +34,7 @@ class HomePage extends React.Component {
     });
 
     return (
-      <ul className='flexthis'>
+      <ul className='flexthis animated slideInUp'>
         {groupList}
       </ul>
     );
