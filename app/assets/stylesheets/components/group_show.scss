@@ -2,6 +2,8 @@
   width: 960px;
   margin: 0 auto;
   margin-bottom: 20px;
+  border-radius: 30px;
+
 }
 
 .group-nav-name {
@@ -16,8 +18,7 @@
   border: 1px solid $off-grey;
   border-bottom: none;
   background-color: $main-red;
-
-
+  border-radius: 4px 4px 0 0;
 }
 
 #group-img {
@@ -33,6 +34,7 @@
   font-size: 20px;
   padding: 5px;
   background-color: white;
+  border-radius: 0 0 4px 4px;
 }
 
 .left-group-nav {
@@ -50,15 +52,11 @@
 
 .left-group-nav > ul > li {
   margin: 0 10px;
-  color: black;
+  color: rgba(0,0,0,.87);
   padding: 8px;
   border-radius: 3px;
 }
 
-.left-group-nav > ul > li:focus {
-  background-color: red;
-  color: white;
-}
 
 .left-group-nav > ul > li:hover {
   background-color: red;
@@ -80,14 +78,18 @@
   justify-content: space-between;
 }
 
-.right-group-nav > ul > li {
+.right-group-nav > ul {
   background-color: $main-red;
   color: white;
-  border-radius: 3px;
+  border-radius: 10px;
   font-size: 20px;
   text-align: center;
   font-weight: 600;
   padding: 8px;
+}
+
+.right-group-nav {
+  border-radius: 5px;
 }
 
 
@@ -102,10 +104,19 @@
   flex-direction: column;
   justify-content: space-between;
   width: 200px;
-  font-size: 13px;
+  font-size: 16px;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid $off-grey;
+  border-radius: 4px;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+#member-count-sidebar:hover {
+  color: blue;
+}
+#member-count-sidebar:focus {
+  color: blue;
 }
 
 .group-sidebar-container > ul {
@@ -150,8 +161,7 @@
 
 .group-show-content-right > p,
 .group-show-content-right > ul {
-  text-align: justify;
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 10px;
   border: 1px solid $off-grey;
   padding: 10px;
@@ -164,6 +174,7 @@
   border: 1px solid $off-grey;
   padding: 10px;
   margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .event-show-content-main > p {

@@ -22,9 +22,12 @@ class GroupMembers extends React.Component {
     this.props.group.members.forEach((member) => {
       memberList.push(
         <li key={member.id}>
+          <div className='group-member-list'>
           <ul>
-            <li>{member.username}</li>
+            <li className="member-pic"><img src={member.profile_pic_url}/></li>
+            <li className='member-name'>{member.username}</li>
           </ul>
+          </div>
         </li>
       );
 

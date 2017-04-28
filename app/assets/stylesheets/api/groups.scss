@@ -20,6 +20,33 @@
 
 }
 
+.member-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+}
+
+.group-member-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-member-list > ul {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.member-name {
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+
+
 .step-button {
   background-color: $main-red;
   font-size: 16px;
