@@ -77,7 +77,7 @@ class GroupShow extends React.Component {
             <div className='group-lower-nav'>
               <div className='left-group-nav'>
                 <ul>
-                  <li>{homeLink}</li>
+                  <li id="home-link">{homeLink}</li>
                   <li>{membersLink}</li>
                 </ul>
               </div>

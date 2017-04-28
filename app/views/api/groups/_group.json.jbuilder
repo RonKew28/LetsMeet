@@ -2,4 +2,4 @@ json.extract! group, :id, :name, :description, :location, :category, :founded_da
 
 
 json.member_count group.members.length
-json.formatted_date group.founded_date.to_formatted_s(:long_ordinal)
+json.formatted_date group.founded_date.strftime("%B %d, %Y")
