@@ -39,6 +39,8 @@ import Modal from 'react-modal';
       <nav className='right-nav'>
           <ul>
             <li ><button onClick={logout}>Log out</button></li>
+            <li>Hello, {currentUser.username}</li>
+            <img id="profile-pic" src={currentUser.profile_pic_url} />
             <li><Link to='/'>View Profile</Link></li>
           </ul>
       </nav>

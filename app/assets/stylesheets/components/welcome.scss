@@ -10,6 +10,14 @@
   display: block;
   height: 460px;
 }
+#profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  margin-right: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
 
 .welcome-slogan {
   padding-top: 170px;

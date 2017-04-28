@@ -23,27 +23,28 @@ Group.destroy_all
 # Group.create!(name: "test", category: "test", creator_id: User.first.id, description: "tesltkjeagkjlf", location: "New York", founded_date: Date.new() )
 
 # Users
-user0 = User.create!(email: "guest_user@guest.com", username: "guest", password: "password")
-User.create!(email: "jim_baker@aol.com", username: "jim_baker", password: "password")
-user2 = User.create!(email: "john_johnson@gmail.com", username: "john_johnspn", password: "password")
-user3 = User.create!(email: "fred_fredson@gmai.com", username: "fred_fredson", password: "password")
-user4 = User.create!(email: "holly_seinfeld@aol.com", username: "holly_seinfeld", password: "password")
-user5 = User.create!(email: "laura_constanza@basketball.com", username: "laura_costanza", password: "password")
-user6 = User.create!(email: "stephanie_roberts@gmail.com", username: "stephanie_roberts", password: "password")
-user7 = User.create!(email: "carol_johnson@gmail.com", username: "carol_johnson", password: "password")
-user8 = User.create!(email: "erin_robertson@aol.com", username: "erin_robertson", password: "password")
-user9 = User.create!(email: "jeb_thomas@comcast.net", username: "jeb_thomas", password: "password")
-user10 = User.create!(email: "tasha_michaels@aol.com", username: "tasha_michaels", password: "password")
-user11 = User.create!(email: "ronnie_anderson@gmail.com", username: "ronnie_anderson", password: "password")
-user12 = User.create!(email: "sam_samuels@gmail.com", username: "sam_samuels", password: "password")
-user13 = User.create!(email: "herbert_chan@aol.com", username: "herbert_chan", password: "password")
-user14 = User.create!(email: "jenna_williams@gmail.com", username: "jenna_wilson", password: "password")
-user15 = User.create!(email: "priya_patel@hotmail.com", username: "priya_patel", password: "password")
-user16 = User.create!(email: "evan_carlson@aol.com", username: "evan_carlson", password: "password")
-user17 = User.create!(email: "daniel_sun@gmail.com", username: "daniel_sun", password: "password")
-user18 = User.create!(email:"steven_trico@gmail.com", username: "Steven_Trico", password: "password")
-user19 = User.create!(email: "michele_peters@gmail.com", username: "michele_peters", password: "password")
-user20 = User.create!(email: "heather_dorer@aol.com", username: "heather_dorer", password: "password")
+user0 = User.create!(email: "guest_user@guest.com", username: "guest", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/guest.png")
+user1 = User.create!(email: "jim_baker@aol.com", username: "jim_baker", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/jim_baker.jpeg")
+user2 = User.create!(email: "john_johnson@gmail.com", username: "john_johnson", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/john_johnson.jpeg")
+user3 = User.create!(email: "fred_fredson@gmail.com", username: "fred_fredson", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/fred_fredson.jpeg")
+user4 = User.create!(email: "holly_seinfeld@aol.com", username: "holly_seinfeld", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/holly_seinfeld.jpeg")
+user5 = User.create!(email: "laura_costanza@basketball.com", username: "laura_costanza", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/laura_costanza.jpeg")
+user6 = User.create!(email: "stephanie_roberts@gmail.com", username: "stephanie_roberts", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/stephanie_roberts.jpeg")
+user7 = User.create!(email: "carol_johnson@gmail.com", username: "carol_johnson", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/carol_johnson.jpeg")
+user8 = User.create!(email: "erin_robertson@aol.com", username: "erin_robertson", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/erin_robertson.jpeg")
+user9 = User.create!(email: "jeb_thomas@comcast.net", username: "jeb_thomas", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/jeb_thomas.jpeg")
+user10 = User.create!(email: "tasha_michaels@aol.com", username: "tasha_michaels", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/tasha_michaels.jpeg")
+user11 = User.create!(email: "ronnie_anderson@gmail.com", username: "ronnie_anderson", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/ronnie_anderson.jpeg")
+user12 = User.create!(email: "sam_samuels@gmail.com", username: "sam_samuels", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/sam_samuels.jpeg")
+user13 = User.create!(email: "herbert_chan@aol.com", username: "herbert_chan", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/herbert_chan.jpeg")
+user14 = User.create!(email: "jenna_williams@gmail.com", username: "jenna_williams", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/jenna_williams.jpeg")
+user15 = User.create!(email: "priya_patel@hotmail.com", username: "priya_patel", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/priya_patel.jpeg")
+user16 = User.create!(email: "evan_carlson@aol.com", username: "evan_carlson", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/evan_carlson.jpeg")
+user17 = User.create!(email: "daniel_sun@gmail.com", username: "daniel_sun", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/daniel_sun.jpeg")
+user18 = User.create!(email:"steven_trico@gmail.com", username: "Steven_Trico", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/steven_trico.jpeg
+")
+user19 = User.create!(email: "michele_peters@gmail.com", username: "michele_peters", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/michele_peters.jpeg")
+user20 = User.create!(email: "heather_dorer@aol.com", username: "heather_dorer", password: "password", profile_pic_url: "https://s3.amazonaws.com/lets-meet-dev/user_profile_pictures/heather_dorer.jpeg")
 
 # Groups
 group1 = Group.create!(
@@ -179,6 +180,7 @@ group9 = Group.create!(
   savory dishes - you name it, we bake it. We also hold bake sales to
   raise money for charity. We are always looking for new bakers, so please
   come join if you are interested!",
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/radiohead_fanatics_NYC_bg.jpeg"
+  founded_date: Date.new,
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/radiohead_fanatics_NYC_bg.jpeg",
   creator_id: user4.id
 )
