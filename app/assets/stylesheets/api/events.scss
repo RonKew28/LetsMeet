@@ -42,3 +42,72 @@
 #event-description {
   border-radius: 4px;
 }
+
+.rsvp-button {
+  background: $main-red;
+  color: white;
+  padding: 6px 8px;
+  font-size: 16px;
+  margin-left: 60px;
+  font-weight: bold;
+  border-radius: 3px;
+
+}
+
+.event-show-right-bar {
+  width: 200px;
+  border: 1px solid $off-grey;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.rsvp-container {
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+}
+
+.rsvp-container h2 {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.rsvp-mini  {
+  display: flex;
+  flex-direction: row;
+
+
+}
+
+.event-show-content-main {
+  width: 520px;
+}
+
+.event-member-list {
+  list-style: none;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+}
+
+.members-container {
+  h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 0;
+  }
+}
+
+.event-show-content-container {
+  width: 740px;
+  display: flex;
+  flex-direction: row;
+}

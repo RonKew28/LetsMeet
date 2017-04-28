@@ -247,3 +247,17 @@ membership35 = Membership.create!({ group_id: group5.id, member_id: user5.id})
 membership36 = Membership.create!({ group_id: group5.id, member_id: user6.id})
 membership37 = Membership.create!({ group_id: group5.id, member_id: user7.id})
 membership38 = Membership.create!({ group_id: group5.id, member_id: user8.id})
+
+
+#Events
+
+event1 = Event.create!(
+  name: "Weekly Hike!",
+  organizer_id: user4.id,
+  group_id: group4.id,
+  location_name: "Inwood Hill Park",
+  location_address: "Dyckman St, New York, NY 10452",
+  time: "03:00:00",
+  date: "2017-05-02",
+  description: "Our usual weekly hike! Bring your favorite beer and let's get hiking!"
+)
