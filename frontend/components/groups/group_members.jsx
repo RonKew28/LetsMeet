@@ -18,7 +18,15 @@ class GroupMembers extends React.Component {
     }
 
     let memberList = [];
-
+    memberList.push(
+      <li>
+        <div className='group-member-list'>
+        <ul>
+          <li><h1 id="member-header">Members:</h1></li>
+        </ul>
+        </div>
+      </li>
+    );
     this.props.group.members.forEach((member) => {
       memberList.push(
         <li key={member.id}>
@@ -35,9 +43,10 @@ class GroupMembers extends React.Component {
 
     return(
       <div className="event-show-content-main">
-      <h1>Members:</h1>
       <ul>
-        {memberList}
+        <div className="group-member-container">
+          {memberList}
+        </div>
       </ul>
       </div>
     );

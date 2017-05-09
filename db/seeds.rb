@@ -407,8 +407,8 @@ event1 = Event.create!(
   group_id: group4.id,
   location_name: "Inwood Hill Park",
   location_address: "Dyckman St, New York, NY 10452",
-  time: "03:00:00",
-  date: "2017-05-06",
+  time: "03:00:00 PM EST",
+  date: "2017-04-22",
   description: Faker::Hipster.paragraph(60)
 )
 
@@ -418,7 +418,7 @@ event2 = Event.create!(
   group_id: group4.id,
   location_name: "Inwood Hill Park",
   location_address: "Dyckman St, New York, NY 10452",
-  time: "03:00:00",
+  time: "03:00:00 PM EST",
   date: "2017-05-13",
   description: Faker::Hipster.paragraph(60)
 )
@@ -429,7 +429,7 @@ event3 = Event.create!(
   group_id: group4.id,
   location_name: "Inwood Hill Park",
   location_address: "Dyckman St, New York, NY 10452",
-  time: "03:00:00",
+  time: "03:00:00 PM EST",
   date: "2017-05-20",
   description: Faker::Hipster.paragraph(60)
 )
@@ -440,7 +440,7 @@ event4 = Event.create!(
   group_id: group4.id,
   location_name: "Inwood Hill Park",
   location_address: "Dyckman St, New York, NY 10452",
-  time: "03:00",
+  time: "03:00:00 PM EST",
   date: "2017-05-27",
   description: Faker::Hipster.paragraph(60)
 )
@@ -451,7 +451,7 @@ event5 = Event.create!(
   group_id: group7.id,
   location_name: "Old Town Bar and Restaurant",
   location_address: "45 E 18th St, New York, NY 10003",
-  time: "06:00",
+  time: "06:00:00 PM EST",
   date: Faker::Date.forward(60),
   description: Faker::Hipster.paragraph(30)
 )
@@ -462,7 +462,7 @@ event6 = Event.create!(
   group_id: group7.id,
   location_name: "Old Town Bar and Restaurant",
   location_address: "45 E 18th St, New York, NY 10003",
-  time: "06:00",
+  time: "06:00:00 PM EST",
   date: Faker::Date.forward(60),
   description: Faker::Hipster.paragraph(30)
 )
@@ -473,7 +473,7 @@ event7 = Event.create!(
   group_id: group7.id,
   location_name: "Old Town Bar and Restaurant",
   location_address: "45 E 18th St, New York, NY 10003",
-  time: "06:00",
+  time: "06:00:00 PM EST",
   date: Faker::Date.forward(60),
   description: Faker::Hipster.paragraph(30)
 )
@@ -484,7 +484,7 @@ event8 = Event.create!(
   group_id: group7.id,
   location_name: "Old Town Bar and Restaurant",
   location_address: "45 E 18th St, New York, NY 10003",
-  time: "06:00",
+  time: "06:00:00 PM EST",
   date: Faker::Date.forward(60),
   description: Faker::Hipster.paragraph(30)
 )
@@ -495,7 +495,7 @@ event9 = Event.create!(
   group_id: group7.id,
   location_name: "Old Town Bar and Restaurant",
   location_address: "45 E 18th St, New York, NY 10003",
-  time: "06:00",
+  time: "06:00:00 PM EST",
   date: Faker::Date.forward(60),
   description: Faker::Hipster.paragraph(30)
 )

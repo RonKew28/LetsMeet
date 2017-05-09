@@ -52,13 +52,18 @@
 
 .left-group-nav > ul > li {
   margin: 0 10px;
-  color: rgba(0,0,0,.87);
   padding: 8px;
   border-radius: 3px;
 }
 
+
 .left-group-nav > ul > li:hover {
-  background: red;
+  background: $main-red;
+  color: white;
+}
+
+.left-group-nav-selected {
+  background: $main-red;
   color: white;
 }
 
@@ -119,6 +124,7 @@
   border: 1px solid $off-grey;
   border-radius: 4px;
   font-family: 'Yantramanav', sans-serif;
+  background: white;
 }
 
 #member-count-sidebar:hover {
@@ -154,18 +160,22 @@
   flex-direction: column;
   width: 960px;
   margin: 0 auto;
+  background: $off-white;
 }
+
 
 .group-show-content {
   display: flex;
   flex-direction: row;
   width: 960px;
+  background: $off-white;
 }
 
 .group-show-content-right {
   display: flex;
   flex-direction: column;
-  width: 740px;
+  width: 780px;
+
 }
 
 .group-show-content-right > p,
@@ -173,19 +183,12 @@
   font-size: 18px;
   margin-left: 10px;
   border: 1px solid $off-grey;
-  padding: 10px;
+  border-bottom: none;
+
   margin-bottom: 20px;
-  width: 745px;
+
 }
 
-.event-show-content-main {
-  margin-left: 10px;
-  width: 740px;
-  border: 1px solid $off-grey;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-}
 
 .event-show-content-main > p {
   font-size: 16px;
