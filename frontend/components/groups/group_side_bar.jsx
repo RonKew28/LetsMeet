@@ -14,7 +14,19 @@ class GroupSideBar extends React.Component {
   }
 
   render() {
+    let upcomingEventsCount = 0;
     if(this.props.group) {
+      this.props.group.events.forEach((event) => {
+          let currentDate = Date.now();
+          let date = new Date(event.date).toLocaleDateString();
+          let time = new Date(event.time).toLocaleTimeString();
+          let eventDateValue = new Date(date + " " + time).valueOf();
+          if (eventDateValue > currentDate) {
+            upcomingEventsCount += 1;
+          }
+        });
+
+
       return(
         <div className='group-sidebar-container'>
           <ul>
@@ -36,11 +48,11 @@ class GroupSideBar extends React.Component {
             <li id='member-count-sidebar'>
               <Link to={`groups/${this.props.group.id}/members`}>
               <span># of Members</span></Link>
-              <span><Link to={`groups/${this.props.group.id}/members`}>{this.state.group.member_count}</Link></span>
+              <span>{this.state.group.member_count}</span>
             </li>
             <li>
-              <span>Upcoming meetings</span>
-              <span>{this.props.eventCount}</span>
+              <span>Upcoming events</span>
+              <span>{upcomingEventsCount}</span>
             </li>
             <li>
               <span>Our calendar</span>

@@ -20,26 +20,43 @@
 
 }
 
+#member-header {
+  font-size: 24px;
+  height: 24px;
+  font-weight: bold;
+
+}
+
 .member-pic {
   width: 50px;
   height: 50px;
   border-radius: 15px;
 }
 
+.group-member-container {
+  border: 1px solid $off-grey;
+  border-bottom: none;
+  margin-left: 10px;
+  width: 740px;
+  margin-bottom: 10px;
+}
+
 .group-member-list {
   display: flex;
   flex-direction: column;
-  width: 740px;
+  background: white;
+  border-bottom: 1px solid $off-grey;
+
 }
+
+
 
 .group-member-list > ul {
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  padding: 15px;
   justify-content: flex-start;
   align-items: center;
-  width: 350px;
-  border: 1px solid $off-grey;
   margin-bottom: 10px;
   background: white;
 }

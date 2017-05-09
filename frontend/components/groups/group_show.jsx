@@ -12,7 +12,19 @@ class GroupShow extends React.Component {
     super(props);
     this.handleLeave = this.handleLeave.bind(this);
     this.handleJoin = this.handleJoin.bind(this);
+    this.homeSelector = this.homeSelector.bind(this);
+    this.memberSelector = this.memberSelector.bind(this);
+
   }
+
+  homeSelector() {
+    return this.props.location.pathname.slice(-7) !== "members" ? "left-group-nav-selected" : "";
+  }
+
+  memberSelector() {
+    return this.props.location.pathname.slice(-7) === "members" ? "left-group-nav-selected" : "";
+  }
+
 
   componentDidMount() {
     this.props.fetchGroup(this.props.groupId);
@@ -77,8 +89,8 @@ class GroupShow extends React.Component {
             <div className='group-lower-nav'>
               <div className='left-group-nav'>
                 <ul>
-                  <li id="home-link">{homeLink}</li>
-                  <li>{membersLink}</li>
+                  <li className={this.homeSelector()}>{homeLink}</li>
+                  <li className={this.memberSelector()}>{membersLink}</li>
                 </ul>
               </div>
               <div className='right-group-nav'>

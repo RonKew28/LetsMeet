@@ -3,3 +3,4 @@ json.extract! group, :id, :name, :description, :location, :category, :founded_da
 
 json.member_count group.members.length
 json.formatted_date group.founded_date.strftime("%B %d, %Y")
+json.event_count group.events.length
