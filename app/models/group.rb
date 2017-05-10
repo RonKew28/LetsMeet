@@ -1,5 +1,6 @@
 class Group < ApplicationRecord
-
+  include PgSearch
+  pg_search_scope :search_by_details, :against => [:name, :description]
   validates :name, :founded_date, :category, :creator, :description, :location, presence: true
   validates :name, uniqueness: true
 

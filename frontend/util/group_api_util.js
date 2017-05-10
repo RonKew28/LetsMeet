@@ -35,6 +35,13 @@ export const deleteGroup = (id) => {
   });
 };
 
+export const searchGroups = (search) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/groups/search?search=${search}'
+  });
+};
+
 export const createMembership = (groupId, userId) => {
   return $.ajax({
     method: 'POST',

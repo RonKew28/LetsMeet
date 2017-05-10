@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
+    get '/groups/search', to: 'groups#search'
+
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
     resources :groups, only: [:create, :update, :destroy, :show, :index] do
