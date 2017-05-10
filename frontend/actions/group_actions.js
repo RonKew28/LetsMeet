@@ -48,6 +48,13 @@ export const deleteGroup = id => dispatch => {
   );
 };
 
+export const searchGroups = (search) => dispatch => {
+  return(
+    GroupAPIUtil.searchGroups(search)
+    .then(groups => dispatch(receiveGroups(groups)))
+  );
+};
+
 export const createMembership = (groupId, userId) => dispatch => {
   return(
     GroupAPIUtil.createMembership(groupId, userId)
