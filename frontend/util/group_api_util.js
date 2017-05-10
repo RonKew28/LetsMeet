@@ -38,7 +38,7 @@ export const deleteGroup = (id) => {
 export const searchGroups = (search) => {
   return $.ajax({
     method: 'GET',
-    url: '/api/groups/search?search=${search}'
+    url: `/api/groups/search?search=${search}`
   });
 };
 
