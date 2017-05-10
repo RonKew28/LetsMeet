@@ -19,6 +19,6 @@ export const selectEvent = ({ events }, id) => {
    return event;
 };
 
-export const eventsArray = ({ events }) => (
+export const eventsArray = (events) => (
   Object.keys(events).map(key => events[key])
 );

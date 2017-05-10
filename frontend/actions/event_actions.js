@@ -48,6 +48,13 @@ export const deleteEvent = id => dispatch => {
   );
 };
 
+export const searchEvents = (search) => dispatch => {
+  return(
+    EventAPIUtil.searchEvents(search)
+    .then(events => dispatch(receiveEvents(events)))
+  );
+};
+
 export const createRsvp = (eventId) => {
   return (dispatch) => {
     return EventAPIUtil.createRsvp(eventId)

@@ -38,7 +38,7 @@ class GroupSearchResults extends React.Component {
     });
 
     return (
-      <ul className='flexthis'>
+      <ul className={this.props.toggleState}>
         {groupList}
       </ul>
     );
