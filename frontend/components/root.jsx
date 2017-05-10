@@ -19,6 +19,7 @@ import EditEventContainer from './events/edit_event_container';
 import GroupBody from './groups/group_body';
 import GroupMembers from './groups/group_members';
 import HomePage from './welcome_page/home_page';
+import SearchBarContainer from './search/search_bar_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -51,6 +52,7 @@ const Root = ({ store }) => {
         </Route>
         <Route path='groups/:groupId/edit' component={EditGroupContainer} onEnter={_ensureLoggedIn} />
         <Route path='events/:eventId/edit' component={EditEventContainer} onEnter={_ensureLoggedIn} />
+        <Route path='search' component={ SearchBarContainer} />
       </Route>
     </Router>
   </Provider>

@@ -1,19 +1,21 @@
 import React from 'react';
-import { withRouter } from 'react-router';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 import { fetchGroups } from '../../actions/group_actions';
+import { Link, withRouter, hashHistory} from 'react-router';
 import { groupsArray } from '../../reducers/selectors';
-import SearchBarContainer from '../search/search_bar_container';
 
-
-class HomePage extends React.Component {
+class GroupSearchResults extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {groups: [] };
   }
+
   componentDidMount() {
     this.props.fetchGroups();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ groups: nextProps.groups });
   }
 
   render() {
@@ -22,7 +24,7 @@ class HomePage extends React.Component {
     }
 
     let groupList = [];
-    this.props.groups.forEach((group) => {
+    this.state.groups.forEach((group) => {
       groupList.push(
         <li className="welcome-group-container" key={group.id}>
           <ul className='welcome-img-container'>
@@ -36,27 +38,23 @@ class HomePage extends React.Component {
     });
 
     return (
-      <ul className='flexthis animated slideInUp'>
+      <ul className='flexthis'>
         {groupList}
       </ul>
     );
   }
 }
 
-
-
-
 const mapStateToProps = (state) => {
-  return ({
+  return {
     groups: groupsArray(state.groups),
-    currentUser: state.session.currentUser
-  });
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {fetchGroups: () => dispatch(fetchGroups())};
+  return {
+    fetchGroups: () => dispatch(fetchGroups())
+  };
 };
 
-export default connect(
-  mapStateToProps, mapDispatchToProps
-)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(GroupSearchResults);
