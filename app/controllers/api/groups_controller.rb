@@ -36,6 +36,11 @@ class Api::GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def search
+    @groups = Group.includes(:members).search_by_details(params[:search])
+    render :search
+  end
+
 
   private
   def group_params
