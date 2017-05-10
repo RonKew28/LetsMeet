@@ -56,16 +56,16 @@ class EventsSearchResults extends React.Component {
       return a[1] - b[1];
     });
 
-    let orderedEventList = [];
+    let orderedEventsList = [];
     eventList.forEach((eventItem) => {
-      orderedEventList.push(eventItem[0]);
+      orderedEventsList.push(eventItem[0]);
     });
 
 
 
     return (
       <ul className={this.props.toggleState}>
-        {orderedEventList}
+        {orderedEventsList}
       </ul>
     );
   }
