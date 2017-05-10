@@ -1,0 +1,81 @@
+
+.search-container {
+  width: 950px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+.search-bar {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  margin: 20px 0;
+  padding: 8px;
+  height: 65px;
+  width: 950px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.search-bar-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.search-bar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.search-button {
+  background: black;
+  border: 1px solid white;
+  margin: 10px 0;
+  padding: 10px 50px;
+  font-size: 20px;
+  border-radius: 4px;
+
+}
+
+.search-input {
+  width: 230px;
+  background-color: white;
+  margin-right: 10px;
+  padding: 10px 50px;
+  border-radius: 4px;
+}
+
+
+
+.search-hidden {
+  display: none;
+}
+
+.groups-search-results-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.events-search-results-items {
+  width: 950px;
+  align-items: center;
+  border: 1px solid $off-grey;
+  margin-bottom: 20px;
+
+
+}

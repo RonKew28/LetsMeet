@@ -1,4 +1,4 @@
-json.extract! event, :id, :name, :description, :location_name, :location_address, :time, :date, :organizer_id
+json.extract! event, :id, :group_id, :name, :description, :location_name, :location_address, :time, :date, :organizer_id
 
 json.attendee_count event.attendees.length
 

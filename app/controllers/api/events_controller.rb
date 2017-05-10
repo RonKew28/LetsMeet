@@ -39,6 +39,12 @@ class Api::EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def search
+    debugger
+    @events= Event.includes(:group, :organizer, :attendees).search_by_details(params[:search]).order(:date)
+    render :search
+  end
+
   private
   def event_params
     params.require(:event).permit(:id, :name, :description, :date, :time, :group_id, :group, :organizer_id, :location_name, :location_address, :rsvps, :attendees)

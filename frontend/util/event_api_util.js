@@ -35,6 +35,13 @@ export const deleteEvent = (id) => {
   });
 };
 
+export const searchEvents = (search) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/events/search?search=${search}`
+  });
+};
+
 export const createRsvp = (eventId, memberId) => {
   return $.ajax({
     method: 'POST',
