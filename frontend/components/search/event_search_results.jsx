@@ -67,6 +67,7 @@ class EventsSearchResults extends React.Component {
     });
 
     let fullCalendar = [];
+    
     Object.keys(nextSevenDays).forEach((day) => {
       let dayItem = (
         <div className="search-day-container">
