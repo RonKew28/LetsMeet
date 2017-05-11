@@ -40,7 +40,6 @@ class Api::EventsController < ApplicationController
   end
 
   def search
-    debugger
     @events= Event.includes(:group, :organizer, :attendees).search_by_details(params[:search]).order(:date)
     render :search
   end

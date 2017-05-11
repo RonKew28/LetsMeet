@@ -18,6 +18,13 @@ class Group < ApplicationRecord
     through: :memberships,
     source: :member
 
+  has_many :category_groups
+    dependent: :destroy
+
+  has_many :categories,
+  through: :category_groups,
+  source: :category
+
   def save_and_join
     transaction do
       self.founded_date = Date.new()
