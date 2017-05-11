@@ -27,10 +27,19 @@ class EventsSearchResults extends React.Component {
       return <h1>Loading</h1>;
     }
 
+    for(let i = 0; i < 7; i++) {
+
+    }
+
+
+
     let eventList = [];
     let currentDate = Date.now();
+
+
     this.state.events.forEach((event) => {
       let date = new Date(event.date).toLocaleDateString();
+      debugger
       let time = new Date(event.time).toLocaleTimeString();
       let eventDateValue = new Date(date + " " + time).valueOf();
 
