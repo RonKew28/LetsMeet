@@ -55,6 +55,13 @@ export const searchGroups = (search) => dispatch => {
   );
 };
 
+export const fetchGroupsByCategory = (category) => dispatch => {
+  return(
+    GroupAPIUtil.fetchGroupsByCategory(category)
+    .then(groups => dispatch(receiveGroups(groups)))
+  );
+};
+
 export const createMembership = (groupId, userId) => dispatch => {
   return(
     GroupAPIUtil.createMembership(groupId, userId)
