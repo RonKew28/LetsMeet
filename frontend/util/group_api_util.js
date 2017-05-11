@@ -42,6 +42,14 @@ export const searchGroups = (search) => {
   });
 };
 
+export const fetchGroupsByCategory = (category) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/category',
+    data: { category }
+  });
+};
+
 export const createMembership = (groupId, userId) => {
   return $.ajax({
     method: 'POST',
