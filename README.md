@@ -5,7 +5,7 @@ Check out a live version of LetsMeet here: [LetsMeet Live][letsmeet]
 [letsmeet]: https://lets-meet-app.herokuapp.com/
 
 LetsMeet is a full-stack web application inspired by Meetup. The application allows users can join groups that they are interested in and participate in events. It utilizes Ruby on Rails with a PostgreSQL database on the backend, and React.js with a Redux architectural framework on the frontend.
-Go on the website, find people who share similar passions, and [LetsMeet!][letsmeet].
+Go on the website, find people who share similar passions, and [LetsMeet!][letsmeet]
 
 ## Features and Implementation
 
