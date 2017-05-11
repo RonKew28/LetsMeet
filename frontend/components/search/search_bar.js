@@ -57,20 +57,22 @@ class SearchBar extends React.Component {
   render() {
 
     return(
-      <div className="search-container flexthis">
-        <div className="search-bar">
-          <div className="search-bar-left">
-            <input className="search-input" type="text" onChange={this.handleUpdateSearch} onKeyPress={this.handleKeyPress} value={this.state.search}/>
-            <label>Search</label>
-        </div>
-          <div className="search-bar-right">
-            <button onClick={this.showGroupsResults} className="search-button">Groups</button>
-            <button onClick={this.showEventsResults} className="search-button">Calendar</button>
+      <div className="search-main">
+        <div className="search-container flexthis">
+          <div className="search-bar">
+            <div className="search-bar-left">
+              <input className="search-input" type="text" onChange={this.handleUpdateSearch} onKeyPress={this.handleKeyPress} value={this.state.search}/>
+              <label>Search</label>
           </div>
-        </div>
-          <div>
-            <GroupSearchResults toggleState={this.toggleGroupsResults()} />
-            <EventSearchResults toggleState={this.toggleEventsResults()} groups={this.props.groups} />
+            <div className="search-bar-right">
+              <button onClick={this.showGroupsResults} className="search-button">Groups</button>
+              <button onClick={this.showEventsResults} className="search-button">Calendar</button>
+            </div>
+          </div>
+            <div>
+              <GroupSearchResults toggleState={this.toggleGroupsResults()} />
+              <EventSearchResults toggleState={this.toggleEventsResults()} groups={this.props.groups} />
+            </div>
           </div>
         </div>
     );

@@ -26,9 +26,11 @@ class EventsSearchResults extends React.Component {
     if(!this.props.events) {
       return <h1>Loading</h1>;
     }
-
+    let nextSevenDays = {};
     for(let i = 0; i < 7; i++) {
-
+      let day = new Date().getDate() + i;
+      let dateItem = new Date(new Date().setDate(day)).toDateString();
+      nextSevenDays[dateItem] = [];
     }
 
 
@@ -39,15 +41,17 @@ class EventsSearchResults extends React.Component {
 
     this.state.events.forEach((event) => {
       let date = new Date(event.date).toLocaleDateString();
-      debugger
       let time = new Date(event.time).toLocaleTimeString();
       let eventDateValue = new Date(date + " " + time).valueOf();
+      let lastDate = new Date(new Date().setDate(new Date().getDate() + 6));
 
-      if (eventDateValue > currentDate) {
+      let dateStr = new Date(event.date).toDateString();
+
+      if (eventDateValue > currentDate && new Date(dateStr)<= lastDate) {
         let eventItem = (
           <li key={event.id}>
-            <ul className="group-event-item">
-              <li><Link to={`groups/${event.group_id}/events/${event.id}`}>
+            <ul className="day-events">
+              <li id="hello"><Link to={`groups/${event.group_id}/events/${event.id}`}>
                 <span>{event.name}</span></Link></li>
 
               <li><span>{event.location_name}</span></li>
@@ -57,24 +61,28 @@ class EventsSearchResults extends React.Component {
 
             </ul>
           </li>);
-        eventList.push([eventItem, eventDateValue]);
+
+        nextSevenDays[dateStr].push(eventItem);
       }
     });
 
-    eventList.sort( function(a, b) {
-      return a[1] - b[1];
+    let fullCalendar = [];
+    Object.keys(nextSevenDays).forEach((day) => {
+      let dayItem = (
+        <div className="search-day-container">
+          <h1 id="search-day">{day}</h1>
+          {nextSevenDays[day]}
+        </div>
+      );
+      fullCalendar.push(dayItem);
     });
 
-    let orderedEventsList = [];
-    eventList.forEach((eventItem) => {
-      orderedEventsList.push(eventItem[0]);
-    });
 
 
 
     return (
       <ul className={this.props.toggleState}>
-        {orderedEventsList}
+        {fullCalendar}
       </ul>
     );
   }

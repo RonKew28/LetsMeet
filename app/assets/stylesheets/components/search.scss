@@ -8,6 +8,9 @@
   margin: 0 auto;
 }
 
+.search-main {
+  background-color: $off-white;
+}
 
 
 .search-bar {
@@ -76,8 +79,46 @@
 .events-search-results-items {
   width: 950px;
   align-items: center;
-  border: 1px solid $off-grey;
   margin-bottom: 20px;
 
 
+}
+
+
+.search-day-container > h1 {
+  font-family: $labels-sans-serif;
+  font-size: 14px;
+}
+
+#search-day {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.day-events {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid $off-grey;
+  border-radius: 4px;
+}
+
+.day-events > ul:last-child {
+  border-bottom: none;
+}
+
+
+.day-events > li {
+  font-size: 20px;
+  font-weight: 400;
+
+}
+
+
+.day-events > li > span {
+  font-size: 16px;
+  color: black;
+  text-shadow: none;
 }
