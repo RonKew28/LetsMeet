@@ -2,6 +2,7 @@
   display: inline-block;
   height: 300px;
   width: 100%;
+  margin-bottom: 400px;
 }
 
 #video {
@@ -53,6 +54,7 @@
 
 .video-signup:hover {
   background-color: $main-red-hover;
+  cursor: pointer;
 }
 
 #welcome-group-img {

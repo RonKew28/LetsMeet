@@ -27,7 +27,7 @@ const mapStateToProps = (state, ownProps) => {
     attendeeType = "organizer";
   } else if (currentUser && attendeeIds.includes(currentUser.id)) {
     attendeeType = "attendee";
-  } else if (currentUser) {
+  } else {
     attendeeType = "nonattendee";
   }
   return {

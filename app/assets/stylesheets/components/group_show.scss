@@ -158,7 +158,7 @@
 .group-show-container {
   display: flex;
   flex-direction: column;
-  width: 960px;
+  width: 100%;
   margin: 0 auto;
   background: $off-white;
 }
@@ -167,6 +167,8 @@
 .group-show-content {
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
+
   width: 960px;
   background: $off-white;
 }

@@ -1,9 +1,7 @@
 // Place all the styles related to the api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background-color: $off-white;
-}
+
 
 .red-button {
 	background-color: $main-red;
@@ -25,9 +23,14 @@ body {
 .main-nav {
 	display: flex;
 	justify-content: space-between;
-	padding: 5px 10px;
+	align-items: center;
+	padding: 10px 5px;
 	border-bottom: 1px solid $off-grey;
 
+}
+
+.left-nav, .right-nav, .center-nav {
+	width: 33%;
 }
 
 .left-nav > ul,
@@ -35,17 +38,32 @@ body {
 .center-nav > ul {
 	display: flex;
 	align-items: center;
-  cursor: pointer;
+}
+
+.left-nav  > ul {
+	justify-content: flex-start;
+}
+
+.right-nav > ul {
+	justify-content: flex-end;
+}
+
+#user-greeting {
+	cursor: auto;
+}
+
+.center-nav > ul {
+	justify-content: center;
 }
 
 .left-nav > ul > li,
 .right-nav > ul > li {
+	font-family: $labels-sans-serif;
   font-size: 16px;
-  font-weight: 500;
-  padding: 15px 15px;
+  font-weight: bold;
+  margin: 0 15px;
   cursor: pointer;
   text-align: center;
-  // margin-bottom: 16px;
 
 }
 //
@@ -54,7 +72,7 @@ body {
   color: white;
   padding: 8px 15px;
   border-radius: 3px;
-  // margin-bottom: 16px;
+
   font-size: 16px;
   text-align: center;
   font-weight: 500;
@@ -64,12 +82,21 @@ body {
   background-color: $main-red-hover;
 }
 
+
+
+
+
+
 #logo {
   color: $red-text;
-  font-size: 22px;
+
+	border-radius: 20px;
+	padding: 5px 12px;
+  font-size: 28px;
   font-weight: bold;
   align-text: center;
-  font-family: cursive;
+  font-family: $logo-font;
+	border: 2px solid $red-text;
 }
 
 
@@ -78,30 +105,42 @@ body {
 .session-form {
   text-align: left;
   display: absolute;
-  background-color: 'white';
-  border: 1px solid #DDD;
+  background-color: 'red';
+  border-top: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  border-left: 1px solid #DDD;
   width: 450px;
   padding: 20px 20px;
   margin: 0 auto;
+  background-color: white;
+}
+
+.session-form:last-of-type {
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 160px;
+}
+
+.session-form:first-of-type {
+  margin-top: 60px;
 }
 .entire-session-form {
-  background-color: "white";
+  background-color: $off-white;
   display: flex;
   flex-direction: column;
-  margin: 60px auto;
 
 }
 .session-form label {
   background-color: white;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: bold;
+  font-family: $labels-sans-serif;
 
   // padding: 10px 10px;
 
 }
 
 .session-form input[type=text], input[type=password]{
-  background-color: $off-white;
+  background-color: #f6ffcc;
   font-size: 16px;
   box-sizing: border-box;
   width: 400px;
@@ -129,9 +168,13 @@ body {
   text-align: left;
 }
 
-.left-nav {
-  margin-top: 15px;
+.intro-text span {
+  font-family: $labels-sans-serif;
+  font-weight: bold;
+  font-size: 14px;
 }
+
+
 
 
 

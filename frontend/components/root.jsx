@@ -43,9 +43,9 @@ const Root = ({ store }) => {
         <Route path='/home' component={HomePage} />
         <Route path="/login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="/signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
-        <Route path="/create" component={ GroupFormContainer } />
-        <Route path='groups/:groupId/events/new' component={EventFormContainer} />
-        <Route path='/groups/:groupId' component={GroupShowContainer} onEnter={_ensureLoggedIn}>
+        <Route path="/create" component={ GroupFormContainer } onEnter={_ensureLoggedIn}/>
+        <Route path='groups/:groupId/events/new' component={EventFormContainer} onEnter={_ensureLoggedIn} />
+        <Route path='/groups/:groupId' component={GroupShowContainer}>
           <IndexRoute component={GroupBody} />
           <Route path='events/:eventId' component={EventShowContainer} />
           <Route path='members' component={GroupMembers} />

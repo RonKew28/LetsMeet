@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
       memberType = "owner";
     } else if (currentUser && memberIds.includes(currentUser.id)) {
       memberType = "member";
-    } else if (currentUser) {
+    } else {
       memberType = "nonmember";
     }
   }
