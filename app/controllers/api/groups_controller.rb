@@ -8,6 +8,12 @@ class Api::GroupsController < ApplicationController
   def create
     @group = current_user.created_groups.new(group_params)
     if @group.save_and_join
+      if params['group']['categorizations']
+        params['group']['categorizations'].each do |categorization|
+          category = Category.find_by(title: categorization)
+          CategoryGroup.create(group_id: @group.id, :category_id: category.id)
+        end
+      end
       render :show
     else
       render json: @group.errors.messages, status: 422
@@ -41,6 +47,11 @@ class Api::GroupsController < ApplicationController
     render :search
   end
 
+  def category
+    category_id = Category.find_by(title: params[:category]).id
+    @groups = Group.includes(:members).joins(:categories).where("categories.id = ?", category_id)
+  end
+
 
   private
   def group_params
@@ -54,7 +65,8 @@ class Api::GroupsController < ApplicationController
       :location,
       :founded_date,
       :memberships,
-      :members)
+      :members,
+      :categorizations)
 
   end
 end
