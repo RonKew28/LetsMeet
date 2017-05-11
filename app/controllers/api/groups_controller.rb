@@ -11,7 +11,7 @@ class Api::GroupsController < ApplicationController
       if params['group']['categorizations']
         params['group']['categorizations'].each do |categorization|
           category = Category.find_by(title: categorization)
-          CategoryGroup.create(group_id: @group.id, :category_id: category.id)
+          CategoryGroup.create(group_id: @group.id, category_id: category.id)
         end
       end
       render :show

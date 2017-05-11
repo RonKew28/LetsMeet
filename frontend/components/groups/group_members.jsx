@@ -42,13 +42,13 @@ class GroupMembers extends React.Component {
     });
 
     return(
-      <div className="event-show-content-main">
+
       <ul>
         <div className="group-member-container">
           {memberList}
         </div>
       </ul>
-      </div>
+    
     );
   }
 }

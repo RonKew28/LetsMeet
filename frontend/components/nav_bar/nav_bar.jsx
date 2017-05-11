@@ -31,17 +31,17 @@ import Modal from 'react-modal';
           <li><Link to='/create'>Create a LetsMeet group</Link></li>
         </ul>
       </nav>
-      <nav className="left-nav">
+      <nav className="center-nav">
         <ul>
-          <li></li>
+          <li><Link to='/'><h1 id='logo'>Let's Meet!</h1></Link></li>
         </ul>
       </nav>
       <nav className='right-nav'>
           <ul>
             <li><button onClick={logout}>Log out</button></li>
-            <li>Hello, {currentUser.username}</li>
-            <li><Link to='/home'><img id="profile-pic" src={currentUser.profile_pic_url}/></Link></li>
-            <li><Link to='/home'>View Profile</Link></li>
+            <li id="user-greeting">Hello, {currentUser.username}</li>
+            <li><Link to='/search'><img id="profile-pic" src={currentUser.profile_pic_url}/></Link></li>
+            <li><Link to='/search'>Search</Link></li>
           </ul>
       </nav>
     </header>

@@ -54,6 +54,7 @@
   flex-direction: row;
   padding: 15px;
   background: white;
+  border-bottom: 1px solid $off-grey;
 
 }
 
@@ -94,6 +95,7 @@
   margin-left: 10px;
   border-radius: 4px;
   margin-bottom: 20px;
+  background: white;
 }
 
 .rsvp-container {
@@ -117,6 +119,11 @@
 .event-show-content-main {
   width: 780px;
   text-align: left;
+  border: 1px solid $off-grey;
+  padding: 10px;
+  background: white;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
 .event-member-list {

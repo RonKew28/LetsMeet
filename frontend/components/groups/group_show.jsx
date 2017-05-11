@@ -14,6 +14,7 @@ class GroupShow extends React.Component {
     this.handleJoin = this.handleJoin.bind(this);
     this.homeSelector = this.homeSelector.bind(this);
     this.memberSelector = this.memberSelector.bind(this);
+    this.groupButtons = this.groupButtons.bind(this);
 
   }
 
@@ -42,9 +43,13 @@ class GroupShow extends React.Component {
     });
   }
   handleJoin() {
-    this.props.createMembership(this.props.groupId, this.props.currentUser.id).then(() => {
-      this.props.router.push(`groups/${this.props.groupId}`);
-    });
+    if(!this.props.currentUser) {
+      this.props.router.push("/login");
+    } else {
+        this.props.createMembership(this.props.groupId, this.props.currentUser.id).then(() => {
+          this.props.router.push(`groups/${this.props.groupId}`);
+      });
+    }
   }
 
   groupButtons() {
