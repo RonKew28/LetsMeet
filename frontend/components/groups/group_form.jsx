@@ -11,7 +11,7 @@ class GroupForm extends React.Component {
       name: "",
       location: "",
       description: "",
-      category: ""
+      category: "",
     };
 
   }

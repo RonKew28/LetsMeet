@@ -27,7 +27,7 @@ class Group < ApplicationRecord
 
   def save_and_join
     transaction do
-      self.founded_date = Date.new()
+      self.founded_date = Date.parse(Time.now.to_s)
       save
       Membership.create(group_id: self.id, member_id: creator.id)
     end
