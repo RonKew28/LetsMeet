@@ -8,7 +8,7 @@
 
 .group-nav-name {
   color: white;
-  padding: 40px 0;
+  padding: 20px 0;
   margin-top: 20px;
   box-sizing: border-box;
   font-size: 40px;
@@ -52,8 +52,10 @@
 
 .left-group-nav > ul > li {
   margin: 0 10px;
-  padding: 8px;
+  padding: 6px 8px;
   border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 
@@ -74,7 +76,9 @@
 .right-group-nav > ul > li {
   background-color: $main-red;
   margin: 0 10px;
-  padding: 8px 15px;
+  padding: 6px 8px;
+  font-size: 16px;
+  cursor: pointer;
   color: white;
   border-radius: 3px;
 }
@@ -144,7 +148,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 
@@ -182,7 +186,7 @@
 
 .group-show-content-right > p,
 .group-show-content-right > ul {
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 10px;
   border: 1px solid $off-grey;
   border-bottom: none;
@@ -190,6 +194,7 @@
   margin-bottom: 20px;
 
 }
+
 
 
 .event-show-content-main > p {
@@ -204,4 +209,51 @@
 
 .event-show-content-main > h2 {
   font-size: 20px;
+}
+
+.group-show-date-loc {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 500;
+  font-weight: bold;
+
+}
+
+
+.group-show-date-loc > span{
+  margin-right: 10px;
+
+}
+
+.group-show-date-loc-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.group-show-date-icon {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.group-show-loc-icon {
+  margin-right: 15px;
+}
+.group-show-date-loc-info > li {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.group-show-date-loc-info > li:last-child{
+  font-size: 12px;
+}
+
+.group-show-time-address{
+  font-size: 12px;
+}
+
+.group-show-time-address > span{
+  margin-left: 25px;
 }

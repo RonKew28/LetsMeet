@@ -53,16 +53,54 @@ class GroupBody extends React.Component {
           let time = new Date(event.time).toLocaleTimeString();
           let eventDateValue = new Date(date + " " + time).valueOf();
 
+
+          let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+          let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          let eventName = event.name;
+          let date2 = new Date(event.date);
+          let dayOfWeek = days[date2.getDay()];
+          let month = months[date2.getMonth()];
+          let day = date2.getDate();
+          let year = date2.getFullYear();
+          let dateString = dayOfWeek + ", " + month + " " + day + ", " + year;
+
+          let time2 = new Date(event.time).toLocaleTimeString();
+          let timeOfDay = time2.slice(-3);
+          let timeIdx = time2.length -6;
+          let timeString = time2.substring(0, timeIdx) + timeOfDay;
+
+          let locationName = event.location_name;
+          let locationAddress = event.location_address;
+
+
+
+
           let eventItem = (
             <li key={event.id}>
               <ul className="group-event-item">
                 <li id="hello"><Link to={`groups/${this.props.groupId}/events/${event.id}`}>
                   <span id="this">{event.name}</span></Link></li>
 
-                <li><span>{event.location_name}</span></li>
-                <li><span id="event-loc-address">{event.location_address}</span></li>
-                  <li><span>{date}</span></li>
-                  <li><span>{time}</span></li>
+                    <div className='group-show-date-loc'>
+                      <div className='group-show-date-icon'>
+                      <i className="fa fa-clock-o" aria-hidden="true"></i>
+                      </div>
+                      <br/>
+                      <ul className="group-show-date-loc-info">
+                        <li>{dateString}</li>
+                        <li>{timeString}</li>
+                      </ul>
+                    </div>
+                    <div className='group-show-date-loc'>
+                      <div className='group-show-loc-icon'>
+                      <i className="fa fa-map-marker" aria-hidden="true"></i>
+                      </div>
+                      <br/>
+                      <ul className="group-show-date-loc-info">
+                        <li>{locationName}</li>
+                        <li>{locationAddress}</li>
+                      </ul>
+                    </div>
 
               </ul>
             </li>);

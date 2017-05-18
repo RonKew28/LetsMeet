@@ -30,7 +30,7 @@
 }
 
 .event-list-container {
-  border-radius: 4px;
+
 }
 
 #hello {
@@ -42,11 +42,12 @@
 }
 
 #event-description {
-  margin-left: 15px;
+  margin-left: 10px;
   border-radius: 4px;
   background: white;
   border: 1px solid $off-grey;
   padding: 10px;
+  line-height: 22px;
 }
 
 .event-list-buttons {
@@ -102,11 +103,16 @@
   font-size: 14px;
   display: flex;
   flex-direction: row;
+
 }
 
 .rsvp-container h2 {
   font-size: 24px;
   font-weight: 900;
+}
+
+.rsvp-container h3 {
+  font-size: 15px;
 }
 
 .rsvp-mini  {
@@ -120,32 +126,102 @@
   width: 780px;
   text-align: left;
   border: 1px solid $off-grey;
-  padding: 10px;
+  border-radius: 4px;
+  padding: 20px;
   background: white;
   margin-left: 10px;
   margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+
+.event-show-content-main > p {
+  font-size: 16px;
+  line-height: 19px;
 }
 
 .event-member-list {
+  font-family: $labels-sans-serif;
+  font-weight: bold;
   list-style: none;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+
   img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 
+  padding-right: 8px;
+
+}
+
+.event-member-list li {
+  padding-bottom: 15px;
+}
+
+.event-member-list li:first-of-type {
+  padding-right: 10px;
+}
+
+.event-show-date-loc {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 500;
+  font-weight: bold;
+
+}
+
+
+.event-show-date-loc > span{
+  margin-right: 10px;
+
+}
+
+.event-show-date-loc-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.event-show-date-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.event-show-loc-icon {
+  margin-right: 15px;
+}
+.event-show-date-loc-info > li {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.event-show-date-loc-info > li:last-child{
+  font-size: 16px;
+}
+
+.event-show-time-address{
+  font-size: 16px;
+}
+
+.event-show-time-address > span{
+  margin-left: 25px;
 }
 
 .members-container {
   h2 {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     margin: 20px 0;
   }
 }
+
 
 .event-show-content-container {
   width: 745px;

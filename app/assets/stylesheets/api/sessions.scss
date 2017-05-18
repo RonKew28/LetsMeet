@@ -22,15 +22,25 @@
 
 .main-nav {
 	display: flex;
-	justify-content: space-between;
+	width: 100%;
+	min-width: 900px;
 	align-items: center;
 	padding: 10px 5px;
 	border-bottom: 1px solid $off-grey;
 
+
 }
 
-.left-nav, .right-nav, .center-nav {
-	width: 33%;
+.right-nav{
+	width: 40%;
+}
+
+.left-nav {
+	width: 40%;
+}
+
+.center-nav {
+	width: 20%;
 }
 
 .left-nav > ul,
@@ -106,9 +116,9 @@
   text-align: left;
   display: absolute;
   background-color: 'red';
-  border-top: 1px solid #DDD;
-  border-right: 1px solid #DDD;
-  border-left: 1px solid #DDD;
+  border-top: 1px solid $off-grey;
+  border-right: 1px solid $off-grey;
+  border-left: 1px solid $off-grey;
   width: 450px;
   padding: 20px 20px;
   margin: 0 auto;
@@ -116,7 +126,7 @@
 }
 
 .session-form:last-of-type {
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid $off-grey;
     margin-bottom: 160px;
 }
 
@@ -144,7 +154,7 @@
   font-size: 16px;
   box-sizing: border-box;
   width: 400px;
-  border: 1px solid #DDD;
+  border: 1px solid $off-grey;
   margin-bottom: 30px;
   margin-top: 10px;
   line-height: 32px;

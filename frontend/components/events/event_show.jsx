@@ -44,7 +44,7 @@ class EventShow extends React.Component {
           <ul>
             <li>
               <h2>Want to go?</h2>
-              <h3>Your RSVP (click to change):</h3><button onClick={this.handleDeleteRsvp} className="rsvp-button">YES</button>
+              <h3>RSVP (click to change):</h3><button onClick={this.handleDeleteRsvp} className="rsvp-button">YES</button>
             </li>
           </ul>
         );
@@ -53,7 +53,7 @@ class EventShow extends React.Component {
           <ul>
             <li>
               <h2>Want to go?</h2>
-              <h3>Your RSVP (click to change):</h3><button onClick={this.handleCreateRsvp} className="rsvp-button">NO</button>
+              <h3>RSVP (click to change):</h3><button onClick={this.handleCreateRsvp} className="rsvp-button">NO</button>
             </li>
           </ul>
         );
@@ -64,7 +64,7 @@ class EventShow extends React.Component {
               <h1>Want to go?</h1>
             </div>
             <div>
-              <h4>Your RSVP:</h4>
+              <h3>RSVP:</h3>
               <button id="rsvp-button" onClick={this.handleCreateRsvp} className="rsvp-button">Join us!</button>
             </div>
 
@@ -89,9 +89,50 @@ class EventShow extends React.Component {
       );
 
     });
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let eventName = this.props.event.name;
+    let date = new Date(this.props.event.date);
+    let dayOfWeek = days[date.getDay()];
+    let month = months[date.getMonth()];
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let dateString = dayOfWeek + ", " + month + " " + day + ", " + year;
+
+    let time = new Date(this.props.event.time).toLocaleTimeString();
+    let timeOfDay = time.slice(-3);
+    let timeIdx = time.length -6;
+    let timeString = time.substring(0, timeIdx) + timeOfDay;
+
+    let locationName = this.props.event.location_name;
+    let locationAddress = this.props.event.location_address;
+
     return(
           <div className='event-show-content-container'>
             <div className='event-show-content-main'>
+              <h1>{eventName}</h1>
+              <br/>
+              <div className='event-show-date-loc'>
+                <div className='event-show-date-icon'>
+                <i className="fa fa-clock-o" aria-hidden="true"></i>
+                </div>
+                <br/>
+                <ul className="event-show-date-loc-info">
+                  <li>{dateString}</li>
+                  <li>{timeString}</li>
+                </ul>
+              </div>
+              <div className='event-show-date-loc'>
+                <div className='event-show-loc-icon'>
+                <i className="fa fa-map-marker" aria-hidden="true"></i>
+                </div>
+                <br/>
+                <ul className="event-show-date-loc-info">
+                  <li>{locationName}</li>
+                  <li>{locationAddress}</li>
+                </ul>
+              </div>
               <p>{this.props.event.description}</p>
             </div>
             <div className='event-show-right-bar'>
