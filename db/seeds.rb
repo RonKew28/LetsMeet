@@ -66,6 +66,101 @@ group4 = Group.create!(
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/beer_hikes_bg.JPG"
 )
 
+group14 = Group.create!(
+  name: "Tennis Round Robin",
+  category: "Sports",
+  location: "New York, NY",
+  description: "Anyone for tennis?",
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/tennis_bg.jpeg",
+  creator_id: user4.id
+)
+
+group17 = Group.create!(
+  name: "Settlers of Catan Fanatics",
+  category: "Games",
+  location: "New York, NY",
+  description: "Come to play the best Settlers players in New York! We have general gameplay and strategy sessions once a month,
+  and we try to have Settlers tournaments at least once a month. Join us if you love Settlers like us!",
+  founded_date: "2017-03-01",
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/settlers_of_catan_bg.jpg",
+  creator_id: user12.id
+)
+
+group21 = Group.create!(
+  name: "Swing Dancin' in the City",
+  category: "Games",
+  location: "New York, NYC",
+  description: "Come join us for swing dancing! People of all skill levels welcome!",
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/swing_dancing_bg.png",
+  creator_id: user12.id
+)
+
+group22 = Group.create!(
+  name: "Tech Talks",
+  category: "Tech",
+  location: "San Francisco, CA",
+  description: "Come join us for talks hosted by different speakers in the tech industry",
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/tech_talks.png",
+  creator_id: user12.id
+)
+
+group23 = Group.create!(
+  name: "Java Junkies",
+  category: "Tech",
+  location: "Denver, CO",
+  description: "We love to code in java. Come code with us!",
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/java_junkies_bg.jpg",
+  creator_id: user12.id
+)
+
+group24 = Group.create!(
+  name: "Improv Actors and Actresses of San Francisco",
+  category: "Games",
+  location: "San Francisco, CA",
+  description: "Come and learn improve acting! It is the most fun you will ever have!",
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/improv_acting_bg.jpeg",
+  creator_id: user17.id
+)
+
+group15 = Group.create!(
+  name: "Super Smash Bros Fans",
+  category: "Sports",
+  location: "Denver, CO",
+  description: "We play Super Smash Bros. Hardcore.",
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/super_smash_bros_bg.jpeg",
+  creator_id: user4.id
+)
+
+group16 = Group.create!(
+  name: "We Sit On Sofas And Watch TV",
+  category: "Food and Drink",
+  location: "New York, NY",
+  description: "Do you love sitting on your sofa and watching TV, but often feel
+  lonely doing so? Then come join us!",
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/sit_tv_bg.jpeg",
+  creator_id: user3.id
+)
+
+
+group18 = Group.create!(
+  name: "Chess! Chess! Chess!",
+  category: "Games",
+  location: "New York, NY",
+  description: "We love chess and we don't care who knows",
+  founded_date: Faker::Date.backward(720),
+  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/chess_bg.jpeg",
+  creator_id: user12.id
+)
+
+
+
 group1 = Group.create!(
   name: "California Women Bikers",
   category: "Sports & Fitness",
@@ -148,7 +243,8 @@ group7 = Group.create!(
   name: "Desi Drinkers",
   category: "Food and Drink",
   location: "New York, NY",
-  description: Faker::Hipster.paragraph(60),
+  description: "Come join us for weekly outings at various bars and restaurants in NYC! All people welcome. Come
+  join Desi Drinkers if you'd like to have a good time!",
   founded_date: "2010-08-08",
   creator_id: user15.id,
   image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/desi_drinkers_bg.jpg"
@@ -234,58 +330,8 @@ group13 = Group.create!(
   creator_id: user10.id
 )
 
-group14 = Group.create!(
-  name: "Tennis Round Robin",
-  category: "Sports",
-  location: "New York, NY",
-  description: "Anyone for tennis?",
-  founded_date: Faker::Date.backward(720),
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/tennis_bg.jpeg",
-  creator_id: user4.id
-)
 
 
-group15 = Group.create!(
-  name: "Super Smash Bros Fans",
-  category: "Sports",
-  location: "Denver, CO",
-  description: "We play Super Smash Bros. Hardcore.",
-  founded_date: Faker::Date.backward(720),
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/super_smash_bros_bg.jpeg",
-  creator_id: user4.id
-)
-
-group16 = Group.create!(
-  name: "We Sit On Sofas And Watch TV",
-  category: "Food and Drink",
-  location: "New York, NY",
-  description: "Do you love sitting on your sofa and watching TV, but often feel
-  lonely doing so? Then come join us!",
-  founded_date: Faker::Date.backward(720),
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/sit_tv_bg.jpeg",
-  creator_id: user3.id
-)
-
-group17 = Group.create!(
-  name: "Settlers of Catan Fanatics",
-  category: "Games",
-  location: "New York, NY",
-  description: "Come to play the best Settlers players in New York! We have general gameplay and strategy sessions once a month,
-  and we try to have Settlers tournaments at least once a month. Join us if you love Settlers like us!",
-  founded_date: "2017-03-01",
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/settlers_of_catan_bg.jpg",
-  creator_id: user12.id
-)
-
-group18 = Group.create!(
-  name: "Chess! Chess! Chess!",
-  category: "Games",
-  location: "New York, NY",
-  description: "We love chess and we don't care who knows",
-  founded_date: Faker::Date.backward(720),
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/chess_bg.jpeg",
-  creator_id: user12.id
-)
 
 group19 = Group.create!(
   name: "Magic the Gathering Group",
@@ -307,45 +353,8 @@ group20 = Group.create!(
   creator_id: user10.id
 )
 
-group21 = Group.create!(
-  name: "Swing Dancin' in the City",
-  category: "Games",
-  location: "New York, NYC",
-  description: "Come join us for swing dancing! People of all skill levels welcome!",
-  founded_date: Faker::Date.backward(720),
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/swing_dancing_bg.png",
-  creator_id: user12.id
-)
 
-group22 = Group.create!(
-  name: "Tech Talks",
-  category: "Tech",
-  location: "San Francisco, CA",
-  description: "Come join us for talks hosted by different speakers in the tech industry",
-  founded_date: Faker::Date.backward(720),
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/tech_talks.png",
-  creator_id: user12.id
-)
 
-group23 = Group.create!(
-  name: "Java Junkies",
-  category: "Tech",
-  location: "Denver, CO",
-  description: "We love to code in java. Come code with us!",
-  founded_date: Faker::Date.backward(720),
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/java_junkies_bg.jpg",
-  creator_id: user12.id
-)
-
-group24 = Group.create!(
-  name: "Improv Actors and Actresses of San Francisco",
-  category: "Games",
-  location: "San Francisco, CA",
-  description: "Come and learn improve acting! It is the most fun you will ever have!",
-  founded_date: Faker::Date.backward(720),
-  image_url: "https://s3.amazonaws.com/lets-meet-dev/group_background_image/improv_acting_bg.jpeg",
-  creator_id: user17.id
-)
 #Memberships
 
 #Group creators' memberships
